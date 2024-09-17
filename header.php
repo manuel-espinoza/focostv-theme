@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
 <head>
-    <title><?php bloginfo('name'); ?> &raquo; <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
+    <title><?php bloginfo('og:title'); ?></title>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
     <?php wp_head(); ?>
 </head>
 
@@ -17,7 +17,10 @@
                 </button>
             </div>
             <div class="focostv-site-header-logo">
-                <a href="<?php echo esc_url(home_url('/')); ?>"></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/images/focostv-logo-black.svg'); ?>"
+                        alt="Logo de Focos TV">
+                </a>
             </div>
             <div class="focostv-site-header-search">
                 <button class="focostv-site-header-button">
