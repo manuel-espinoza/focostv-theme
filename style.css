@@ -178,6 +178,18 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
+    /*******NAVIGATION*****************/
+    .focostv-site-header-navigation-menu {
+        display: block;
+    }
+
+    .focostv-site-navigation {
+        display: none;
+    }
+
+    body.focostv-home .focostv-site-navigation {
+        display: block;
+    }
 
     /****** FOOTER*************/
     .focostv-site-footer {
@@ -202,7 +214,7 @@ body {
     }
 }
 
-@media screen and (min-width: 1280px) {
+/* @media screen and (min-width: 1280px) {
     .focostv-site-header-navigation-menu {
         display: block;
     }
@@ -214,7 +226,7 @@ body {
     body.focostv-home .focostv-site-navigation {
         display: block;
     }
-}
+} */
 
 @media screen and (min-width: 1440px) {
     .focostv-site-footer {

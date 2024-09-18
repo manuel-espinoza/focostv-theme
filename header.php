@@ -8,7 +8,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body class="<?php echo (is_front_page() || is_home()) ? 'focostv-home' : ''; ?> ">
+<body class="<?php echo (is_front_page() || is_home()) ? 'focostv-home' : 'focostv-site'; ?>">
     <header class="focostv-site-header">
         <div class="focostv-site-header-container">
             <div class="focostv-site-header-menu">
@@ -22,18 +22,20 @@
                         alt="Logo de Focos TV">
                 </a>
             </div>
-            <div class="focostv-site-header-navigation-menu">
-                <nav class="focostv-site-header-navigation">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location' => 'menu_principal',
-                        'container' => false,
-                        'menu_class' => 'focostv-site-navigation-menu focostv-header-menu',
-                        'fallback_cb' => false,
-                    ));
-                    ?>
-                </nav>
-            </div>
+            <?php if (!is_front_page() && !is_home()): ?>
+                <div class="focostv-site-header-navigation-menu">
+                    <nav class="focostv-site-header-navigation">
+                        <?php
+                        wp_nav_menu(array(
+                            'theme_location' => 'menu_principal',
+                            'container' => false,
+                            'menu_class' => 'focostv-site-navigation-menu focostv-header-menu',
+                            'fallback_cb' => false,
+                        ));
+                        ?>
+                    </nav>
+                </div>
+            <?php endif; ?>
             <div class="focostv-site-header-search">
                 <button class="focostv-site-header-button">
                     <i class="fa-solid fa-magnifying-glass focostv-site-header-icon"></i>
