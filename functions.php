@@ -1,4 +1,13 @@
 <?php
+function focostvtheme_setup_menus() {
+    register_nav_menus(array(
+        'menu_principal' => __('Principal', 'focostv'),
+        'footer_menu_principal' => __('FooterPrincipal', 'focostv'),
+        'footer_menu_secondary' => __('FooterSecundario','focostv'),
+    ));
+}
+
+add_action('after_setup_theme', 'focostvtheme_setup_menus');
 function focostvtheme_enqueue_styles()
 {
     // google font: Inter

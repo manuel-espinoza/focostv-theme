@@ -29,3 +29,13 @@
             </div>
         </div>
     </header>
+    <nav class="focostv-site-navigation">
+        <?php
+        wp_nav_menu(array(
+            'theme_location' => 'menu_principal',
+            'container' => false,
+            'menu_class' => 'focostv-site-navigation-menu',
+            'fallback_cb' => false,
+        ));
+        ?>
+    </nav>
