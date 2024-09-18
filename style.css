@@ -228,6 +228,16 @@ body {
         display: block;
     }
 
+    /***************TOGGLE NAVIGATION***********/
+    .focostv-site-toggle-navigation {
+        width: 40%;
+        padding-bottom: 0;
+    }
+
+    .focostv-site-toggle-navigation-menu {
+        margin: 2rem 2rem;
+    }
+
     /****** FOOTER*************/
     .focostv-site-footer {
         flex-direction: row;
