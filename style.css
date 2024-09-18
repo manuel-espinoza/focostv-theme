@@ -144,7 +144,51 @@ body {
 
 .focostv-site-toggle-navigation-menu.secondary li a {
     font-size: 1rem;
+}
 
+/******************SEARCH COMPONENT*************************/
+.focostv-site-search {
+    /* display: none; */
+    background: white;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    right: 0;
+    z-index: 99;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    /* padding-bottom: 5rem; */
+}
+
+.focostv-site-search-home-button {
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.focostv-site-search-form-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 10px;
+    max-width: 300px;
+    background-color: #f9f9f9;
+}
+
+.focostv-site-search-form-container input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    font-size: 16px;
+    background-color: transparent;
+    padding: 5px;
+}
+
+.focostv-site-search-form-container .focostv-site-search-icon {
+    margin-right: 10px;
+    font-size: 18px;
 }
 
 /************************FOOTER*****************************/

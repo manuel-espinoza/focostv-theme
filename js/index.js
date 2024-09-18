@@ -20,4 +20,22 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })
 
+    //toggle search
+    const focostvToggleSearch = document.getElementById('focostv-toggle-search')
+
+    focostvToggleSearch.addEventListener('click', () => {
+        focostvToggleSearch.classList.toggle('focostv-search-open')
+
+        const icon = focostvToggleSearch.querySelector("i")
+
+        if (focostvToggleSearch.classList.contains('focostv-search-open')) {
+            icon.classList.remove('fa-bars')
+            icon.classList.add('fa-xmark')
+        }
+        else {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+        }
+    })
+
 });

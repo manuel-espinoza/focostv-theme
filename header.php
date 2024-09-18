@@ -37,7 +37,7 @@
                 </div>
             <?php endif; ?>
             <div class="focostv-site-header-search">
-                <button class="focostv-site-header-button">
+                <button class="focostv-site-header-button" id="focostv-toggle-search">
                     <i class="fa-solid fa-magnifying-glass focostv-site-header-icon"></i>
                 </button>
             </div>
@@ -59,6 +59,9 @@
         ));
         ?>
     </nav>
+    <!-- Search Component -->
+    <?php get_template_part('components/search'); ?>
+    <!--  -->
     <nav class="focostv-site-navigation">
         <?php
         wp_nav_menu(array(
