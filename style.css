@@ -18,6 +18,7 @@ body {
 }
 
 /************************************** FOCOS THEME STYLES***********************************/
+/**********************HEADER**********************************/
 .focostv-site-header {
     background-color: #f8f8f7;
     border-bottom: 0.063rem solid #cdcdcd;
@@ -46,6 +47,7 @@ body {
     overflow-x: auto;
 }
 
+/****************************NAVIGATION*******************/
 .focostv-site-navigation-menu {
     list-style: none;
     display: flex;
@@ -94,3 +96,53 @@ body {
 .focostv-site-navigation-menu .current-menu-item a::after {
     background-color: #ffbe02;
 }
+/************************FOOTER*****************************/
+.focostv-site-footer {
+    font-family: "Inter", sans-serif;
+    background-color: black;
+    padding-top: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.focostv-site-footer-menu {
+    margin-top: 2rem;
+    border-bottom: 1px solid white;
+}
+
+.focostv-footer-menu,
+.focostv-footer-menu-secondary {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.focostv-footer-menu li,
+.focostv-footer-menu-secondary li {
+    margin-bottom: 1.5rem;
+}
+
+.focostv-footer-menu li a {
+    color: #D9D9D9;
+    text-decoration: none;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.focostv-footer-menu-secondary li a {
+    color: #D9D9D9;
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.focostv-site-footer-copyright {
+    margin-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+.copyright-text {
+    color: #D9D9D9;
+    font-size: 0.875rem;
+}
+
