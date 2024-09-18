@@ -93,9 +93,11 @@ body {
 .focostv-site-navigation-menu .current-menu-item a {
     color: #636363;
 }
+
 .focostv-site-navigation-menu .current-menu-item a::after {
     background-color: #ffbe02;
 }
+
 /************************FOOTER*****************************/
 .focostv-site-footer {
     font-family: "Inter", sans-serif;
@@ -146,3 +148,35 @@ body {
     font-size: 0.875rem;
 }
 
+/***************************************TABLET STYLES**************************/
+@media screen and (min-width: 768px) {
+
+    /****** NAVIGATION**********/
+    .focostv-site-navigation-menu {
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    /****** FOOTER*************/
+    .focostv-site-footer {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+    }
+
+    /* .focostv-site-footer-logo {
+        display: flex;
+    } */
+
+    .focostv-site-footer-menu {
+        margin-top: 0;
+        border: none;
+    }
+
+    .focostv-site-footer-copyright {
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
