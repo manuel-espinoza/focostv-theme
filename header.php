@@ -8,7 +8,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body class="focostv-site">
+<body class="<?php echo (is_front_page() || is_home()) ? 'focostv-home' : ''; ?> ">
     <header class="focostv-site-header">
         <div class="focostv-site-header-container">
             <div class="focostv-site-header-menu">
@@ -21,6 +21,18 @@
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/images/focostv-logo-black.svg'); ?>"
                         alt="Logo de Focos TV">
                 </a>
+            </div>
+            <div class="focostv-site-header-navigation-menu">
+                <nav class="focostv-site-header-navigation">
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'menu_principal',
+                        'container' => false,
+                        'menu_class' => 'focostv-site-navigation-menu focostv-header-menu',
+                        'fallback_cb' => false,
+                    ));
+                    ?>
+                </nav>
             </div>
             <div class="focostv-site-header-search">
                 <button class="focostv-site-header-button">
