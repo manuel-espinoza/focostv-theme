@@ -13,7 +13,7 @@
         <div class="focostv-site-header-container">
             <div class="focostv-site-header-menu">
                 <button class="focostv-site-header-button" id="focostv-toggle-button">
-                    <i class="fa-solid fa-bars focostv-site-header-icon"></i>
+                    <i id="focostv-toggle-icon" class="fa-solid fa-bars focostv-site-header-icon"></i>
                 </button>
             </div>
             <div class="focostv-site-header-logo">
@@ -43,6 +43,22 @@
             </div>
         </div>
     </header>
+    <nav id="focostv-site-toggle-navigation" class="focostv-site-toggle-navigation">
+        <?php
+        wp_nav_menu(array(
+            'theme_location' => 'menu_principal',
+            'container' => false,
+            'menu_class' => 'focostv-site-toggle-navigation-menu',
+            'fallback_cb' => false,
+        ));
+        wp_nav_menu(array(
+            'theme_location' => 'footer_menu_secondary',
+            'container' => false,
+            'menu_class' => 'focostv-site-toggle-navigation-menu secondary',
+            'fallback_cb' => false,
+        ));
+        ?>
+    </nav>
     <nav class="focostv-site-navigation">
         <?php
         wp_nav_menu(array(
