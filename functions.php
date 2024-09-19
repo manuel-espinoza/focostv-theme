@@ -26,3 +26,13 @@ function focostvtheme_enqueue_scripts() {
     wp_enqueue_script('focostv-scripts', get_template_directory_uri() . '/js/index.js', array(), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'focostvtheme_enqueue_scripts');
+
+/**
+ * Summary of custom_excerpt_length
+ * @param mixed $length
+ * @return int
+ */
+function custom_excerpt_length($length) {
+    return 25; 
+}
+add_filter('excerpt_length', 'custom_excerpt_length');
