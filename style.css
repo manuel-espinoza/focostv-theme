@@ -278,11 +278,22 @@ body {
 
 /***********************FRONT PAGE POSTS*****************/
 .focostv-section-front-page {
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
 }
 
 .focostv-front-page-post-item {
-    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    border-bottom: 1px solid #CDCDCD;
+}
+
+.focostv-front-page-post {
+    width: 65%;
+}
+
+.focostv-front-page-post-thumbnail {
+    width: 35%;
 }
 
 .focostv-front-page-post-thumbnail a img {
@@ -290,17 +301,34 @@ body {
     height: 100%;
 }
 
+.front-page-first-post {
+    flex-direction: column-reverse;
+}
+
+.front-page-first-post .focostv-front-page-post,
+.front-page-first-post .focostv-front-page-post-thumbnail {
+    width: 100%;
+}
+
+.front-page-first-post .focostv-front-page-post-thumbnail {
+    margin-bottom: 1rem;
+}
+
 .focostv-front-page-post-title {
-    margin: 0.5rem 0;
+    margin: 0 0 0.5rem 0;
 
 }
 
 .focostv-front-page-post-title a {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 1.75rem;
+    font-size: 1rem;
     text-decoration: none;
     color: black;
+}
+
+.front-page-first-post .focostv-front-page-post-title a {
+    font-size: 1.75rem;
     line-height: 2.45rem;
 }
 

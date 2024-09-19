@@ -13,15 +13,13 @@ if ($portada_query->have_posts()):
     while ($portada_query->have_posts()):
         $portada_query->the_post();
         $post_counter++;
+
+        $frontpage_post_class = ($post_counter == 1) ? ' front-page-first-post' : '';
         ?>
-        <div class="focostv-front-page-post-item">
-            <?php if (has_post_thumbnail()): ?>
-                <div class="focostv-front-page-post-thumbnail">
-                    <a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'full'); ?></a>
-                </div>
-            <?php endif; ?>
+        <div class="focostv-front-page-post-item<?php echo $frontpage_post_class; ?>">
             <div class="focostv-front-page-post">
-                <h2 class="focostv-front-page-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                <h2 class="focostv-front-page-post-title<?php echo $frontpage_post_class; ?>"><a
+                        href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                 <?php if ($post_counter == 1): ?>
                     <div class="focostv-front-page-post-excerpt">
                         <?php the_excerpt(); ?>
@@ -31,6 +29,11 @@ if ($portada_query->have_posts()):
                     <a href="<?php the_permalink(); ?>">Leer nota <i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
+            <?php if (has_post_thumbnail()): ?>
+                <div class="focostv-front-page-post-thumbnail">
+                    <a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'full'); ?></a>
+                </div>
+            <?php endif; ?>
         </div>
 
     <?php endwhile;
