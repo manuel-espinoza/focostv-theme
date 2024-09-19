@@ -148,7 +148,7 @@ body {
 
 /******************SEARCH COMPONENT*************************/
 .focostv-site-search {
-    /* display: none; */
+    display: none;
     background: white;
     width: 100%;
     height: auto;
@@ -160,11 +160,16 @@ body {
     /* padding-bottom: 5rem; */
 }
 
+.focostv-site-search.focostv-search-open {
+    display: block;
+}
+
 .focostv-site-search-home-button {
     font-weight: 600;
     font-family: 'Inter', sans-serif;
     text-decoration: none;
     cursor: pointer;
+    color: black;
 }
 
 .focostv-site-search-form-container {
@@ -189,6 +194,12 @@ body {
 .focostv-site-search-form-container .focostv-site-search-icon {
     margin-right: 10px;
     font-size: 18px;
+}
+
+.focostv-site-search-topics-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: black;
 }
 
 /************************FOOTER*****************************/

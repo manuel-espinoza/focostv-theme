@@ -22,10 +22,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //toggle search
     const focostvToggleSearch = document.getElementById('focostv-toggle-search')
+    const focostvSearch = document.getElementById('focostv-site-search')
 
     focostvToggleSearch.addEventListener('click', () => {
         focostvToggleSearch.classList.toggle('focostv-search-open')
-
+        focostvSearch.classList.toggle('focostv-search-open')
+        
         const icon = focostvToggleSearch.querySelector("i")
 
         if (focostvToggleSearch.classList.contains('focostv-search-open')) {
