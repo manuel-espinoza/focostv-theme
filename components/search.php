@@ -14,5 +14,27 @@
         <h4 class="focostv-site-search-topics-title">
             Temas
         </h4>
+        <?php
+
+        $tags = get_tags(array(
+            'orderby' => 'count',
+            'order' => 'DESC',
+            'number' => 10
+        ));
+
+        if ($tags) {
+            echo '<ul class="focostv-topics-list">';
+
+            foreach ($tags as $tag) {
+
+                echo '<li>';
+                echo '<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>';
+                echo '</li>';
+            }
+            echo '</ul>';
+        } else {
+            echo '<p>No hay temas disponibles.</p>';
+        }
+        ?>
     </div>
 </div>

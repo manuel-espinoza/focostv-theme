@@ -157,11 +157,16 @@ body {
     z-index: 99;
     padding-left: 1rem;
     padding-right: 1rem;
-    /* padding-bottom: 5rem; */
+    padding-bottom: 5rem;
 }
 
 .focostv-site-search.focostv-search-open {
     display: block;
+}
+
+.focostv-site-search-home {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 .focostv-site-search-home-button {
@@ -176,10 +181,10 @@ body {
     display: flex;
     align-items: center;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 5px 10px;
-    max-width: 300px;
+    border-radius: 0.625rem;
+    padding: 0.625rem 0.938rem;
     background-color: #f9f9f9;
+    font-family: 'Inter', sans-serif;
 }
 
 .focostv-site-search-form-container input {
@@ -202,6 +207,17 @@ body {
     color: black;
 }
 
+.focostv-topics-list li {
+    margin-bottom: 1rem;
+}
+
+.focostv-topics-list li a {
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+
 /************************FOOTER*****************************/
 .focostv-site-footer {
     font-family: "Inter", sans-serif;
@@ -222,6 +238,7 @@ body {
     border-bottom: 1px solid white;
 }
 
+.focostv-topics-list,
 .focostv-footer-menu,
 .focostv-footer-menu-secondary {
     list-style: none;
@@ -291,6 +308,11 @@ body {
 
     .focostv-site-toggle-navigation-menu {
         margin: 2rem 2rem;
+    }
+
+    /******* SEARCH ************/
+    .focostv-site-search {
+        width: 60%;
     }
 
     /****** FOOTER*************/
