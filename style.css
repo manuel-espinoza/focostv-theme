@@ -38,6 +38,7 @@ body {
 }
 
 .focostv-site-header-icon {
+    color: black !important;
     font-size: 1.4rem;
 }
 
@@ -277,7 +278,8 @@ body {
 }
 
 /***********************FRONT PAGE POSTS*****************/
-.focostv-section-front-page {
+.focostv-section-front-page,
+.focostv-section-topicality {
     padding: 1rem 1.5rem;
 }
 
@@ -350,6 +352,30 @@ body {
     font-weight: 600;
 }
 
+/************************ ACTUALIDAD POSTS ********************/
+.focostv-topicality-title {
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.focostv-topicality-title::before {
+    content: '';
+    display: inline-block;
+    width: 0.5rem;
+    height: 2em;
+    background-color: #FFBE02;
+    margin-right: 0.625rem;
+}
+
+.focostv-topicality-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
 /***************************************TABLET STYLES**************************/
 @media screen and (min-width: 768px) {
 
@@ -365,6 +391,7 @@ body {
     .focostv-site-navigation-menu li a {
         font-size: 1rem;
     }
+
     .focostv-site-header-navigation-menu {
         display: block;
     }
