@@ -414,6 +414,17 @@ body {
     /*********FRONTPAGE POSTS***************/
     .focostv-section-front-page {
         padding: 1rem 5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .full-width-front-page-post {
+        width: 100%;
+    }
+
+    .half-width-front-page-post {
+        width: 48%;
     }
 
     .front-page-first-post {
@@ -428,14 +439,42 @@ body {
     .front-page-first-post .focostv-front-page-post {
         padding-left: 1rem;
     }
-    .front-page-first-post .focostv-front-page-post-thumbnail {
-        padding-right: 1rem;
+
+    .front-page-first-post .focostv-front-page-post-title a {
+        font-size: 2.375rem;
+        line-height: 3.325rem;
+        font-weight: 600;
     }
 
     .front-page-first-post .focostv-front-page-post-thumbnail {
+        padding-right: 1rem;
         margin-bottom: 0;
     }
-    
+
+    .focostv-front-page-post-link a {
+        font-size: 1rem;
+    }
+
+    .focostv-front-page-post-title a {
+        font-size: 1.375rem;
+        font-weight: 500;
+    }
+
+    .focostv-front-page-post-excerpt p {
+        font-size: 1.25rem;
+        font-weight: 300;
+    }
+
+
+
+    /* .half-width-front-page-post .focostv-front-page-post {
+        width: 65%;
+    }
+
+    .half-width-front-page-post .focostv-front-page-post {
+        width: 35%;
+    } */
+
 }
 
 /* @media screen and (min-width: 1280px) {
@@ -456,5 +495,9 @@ body {
     .focostv-site-footer {
         padding-left: 6rem;
         padding-right: 6rem;
+    }
+
+    .focostv-section-front-page {
+        padding: 1rem 10rem;
     }
 }
