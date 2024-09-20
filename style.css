@@ -410,6 +410,32 @@ body {
     .focostv-copyright-text {
         margin: 0;
     }
+
+    /*********FRONTPAGE POSTS***************/
+    .focostv-section-front-page {
+        padding: 1rem 5rem;
+    }
+
+    .front-page-first-post {
+        flex-direction: row-reverse;
+    }
+
+    .front-page-first-post .focostv-front-page-post,
+    .front-page-first-post .focostv-front-page-post-thumbnail {
+        width: 50%;
+    }
+
+    .front-page-first-post .focostv-front-page-post {
+        padding-left: 1rem;
+    }
+    .front-page-first-post .focostv-front-page-post-thumbnail {
+        padding-right: 1rem;
+    }
+
+    .front-page-first-post .focostv-front-page-post-thumbnail {
+        margin-bottom: 0;
+    }
+    
 }
 
 /* @media screen and (min-width: 1280px) {
