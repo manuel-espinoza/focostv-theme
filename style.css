@@ -362,6 +362,9 @@ body {
 @media screen and (min-width: 1024px) {
 
     /*******NAVIGATION*****************/
+    .focostv-site-navigation-menu li a {
+        font-size: 1rem;
+    }
     .focostv-site-header-navigation-menu {
         display: block;
     }
