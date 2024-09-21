@@ -513,6 +513,8 @@ body {
     /*********************ACTUALIDAD*************/
     .focostv-front-page-topicality {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .focostv-front-page-topicality-post-item {
