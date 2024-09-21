@@ -277,6 +277,12 @@ body {
     font-size: 0.875rem;
 }
 
+/*** layout component *********/
+.goto-page-icon {
+    display: flex;
+    margin-left: 1rem;
+}
+
 /***********************FRONT PAGE POSTS*****************/
 .focostv-section-front-page,
 .focostv-section-topicality {
@@ -383,6 +389,11 @@ body {
     .focostv-site-navigation-menu {
         justify-content: center;
     }
+
+    .focostv-section-front-page,
+    .focostv-section-topicality {
+        padding: 1rem 3.5rem;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -442,8 +453,12 @@ body {
     }
 
     /*********FRONTPAGE POSTS***************/
-    .focostv-section-front-page {
+    .focostv-section-front-page,
+    .focostv-section-topicality {
         padding: 1rem 5rem;
+    }
+
+    .focostv-section-front-page {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
@@ -495,31 +510,15 @@ body {
         font-weight: 300;
     }
 
-
-
-    /* .half-width-front-page-post .focostv-front-page-post {
-        width: 65%;
+    /*********************ACTUALIDAD*************/
+    .focostv-front-page-topicality {
+        display: flex;
     }
 
-    .half-width-front-page-post .focostv-front-page-post {
-        width: 35%;
-    } */
-
+    .focostv-front-page-topicality-post-item {
+        flex-direction: column-reverse;
+    }
 }
-
-/* @media screen and (min-width: 1280px) {
-    .focostv-site-header-navigation-menu {
-        display: block;
-    }
-
-    .focostv-site-navigation {
-        display: none;
-    }
-
-    body.focostv-home .focostv-site-navigation {
-        display: block;
-    }
-} */
 
 @media screen and (min-width: 1440px) {
     .focostv-site-footer {
@@ -527,7 +526,8 @@ body {
         padding-right: 6rem;
     }
 
-    .focostv-section-front-page {
+    .focostv-section-front-page,
+    .focostv-section-topicality {
         padding: 1rem 10rem;
     }
 }
