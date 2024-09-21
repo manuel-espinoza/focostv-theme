@@ -513,12 +513,17 @@ body {
     /*********************ACTUALIDAD*************/
     .focostv-front-page-topicality {
         display: flex;
-        align-items: center;
+        align-items: baseline;
         justify-content: space-between;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #CDCDCD;
+
     }
 
     .focostv-front-page-topicality-post-item {
         flex-direction: column-reverse;
+        width: 32%;
+        border-bottom: none;
     }
 
     .focostv-front-page-topicality-post-item .focostv-front-page-post,
