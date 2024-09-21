@@ -518,6 +518,12 @@ body {
     .focostv-front-page-topicality-post-item {
         flex-direction: column-reverse;
     }
+
+    .focostv-front-page-topicality-post-item .focostv-front-page-post,
+    .focostv-front-page-topicality-post-item .focostv-front-page-post-thumbnail {
+        width: 100%;
+    }
+
 }
 
 @media screen and (min-width: 1440px) {
