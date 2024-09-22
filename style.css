@@ -426,10 +426,13 @@ body {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 }
-.focostv-research-carousel-next, .focostv-research-carousel-prev {
+
+.focostv-research-carousel-next,
+.focostv-research-carousel-prev {
     background: none;
     border: none;
 }
+
 .focostv-research-carousel-indicators {
     text-align: center;
 }
@@ -465,6 +468,10 @@ body {
 
     .focostv-section-container {
         padding: 1rem 3.5rem;
+    }
+
+    .focostv-research-carousel-container {
+        max-width: 41.25rem;
     }
 }
 
