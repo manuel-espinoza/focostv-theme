@@ -24,7 +24,7 @@ $is_frontpage = get_query_var('is_frontpage');
         );
 
         if ($is_frontpage) {
-            $args['posts_per_page'] = 5; // Limita a 5 si estás en la página principal
+            $args['posts_per_page'] = 3; // Revisar si se puede mantener esto para ambos diseños
         }
 
         $investigacion_query = new WP_Query($args);
