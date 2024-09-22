@@ -3,7 +3,7 @@ $is_frontpage = get_query_var('is_frontpage');
 $frontpage_topicality_post_class = ''
     ?>
 
-<h3 class="focostv-topicality-title"><a href="<?php echo get_permalink(get_page_by_path('actualidad')); ?>">Actualidad
+<h3 class="focostv-sections-title"><a href="<?php echo get_permalink(get_page_by_path('actualidad')); ?>">Actualidad
     </a>
     <div class="goto-page-icon"><!-- https://feathericons.dev/?search=arrow-up-right&iconset=feather -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon"

@@ -284,8 +284,7 @@ body {
 }
 
 /***********************FRONT PAGE POSTS*****************/
-.focostv-section-front-page,
-.focostv-section-topicality {
+.focostv-section-container {
     padding: 1rem 1.5rem;
 }
 
@@ -335,7 +334,8 @@ body {
     color: black;
 }
 
-.front-page-first-post .focostv-front-page-post-title a {
+.front-page-first-post .focostv-front-page-post-title a,
+.focostv-research-post-title a {
     font-size: 1.75rem;
     line-height: 2.45rem;
 }
@@ -359,7 +359,7 @@ body {
 }
 
 /************************ ACTUALIDAD POSTS ********************/
-.focostv-topicality-title {
+.focostv-sections-title {
     display: flex;
     align-items: center;
     font-family: 'Poppins', sans-serif;
@@ -367,7 +367,7 @@ body {
     font-weight: 600;
 }
 
-.focostv-topicality-title::before {
+.focostv-sections-title::before {
     content: '';
     display: inline-block;
     width: 0.5rem;
@@ -376,9 +376,82 @@ body {
     margin-right: 0.625rem;
 }
 
-.focostv-topicality-title a {
+.focostv-sections-title a {
     text-decoration: none;
     color: inherit;
+}
+
+/**************************INVESTIGACIONES*********************/
+/******CAROUSEL******************/
+.focostv-research-carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 31.25rem;
+    margin: auto;
+    overflow: hidden;
+}
+
+.focostv-research-carousel {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.focostv-research-carousel-card {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    border: 1px solid #CDCDCD;
+}
+
+.focostv-research-carousel-card img {
+    max-width: 100%;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.focostv-research-post-extract {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    margin: 0;
+}
+
+.focostv-research-carousel-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.focostv-research-carousel-next, .focostv-research-carousel-prev {
+    background: none;
+    border: none;
+}
+.focostv-research-carousel-indicators {
+    text-align: center;
+}
+
+.focostv-research-carousel-dot {
+    height: 1rem;
+    width: 1rem;
+    margin: 0 0.313rem;
+    background-color: #FFBE02;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.focostv-research-carousel-dot-active,
+.focostv-research-carousel-dot:hover {
+    background-color: black;
+}
+
+.focostv-research-carousel-dot-active {
+    width: 1.688rem;
+    border-radius: 2.563rem;
 }
 
 
@@ -390,8 +463,7 @@ body {
         justify-content: center;
     }
 
-    .focostv-section-front-page,
-    .focostv-section-topicality {
+    .focostv-section-container {
         padding: 1rem 3.5rem;
     }
 }
@@ -453,8 +525,7 @@ body {
     }
 
     /*********FRONTPAGE POSTS***************/
-    .focostv-section-front-page,
-    .focostv-section-topicality {
+    .focostv-section-container {
         padding: 1rem 5rem;
     }
 
@@ -539,8 +610,7 @@ body {
         padding-right: 6rem;
     }
 
-    .focostv-section-front-page,
-    .focostv-section-topicality {
+    .focostv-section-container {
         padding: 1rem 10rem;
     }
 }

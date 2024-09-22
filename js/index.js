@@ -41,3 +41,57 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 });
+
+/*********CAROUSEL SCRIPTS ***************************/
+let currentIndex = 0;
+const cards = document.querySelectorAll('.focostv-research-carousel-card');
+const totalCards = cards.length;
+
+document.querySelector('.focostv-research-carousel-next').addEventListener('click', nextSlide);
+document.querySelector('.focostv-research-carousel-prev').addEventListener('click', prevSlide);
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % totalCards;
+  updateCarousel();
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+  updateCarousel();
+}
+
+function currentSlide(index) {
+  currentIndex = index - 1;
+  updateCarousel();
+}
+
+function updateCarousel() {
+  const carousel = document.querySelector('.focostv-research-carousel');
+  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+  
+  const dots = document.querySelectorAll('.focostv-research-carousel-dot');
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('focostv-research-carousel-dot-active', index === currentIndex);
+  });
+}
+
+// CAROUSEL SCRIPTS Swipe functionality
+const carousel = document.querySelector('.focostv-research-carousel');
+
+carousel.addEventListener('touchstart', (event) => {
+  startX = event.touches[0].clientX;
+});
+
+carousel.addEventListener('touchmove', (event) => {
+  endX = event.touches[0].clientX;
+});
+
+carousel.addEventListener('touchend', () => {
+  if (startX > endX + 50) { // Swipe left
+    nextSlide();
+  } else if (startX < endX - 50) { // Swipe right
+    prevSlide();
+  }
+});
+
+updateCarousel(); 

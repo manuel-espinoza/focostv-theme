@@ -20,7 +20,7 @@ function focostvtheme_enqueue_styles()
     // icons from FontAwesome
     wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css', array(), '6.5.0');
     // theme styles
-    wp_enqueue_style('focostvtheme-style', get_stylesheet_uri(), array(), '1.0.0');
+    wp_enqueue_style('focostvtheme-style', get_stylesheet_uri(), array(), '1.0.1');
 }
 add_action('wp_enqueue_scripts', 'focostvtheme_enqueue_styles');
 
