@@ -1,7 +1,7 @@
 <?php
 $is_frontpage = get_query_var('is_frontpage');
-$frontpage_topicality_post_class = ''
-    ?>
+$frontpage_topicality_post_class = '';
+?>
 
 <h3 class="focostv-sections-title"><a href="<?php echo get_permalink(get_page_by_path('actualidad')); ?>">Actualidad
     </a>
