@@ -18,8 +18,7 @@ if ($portada_query->have_posts()):
         ?>
         <div class="focostv-front-page-post-item<?php echo $frontpage_post_class; ?>">
             <div class="focostv-front-page-post">
-                <h2 class="focostv-front-page-post-title"><a
-                        href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                <h2 class="focostv-front-page-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                 <?php if ($post_counter == 1): ?>
                     <div class="focostv-front-page-post-excerpt">
                         <?php the_excerpt(); ?>
@@ -31,7 +30,15 @@ if ($portada_query->have_posts()):
             </div>
             <?php if (has_post_thumbnail()): ?>
                 <div class="focostv-front-page-post-thumbnail">
-                    <a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'full'); ?></a>
+                    <a href="<?php the_permalink(); ?>">
+                        <?php
+                        the_post_thumbnail('full', array(
+                            'srcset' => wp_get_attachment_image_srcset(get_post_thumbnail_id(), 'full'),
+                            'sizes' => '(max-width: 1023px) 300px, 9999',
+                            'alt' => get_the_title(),
+                        ));
+                        ?>
+                    </a>
                 </div>
             <?php endif; ?>
         </div>

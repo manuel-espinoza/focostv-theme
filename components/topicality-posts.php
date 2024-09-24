@@ -45,7 +45,15 @@ if ($actualidad_query->have_posts()):
             </div>
             <?php if (has_post_thumbnail()): ?>
                 <div class="focostv-front-page-post-thumbnail">
-                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full'); ?></a>
+                    <a href="<?php the_permalink(); ?>">
+                        <?php
+                        the_post_thumbnail('full', array(
+                            'srcset' => wp_get_attachment_image_srcset(get_post_thumbnail_id(), 'full'),
+                            'sizes' => '(max-width: 1023px) 300px, 9999',
+                            'alt' => get_the_title(),
+                        ));
+                        ?>
+                    </a>
                 </div>
             <?php endif; ?>
         </div>

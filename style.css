@@ -408,6 +408,7 @@ body {
 
 .focostv-research-carousel-card img {
     max-width: 100%;
+    height: auto;
     border-radius: 0.25rem;
     margin-bottom: 1rem;
 }
