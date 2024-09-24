@@ -24,9 +24,11 @@ if ($portada_query->have_posts()):
                         <?php the_excerpt(); ?>
                     </div>
                 <?php endif; ?>
-                <div class="focostv-front-page-post-link">
-                    <a href="<?php the_permalink(); ?>">Leer nota <i class="fa-solid fa-up-right-from-square"></i></a>
-                </div>
+                <?php
+                $permalink = get_permalink();
+                $custom_text = 'Leer nota';
+                get_template_part('components/read-more-post', null, array('permalink' => $permalink, 'custom_text' => $custom_text));
+                ?>
             </div>
             <?php if (has_post_thumbnail()): ?>
                 <div class="focostv-front-page-post-thumbnail">

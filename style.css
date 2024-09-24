@@ -283,6 +283,10 @@ body {
     margin-left: 1rem;
 }
 
+.goto-post-icon {
+    margin-left: 0.5rem;
+}
+
 /***********************FRONT PAGE POSTS*****************/
 .focostv-section-container {
     padding: 1rem 1.5rem;
@@ -347,6 +351,8 @@ body {
 }
 
 .focostv-front-page-post-link {
+    display: flex;
+    align-items: center;
     margin-top: 1rem;
 }
 
@@ -478,6 +484,9 @@ body {
 
 @media screen and (min-width: 1024px) {
 
+    .goto-post-icon {
+        display: flex;
+    }
     /*******NAVIGATION*****************/
     .focostv-site-navigation-menu li a {
         font-size: 1rem;
