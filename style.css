@@ -351,8 +351,7 @@ body {
     font-size: 1.125rem;
 }
 
-.focostv-front-page-post-link,
-.focostv-documentaries-post-link {
+.focostv-front-page-post-link {
     display: flex;
     align-items: center;
     margin-top: 1rem;
@@ -521,6 +520,10 @@ body {
 
 .focostv-documentaries-post-time {
     font-weight: bold;
+}
+
+.focostv-documentaries-post-link {
+    display: none;
 }
 
 /***************************************TABLET STYLES**************************/
@@ -722,6 +725,7 @@ body {
         width: 30%;
         margin-bottom: 0;
     }
+
     .front-page-documentaries-secondary-post .focostv-documentaries-post-thumbnail img {
         height: 100%;
     }
@@ -730,6 +734,12 @@ body {
         width: 70%;
         padding-right: 1rem;
         text-align: right;
+    }
+
+    .focostv-documentaries-post-link {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
     }
 
     .focostv-documentaries-post-link a {
