@@ -24,18 +24,18 @@ $args = array(
 
 if ($is_frontpage) {
     $args['posts_per_page'] = 3;
-    // $frontpage_topicality_post_class = 'focostv-front-page-topicality';
-    // $frontpage_topicality_post_item_class = ' focostv-front-page-topicality-post-item';
+    $frontpage_documentaries_post_class = 'focostv-front-page-documentaries';
 }
 
 $documentales_query = new WP_Query($args);
 
+echo "<div class='focostv-documentaries-post-container $frontpage_documentaries_post_class'>";
 if ($documentales_query->have_posts()):
     $post_counter = 0;
     while ($documentales_query->have_posts()):
         $documentales_query->the_post();
         $post_counter++;
-        $frontpage_post_class = ($post_counter == 1) ? ' full-width-front-page-documentaries-post front-page-documentaries-first-post' : ' half-width-front-page-documentaries-post';
+        $frontpage_post_class = ($post_counter == 1) ? ' front-page-documentaries-first-post' : ' front-page-documentaries-secondary-post';
         ?>
         <div class="focostv-documentaries-post-item<?php echo $frontpage_post_class; ?>">
             <?php if (has_post_thumbnail()): ?>
@@ -71,12 +71,27 @@ if ($documentales_query->have_posts()):
                 <div class="focostv-documentaries-post-excerpt">
                     <?php the_excerpt(); ?>
                 </div>
+                <div class="focostv-documentaries-post-link">
+                    <a href="<?php the_permalink(); ?>">Reproducir</a>
+                    <div class="goto-documentarie-icon">
+                        <!-- https://feathericons.dev/?search=play-circle&iconset=feather -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                            class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polygon points="10 8 16 12 10 16 10 8" />
+                        </svg>
+
+                    </div>
+                </div>
             </div>
         </div>
     <?php endwhile;
 else:
     echo '<p>No hay posts en la categoría DOCUMENTALES.</p>';
 endif;
+echo '</div>';
+
 
 // Resetear postdata
 wp_reset_postdata();

@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
       posts.forEach((post, index) => {
           if (windowWidth >= 1024) {
               // Show all posts if the screen width is 1024px or more
-              post.style.display = 'block';
+              post.style.display = 'flex';
           } else {
               // Show only the first post if the screen width is less than 1024px
               post.style.display = (index === 0) ? 'block' : 'none';

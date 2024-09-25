@@ -283,7 +283,8 @@ body {
     margin-left: 1rem;
 }
 
-.goto-post-icon {
+.goto-post-icon,
+.goto-documentarie-icon {
     margin-left: 0.5rem;
 }
 
@@ -350,7 +351,8 @@ body {
     font-size: 1.125rem;
 }
 
-.focostv-front-page-post-link {
+.focostv-front-page-post-link,
+.focostv-documentaries-post-link {
     display: flex;
     align-items: center;
     margin-top: 1rem;
@@ -679,6 +681,79 @@ body {
     /**************************INVESTIGACIONES*********************************/
 
     /*************************DOCUMENTALES*************************************/
+    .focostv-front-page-documentaries {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .front-page-documentaries-first-post {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #CDCDCD;
+        align-items: center;
+        width: 100%;
+    }
+
+    .front-page-documentaries-first-post .focostv-documentaries-post-thumbnail {
+        width: 60%;
+    }
+
+    .front-page-documentaries-first-post .focostv-documentaries-post {
+        width: 40%;
+        padding: 1rem;
+    }
+
+    .focostv-documentaries-play-icon-overlay svg {
+        opacity: 0.9;
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .front-page-documentaries-secondary-post {
+        width: 48%;
+        flex-direction: row-reverse;
+    }
+
+    .front-page-documentaries-secondary-post .focostv-documentaries-post-excerpt {
+        display: none;
+    }
+
+    .front-page-documentaries-secondary-post .focostv-documentaries-post-thumbnail {
+        width: 30%;
+        margin-bottom: 0;
+    }
+    .front-page-documentaries-secondary-post .focostv-documentaries-post-thumbnail img {
+        height: 100%;
+    }
+
+    .front-page-documentaries-secondary-post .focostv-documentaries-post {
+        width: 70%;
+        padding-right: 1rem;
+        text-align: right;
+    }
+
+    .focostv-documentaries-post-link a {
+        text-decoration: none;
+        color: #D9D9D9;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .goto-documentarie-icon {
+        display: flex;
+        color: #D9D9D9;
+    }
+
+    .front-page-documentaries-secondary-post .focostv-documentaries-post-link {
+        justify-content: end;
+    }
+
+    .front-page-documentaries-secondary-post .focostv-documentaries-play-icon-overlay svg {
+        width: 3.125rem;
+        height: 3.125rem;
+        opacity: 0.7;
+    }
 }
 
 @media screen and (min-width: 1440px) {
