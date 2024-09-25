@@ -40,6 +40,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })
 
+    function updatePostVisibility() {
+      const posts = document.querySelectorAll('.focostv-documentaries-post-item');
+      const windowWidth = window.innerWidth;
+
+      posts.forEach((post, index) => {
+          if (windowWidth >= 1024) {
+              // Show all posts if the screen width is 1024px or more
+              post.style.display = 'block';
+          } else {
+              // Show only the first post if the screen width is less than 1024px
+              post.style.display = (index === 0) ? 'block' : 'none';
+          }
+      });
+  }
+
+  // Execute the function on page load
+  updatePostVisibility();
+
+  // Execute the function on window resize
+  window.addEventListener('resize', updatePostVisibility);
+
 });
 
 /*********CAROUSEL SCRIPTS ***************************/

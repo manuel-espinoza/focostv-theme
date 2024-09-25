@@ -516,6 +516,7 @@ body {
     margin-top: 0;
     margin-bottom: 1rem;
 }
+
 .focostv-documentaries-post-time {
     font-weight: bold;
 }
@@ -677,7 +678,7 @@ body {
 
     /**************************INVESTIGACIONES*********************************/
 
-
+    /*************************DOCUMENTALES*************************************/
 }
 
 @media screen and (min-width: 1440px) {
