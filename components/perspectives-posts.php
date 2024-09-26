@@ -27,6 +27,7 @@ if ($category) {
 
     if (!empty($subcategories)) {
         foreach ($subcategories as $subcategory) {
+            $post_pespective_title_class = strpos(strtolower($subcategory->name), 'entrevista') !== false ? ' focostv-interview-title' : '';
             ?>
             <div class="<?php echo $subcategory->slug ?>-container-perspective-posts">
 
@@ -45,13 +46,41 @@ if ($category) {
                         $perspectivas_query->the_post();
                         ?>
                         <div class="focostv-perspectives-post-item">
+                            <h6 class="focostv-perspectives-category">
+                                <?php echo strtolower($subcategory->name); ?>
+                            </h6>
+                            <?php if (has_post_thumbnail() && strpos(strtolower($subcategory->name), 'entrevista') !== false): ?>
+                                <div class="focostv-perspectives-post-thumbnail">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <?php
+                                        the_post_thumbnail('full', array(
+                                            'srcset' => wp_get_attachment_image_srcset(get_post_thumbnail_id(), 'full'),
+                                            'sizes' => '(max-width: 1023px) 300px, 9999',
+                                            'alt' => get_the_title(),
+                                        ));
+                                        ?>
+                                    </a>
+                                </div>
+                            <?php endif; ?>
                             <div class="focostv-perspectives-post">
-                                <h6 class="focostv-perspectives-category">
-                                    <?php echo esc_html(strtolower($subcategory->name)); ?>
-                                </h6>
-                                <h2 class="focostv-front-page-post-title focostv-perspectives-opinion-post-title">
+                                <h2
+                                    class="focostv-front-page-post-title focostv-perspectives-post-title<?php echo $post_pespective_title_class ?>">
                                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 </h2>
+                                <?php
+                                if (strpos(strtolower($subcategory->name), 'entrevista') !== false) {
+                                    $permalink = get_permalink();
+                                    $custom_text = 'Ver entrevista';
+                                    get_template_part('components/read-more-post', null, array('permalink' => $permalink, 'custom_text' => $custom_text));
+                                } else if (strpos(strtolower($subcategory->name), 'opinion') !== false) {
+                                    ?>
+                                        <div class="focostv-perspectives-post-author">
+                                        <?php echo get_avatar(get_the_author_meta('ID'), 60); ?>
+                                            <span class="focostv-perspectives-post-author-name"><?php echo esc_html(get_the_author()); ?></span>
+                                        </div>
+                                    <?php
+                                }
+                                ?>
                             </div>
                         </div>
                         <?php
