@@ -547,6 +547,7 @@ body {
     font-size: 2.125rem;
     line-height: 2.975rem;
 }
+
 .focostv-interview-title a {
     font-size: 1.75rem;
     line-height: 2.45rem;
@@ -571,6 +572,21 @@ body {
 .focostv-perspectives-post-author-name {
     font-family: 'Inter', sans-serif;
     font-weight: 600;
+}
+
+.focostv-perpesctives-podcasts-post-link i {
+    color: #2EBD59;
+    font-size: 2.5rem;
+}
+
+.focostv-perpesctives-podcasts-post-link a {
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+.focostv-perspectives-podcasts-post-date span {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
 }
 
 /***************************************TABLET STYLES**************************/

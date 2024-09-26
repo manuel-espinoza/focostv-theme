@@ -79,6 +79,16 @@ if ($category) {
                                             <span class="focostv-perspectives-post-author-name"><?php echo esc_html(get_the_author()); ?></span>
                                         </div>
                                     <?php
+                                } else if (strpos(strtolower($subcategory->name), 'podcast') !== false) {
+                                    ?>
+                                            <div class="focostv-perspectives-podcasts-post-date">
+                                                <span><?php echo get_the_date('j \d\e F'); ?></span>
+                                            </div>
+                                            <div class="focostv-perpesctives-podcasts-post-link focostv-front-page-post-link">
+                                                <i class="fa-brands fa-spotify"></i> <a href="<?php echo esc_url($permalink); ?>"> Escuchar
+                                                </a>
+                                            </div>
+                                    <?php
                                 }
                                 ?>
                             </div>
