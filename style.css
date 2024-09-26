@@ -526,6 +526,24 @@ body {
     display: none;
 }
 
+/****************** PERSPECTIVAS ****************************/
+.focostv-perspectives-category {
+    font-size: 0.875rem;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+}
+
+.focostv-perspectives-post-item {
+    border: 1px solid #CDCDCD;
+    padding: 1.5rem;
+}
+
+.focostv-perspectives-opinion-post-title a {
+    font-size: 2.125rem;
+    line-height: 2.975rem;
+}
+
 /***************************************TABLET STYLES**************************/
 @media screen and (min-width: 768px) {
 
