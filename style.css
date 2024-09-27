@@ -750,7 +750,61 @@ body {
     }
 
     /**************************INVESTIGACIONES*********************************/
+    /***CANDIDATE #1***/
+    .focostv-research-carousel-container {
+        max-width: 100%;
+        padding-bottom: 1.5rem;
+    }
 
+    .focostv-research-carousel {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(32%, 1fr));
+        gap: 1rem;
+        transition: none;
+    }
+
+    .focostv-research-carousel-card {
+        min-width: auto;
+    }
+
+    .focostv-research-carousel-buttons,
+    .focostv-research-carousel-indicators {
+        display: none;
+    }
+
+    /*****CANDIDATE #2***********/
+    /* .focostv-research-carousel {
+        display: grid;
+        grid-template-columns: 2fr 1fr; 
+        grid-template-rows: repeat(2, 1fr); 
+        gap: 1rem; 
+        align-items: center; 
+    }
+
+    .focostv-research-carousel-card {
+        border-radius: 0.25rem;
+        box-sizing: border-box;
+    }
+
+    .focostv-research-carousel-card:first-child {
+        grid-column: 1;
+        grid-row: 1 / span 2; 
+    }
+
+    .focostv-research-carousel-card:nth-child(2) {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .focostv-research-carousel-card:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .focostv-research-carousel-buttons,
+    .focostv-research-carousel-indicators {
+        display: none; 
+    } */
     /*************************DOCUMENTALES*************************************/
     .focostv-front-page-documentaries {
         display: flex;
@@ -852,7 +906,7 @@ body {
         line-height: 1.925rem;
     }
 
-    .focostv-perspectives-container > div {
+    .focostv-perspectives-container>div {
         width: 32%;
     }
 }
