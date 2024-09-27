@@ -23,7 +23,7 @@
     </section>
     <section class="focostv-section-perspectives focostv-section-container">
     <?php
-        set_query_var('is_frontpage', is_front_page() || is_home());
+        set_query_var('is_frontpage', (is_front_page() || is_home()));
         get_template_part('components/perspectives-posts');
         ?>
     </section>

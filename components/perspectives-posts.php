@@ -26,6 +26,7 @@ if ($category) {
     $subcategories = get_categories($args);
 
     if (!empty($subcategories)) {
+        echo '<div class="focostv-perspectives-container">';
         foreach ($subcategories as $subcategory) {
             $post_pespective_title_class = strpos(strtolower($subcategory->name), 'entrevista') !== false ? ' focostv-interview-title' : '';
             ?>
@@ -35,8 +36,9 @@ if ($category) {
                 $args_posts = array(
                     'cat' => $subcategory->term_id,
                 );
+
                 if ($is_frontpage) {
-                    $args['posts_per_page'] = 3;
+                    $args_posts['posts_per_page'] = 3;
                 }
 
                 $perspectivas_query = new WP_Query($args_posts);
@@ -78,7 +80,10 @@ if ($category) {
                                         <?php echo get_avatar(get_the_author_meta('ID'), 60); ?>
                                             <span class="focostv-perspectives-post-author-name"><?php echo esc_html(get_the_author()); ?></span>
                                         </div>
-                                    <?php
+                                        <?php
+                                        $permalink = get_permalink();
+                                        $custom_text = 'Ver editorial';
+                                        get_template_part('components/read-more-post', null, array('permalink' => $permalink, 'custom_text' => $custom_text));
                                 } else if (strpos(strtolower($subcategory->name), 'podcast') !== false) {
                                     ?>
                                             <div class="focostv-perspectives-podcasts-post-date">
@@ -102,6 +107,7 @@ if ($category) {
             </div>
             <?php
         }
+        echo '</div>';
     } else {
         echo '<p>No hay subcategorías disponibles.</p>';
     }

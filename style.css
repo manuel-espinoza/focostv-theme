@@ -583,10 +583,15 @@ body {
     font-size: 1rem;
     margin-left: 1rem;
 }
+
 .focostv-perspectives-podcasts-post-date span {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     font-size: 1rem;
+}
+
+.focostv-perspectives-post-item:nth-child(n+2) {
+    display: none;
 }
 
 /***************************************TABLET STYLES**************************/
@@ -826,6 +831,29 @@ body {
         width: 3.125rem;
         height: 3.125rem;
         opacity: 0.7;
+    }
+
+    /******************************PERSPECTIVAS***********************************/
+    .focostv-perspectives-post-item {
+        display: block !important;
+    }
+
+    .focostv-perspectives-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .focostv-perspectives-category {
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    .focostv-perspectives-post-title a {
+        line-height: 1.925rem;
+    }
+
+    .focostv-perspectives-container > div {
+        width: 32%;
     }
 }
 
