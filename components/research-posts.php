@@ -51,12 +51,13 @@ $is_frontpage = get_query_var('is_frontpage');
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </h3>
                     <p class="focostv-research-post-extract"><?php echo wp_trim_words(get_the_content(), 20, '...'); ?></p>
-                    <?php
-                    $permalink = get_permalink();
-                    $custom_text = 'Leer investigación';
-                    get_template_part('components/read-more-post', null, array('permalink' => $permalink, 'custom_text' => $custom_text));
-                    ?>
-                    ?>
+                    <div class="focostv-research-goto-post-container">
+                        <?php
+                        $permalink = get_permalink();
+                        $custom_text = 'Leer investigación';
+                        get_template_part('components/read-more-post', null, array('permalink' => $permalink, 'custom_text' => $custom_text));
+                        ?>
+                    </div>
                 </div>
                 <?php
             endwhile;

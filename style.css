@@ -465,6 +465,10 @@ body {
     border-radius: 2.563rem;
 }
 
+.focostv-research-goto-post-container {
+    display: none;
+}
+
 /******************DOCUMENTALES******************/
 .focostv-section-documentaries {
     background-color: #0F0F0F;
@@ -770,6 +774,14 @@ body {
     .focostv-research-carousel-buttons,
     .focostv-research-carousel-indicators {
         display: none;
+    }
+
+    .focostv-research-goto-post-container {
+        display: block;
+    }
+
+    .focostv-research-goto-post-container>.focostv-front-page-post-link {
+        justify-content: center;
     }
 
     /*****CANDIDATE #2***********/
