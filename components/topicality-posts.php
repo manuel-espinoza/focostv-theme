@@ -3,15 +3,16 @@ $is_frontpage = get_query_var('is_frontpage');
 $frontpage_topicality_post_class = '';
 ?>
 
-<h3 class="focostv-sections-title"><a href="<?php echo get_permalink(get_page_by_path('actualidad')); ?>">Actualidad
-    </a>
-    <div class="goto-page-icon"><!-- https://feathericons.dev/?search=arrow-up-right&iconset=feather -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon"
-            fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-            <line x1="7" x2="17" y1="17" y2="7" />
-            <polyline points="7 7 17 7 17 17" />
-        </svg>
-    </div>
+<h3 class="focostv-sections-title"><a <?php echo $is_frontpage ? 'href="' . get_permalink(get_page_by_path('actualidad')) . '"' : ''; ?>>Actualidad</a>
+    <?php if ($is_frontpage): ?>
+        <div class="goto-page-icon"><!-- https://feathericons.dev/?search=arrow-up-right&iconset=feather -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon"
+                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <line x1="7" x2="17" y1="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+            </svg>
+        </div>
+    <?php endif; ?>
 </h3>
 
 <?php
@@ -25,20 +26,31 @@ if ($is_frontpage) {
     $args['posts_per_page'] = 3;
     $frontpage_topicality_post_class = 'focostv-front-page-topicality';
     $frontpage_topicality_post_item_class = ' focostv-front-page-topicality-post-item';
+} else {
+    $frontpage_topicality_post_item_class = ' focostv-page-topicality-post-item';
 }
 
 $actualidad_query = new WP_Query($args);
 
 echo "<div class='focostv-topicality-post-container " . $frontpage_topicality_post_class . "'>";
 if ($actualidad_query->have_posts()):
+    $post_counter = 0;
     while ($actualidad_query->have_posts()):
         $actualidad_query->the_post();
+        $post_counter++;
+
+        $first_post_topicality_class = ($post_counter == 1 || $post_counter % 8 == 0) ? " focostv-page-topicality-first-post" : "";
         ?>
-        <div class="focostv-front-page-post-item<?php echo $frontpage_topicality_post_item_class; ?>">
+        <div class="focostv-front-page-post-item<?php echo $frontpage_topicality_post_item_class . $first_post_topicality_class;?>">
             <div class="focostv-front-page-post">
                 <h2 class="focostv-front-page-post-title">
                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </h2>
+                <?php if ($post_counter == 1 && !$is_frontpage): ?>
+                    <div class="focostv-front-page-post-excerpt">
+                        <?php the_excerpt(); ?>
+                    </div>
+                <?php endif; ?>
                 <?php
                 $permalink = get_permalink();
                 $custom_text = 'Leer nota';

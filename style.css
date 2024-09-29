@@ -289,8 +289,22 @@ body {
     margin-left: 0.5rem;
 }
 
+.focostv-go-home-container {
+    padding: 0.25rem;
+}
+
+.focostv-go-home-container a {
+    margin-left: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: #0F0F0F;
+    font-size: 1rem;
+}
+
 /***********************FRONT PAGE POSTS*****************/
-.focostv-section-container {
+.focostv-section-container,
+.focostv-site-actualidad {
     padding: 1rem 1.5rem;
 }
 
@@ -387,6 +401,19 @@ body {
 .focostv-sections-title a {
     text-decoration: none;
     color: inherit;
+}
+
+.focostv-page-topicality-first-post {
+    flex-direction: column-reverse;
+}
+
+.focostv-page-topicality-first-post .focostv-front-page-post,
+.focostv-page-topicality-first-post .focostv-front-page-post-thumbnail{
+    width: 100%;
+}
+
+.focostv-page-topicality-first-post .focostv-front-page-post .focostv-front-page-post-title a {
+    font-size: 1.75rem;
 }
 
 /**************************INVESTIGACIONES*********************/
