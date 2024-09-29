@@ -40,6 +40,7 @@ body {
 .focostv-site-header-icon {
     color: black !important;
     font-size: 1.4rem;
+    transition: 0.4s ease all;
 }
 
 .focostv-site-navigation,
@@ -599,7 +600,8 @@ body {
 }
 
 /***************************************TABLET STYLES**************************/
-@media screen and (min-width: 768px) {
+/****TO CHANGE 768px resolution**************/
+@media screen and (min-width: 640px) {
 
     /****** NAVIGATION**********/
     .focostv-site-navigation-menu {

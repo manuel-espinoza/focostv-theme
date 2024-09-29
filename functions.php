@@ -15,7 +15,7 @@ function focostvtheme_enqueue_styles()
     // google fonts
     wp_enqueue_style('google-fonts', get_template_directory_uri() . '/fonts/fonts.css', array(), null);
     // icons from FontAwesome
-    wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css', array(), '6.5.0');
+    wp_enqueue_style('fontawesome', get_template_directory_uri() . '/assets/fontawesome/css/all.min.css', array(), '6.6.0');
     // theme styles
     wp_enqueue_style('focostvtheme-style', get_stylesheet_uri(), array(), '1.0.0');
 }
