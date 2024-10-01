@@ -41,13 +41,18 @@ if ($documentales_query->have_posts()):
             <?php if (has_post_thumbnail()): ?>
                 <div class="focostv-documentaries-post-thumbnail">
                     <a href="<?php the_permalink(); ?>">
-                        <?php
-                        the_post_thumbnail('full', array(
-                            'srcset' => wp_get_attachment_image_srcset(get_post_thumbnail_id(), 'full'),
-                            'sizes' => '(max-width: 1023px) 300px, 9999',
-                            'alt' => get_the_title(),
-                        ));
-                        ?>
+                        <picture>
+                            <source media="(max-width: 639px)"
+                                srcset="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'small'); ?>">
+                            <source media="(min-width: 640px) and (max-width: 1023px)"
+                                srcset="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
+                            <source media="(min-width: 1024px) and (max-width: 1439px)"
+                                srcset="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>">
+                            <source media="(min-width: 1440px)"
+                                srcset="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>">
+                            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
+                                alt="<?php the_title_attribute(); ?>">
+                        </picture>
                         <div class="focostv-documentaries-play-icon-overlay">
                             <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="60" height="60" rx="30" fill="white" />

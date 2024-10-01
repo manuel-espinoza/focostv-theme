@@ -16,10 +16,12 @@ $frontpage_topicality_post_class = '';
 </h3>
 
 <?php
+$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 $args = array(
     'category_name' => 'actualidad',
     'orderby' => 'date',
-    'order' => 'DESC'
+    'order' => 'DESC',
+    'paged' => $paged
 );
 
 if ($is_frontpage) {
@@ -27,6 +29,7 @@ if ($is_frontpage) {
     $frontpage_topicality_post_class = 'focostv-front-page-topicality';
     $frontpage_topicality_post_item_class = ' focostv-front-page-topicality-post-item';
 } else {
+    $args['posts_per_page'] = 10;
     $frontpage_topicality_post_item_class = ' focostv-page-topicality-post-item';
 }
 
@@ -38,15 +41,16 @@ if ($actualidad_query->have_posts()):
     while ($actualidad_query->have_posts()):
         $actualidad_query->the_post();
         $post_counter++;
-
-        $first_post_topicality_class = ($post_counter == 1 || $post_counter % 8 == 0) ? " focostv-page-topicality-first-post" : "";
+        $is_topicality_page = ($post_counter == 1 || $post_counter == 5) && !$is_frontpage;
+        $first_post_topicality_class = $is_topicality_page ? " focostv-page-topicality-first-post" : "";
         ?>
-        <div class="focostv-front-page-post-item<?php echo $frontpage_topicality_post_item_class . $first_post_topicality_class;?>">
+        <div
+            class="focostv-front-page-post-item<?php echo $frontpage_topicality_post_item_class . $first_post_topicality_class; ?>">
             <div class="focostv-front-page-post">
                 <h2 class="focostv-front-page-post-title">
                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </h2>
-                <?php if ($post_counter == 1 && !$is_frontpage): ?>
+                <?php if ($is_topicality_page): ?>
                     <div class="focostv-front-page-post-excerpt">
                         <?php the_excerpt(); ?>
                     </div>
@@ -60,19 +64,36 @@ if ($actualidad_query->have_posts()):
             <?php if (has_post_thumbnail()): ?>
                 <div class="focostv-front-page-post-thumbnail">
                     <a href="<?php the_permalink(); ?>">
-                        <?php
-                        the_post_thumbnail('full', array(
-                            'srcset' => wp_get_attachment_image_srcset(get_post_thumbnail_id(), 'full'),
-                            'sizes' => '(max-width: 1023px) 300px, 9999',
-                            'alt' => get_the_title(),
-                        ));
-                        ?>
+                        <picture>
+                            <source media="(max-width: 639px)"
+                                srcset="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'small'); ?>">
+                            <source media="(min-width: 640px) and (max-width: 1023px)"
+                                srcset="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>">
+                            <source media="(min-width: 1024px) and (max-width: 1439px)"
+                                srcset="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>">
+                            <source media="(min-width: 1440px)"
+                                srcset="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>">
+                            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
+                                alt="<?php the_title_attribute(); ?>">
+                        </picture>
                     </a>
                 </div>
             <?php endif; ?>
         </div>
         <?php
     endwhile;
+    $pagination_args = array(
+        'total' => $actualidad_query->max_num_pages,
+        'current' => $paged,
+        'prev_text' => '<i class="fa-solid fa-angle-left"></i>',
+        'next_text' => '<i class="fa-solid fa-angle-right"></i>',
+        'end_size' => 2,
+        'mid_size' => 1,
+        'type' => 'list',
+    );
+    echo '<div class="focostv-pagination-container">';
+    echo paginate_links($pagination_args);
+    echo '</div>';
 else:
     echo '<p>No hay posts en la categoría ACTUALIDAD.</p>';
 endif;

@@ -302,6 +302,46 @@ body {
     font-size: 1rem;
 }
 
+.focostv-pagination-container {
+    margin: 1rem 0;
+}
+
+.focostv-pagination-container ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.focostv-pagination-container ul li {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.focostv-pagination-container ul li a {
+    text-decoration: none;
+    color: #0F0F0F;
+    padding: 0.625rem 0.938rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+}
+
+.focostv-pagination-container ul li a:hover {
+    color: #D9D9D9;
+}
+
+.focostv-pagination-container ul .current {
+    color: #D9D9D9;
+    padding: 0.625rem 0.938rem;
+    border-radius: 0.25rem;
+}
+
+.focostv-pagination-container ul li .prev,
+.focostv-pagination-container ul li .next {
+    font-weight: bold;
+}
+
 /***********************FRONT PAGE POSTS*****************/
 .focostv-section-container,
 .focostv-site-actualidad {
@@ -408,7 +448,7 @@ body {
 }
 
 .focostv-page-topicality-first-post .focostv-front-page-post,
-.focostv-page-topicality-first-post .focostv-front-page-post-thumbnail{
+.focostv-page-topicality-first-post .focostv-front-page-post-thumbnail {
     width: 100%;
 }
 
@@ -635,7 +675,8 @@ body {
         justify-content: center;
     }
 
-    .focostv-section-container {
+    .focostv-section-container,
+    .focostv-site-actualidad {
         padding: 1rem 3.5rem;
     }
 
@@ -705,7 +746,8 @@ body {
     }
 
     /*********FRONTPAGE POSTS***************/
-    .focostv-section-container {
+    .focostv-section-container,
+    .focostv-site-actualidad {
         padding: 1rem 5rem;
     }
 
@@ -782,6 +824,30 @@ body {
         width: 100%;
     }
 
+    .focostv-page-topicality-post-item {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .focostv-page-topicality-post-item .focostv-front-page-post {
+        width: 64%;
+    }
+
+    .focostv-page-topicality-post-item .focostv-front-page-post-thumbnail {
+        width: 34%;
+    }
+
+    .focostv-page-topicality-first-post {
+        flex-direction: row !important;
+        justify-content: space-between;
+    }
+    
+    .focostv-page-topicality-first-post .focostv-front-page-post,
+    .focostv-page-topicality-first-post .focostv-front-page-post-thumbnail {
+        width: 49% !important;
+    }
+
+    
     /**************************INVESTIGACIONES*********************************/
     /***CANDIDATE #1***/
     .focostv-research-carousel-container {
@@ -958,7 +1024,8 @@ body {
         padding-right: 6rem;
     }
 
-    .focostv-section-container {
+    .focostv-section-container,
+    .focostv-site-actualidad {
         padding: 1rem 10rem;
     }
 }

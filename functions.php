@@ -2,6 +2,9 @@
 function focostvtheme_setup_menus()
 {
     add_theme_support('post-thumbnails');
+    add_image_size('small', 480, 480);
+    add_image_size('medium', 768, 9999);
+    add_image_size('large', 1024, 9999);
     register_nav_menus(array(
         'menu_principal' => __('Principal', 'focostv'),
         'footer_menu_principal' => __('FooterPrincipal', 'focostv'),
