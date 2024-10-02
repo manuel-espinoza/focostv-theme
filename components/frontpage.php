@@ -43,7 +43,7 @@ if ($portada_query->have_posts()):
                             <source media="(min-width: 1440px)"
                                 srcset="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>">
                             <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
-                                alt="<?php the_title_attribute(); ?>">
+                                alt="<?php the_title_attribute(); ?>" loading="eager">
                         </picture>
                     </a>
                 </div>

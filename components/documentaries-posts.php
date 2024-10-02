@@ -51,7 +51,7 @@ if ($documentales_query->have_posts()):
                             <source media="(min-width: 1440px)"
                                 srcset="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>">
                             <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
-                                alt="<?php the_title_attribute(); ?>">
+                                alt="<?php the_title_attribute(); ?>" loading="eager">
                         </picture>
                         <div class="focostv-documentaries-play-icon-overlay">
                             <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">

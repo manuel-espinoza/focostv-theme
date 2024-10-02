@@ -20,7 +20,7 @@ body {
 /************************************** FOCOS THEME STYLES***********************************/
 /**********************HEADER**********************************/
 .focostv-site-header {
-    background-color: #f8f8f7;
+    background-color: white;
     border-bottom: 0.063rem solid #cdcdcd;
     padding: 1rem 2rem;
 }
@@ -353,14 +353,15 @@ body {
     margin-top: 1rem;
     display: flex;
     border-bottom: 1px solid #CDCDCD;
+    justify-content: space-between;
 }
 
 .focostv-front-page-post {
-    width: 65%;
+    width: 64%;
 }
 
 .focostv-front-page-post-thumbnail {
-    width: 35%;
+    width: 34%;
 }
 
 .focostv-front-page-post-thumbnail a img {
@@ -755,6 +756,7 @@ body {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
+        justify-content: space-between;
     }
 
     .full-width-front-page-post {
@@ -762,7 +764,7 @@ body {
     }
 
     .half-width-front-page-post {
-        width: 48%;
+        width: 48.5%;
     }
 
     .front-page-first-post {
@@ -841,13 +843,13 @@ body {
         flex-direction: row !important;
         justify-content: space-between;
     }
-    
+
     .focostv-page-topicality-first-post .focostv-front-page-post,
     .focostv-page-topicality-first-post .focostv-front-page-post-thumbnail {
         width: 49% !important;
     }
 
-    
+
     /**************************INVESTIGACIONES*********************************/
     /***CANDIDATE #1***/
     .focostv-research-carousel-container {
@@ -864,6 +866,15 @@ body {
 
     .focostv-research-carousel-card {
         min-width: auto;
+        text-align: left;
+    }
+    .focostv-research-post-title a {
+        line-height: 1.5;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    .focostv-research-post-extract {
+        display: none;
     }
 
     .focostv-research-carousel-buttons,
@@ -876,8 +887,9 @@ body {
     }
 
     .focostv-research-goto-post-container>.focostv-front-page-post-link {
-        justify-content: center;
+        justify-content: start;
     }
+
 
     /*****CANDIDATE #2***********/
     /* .focostv-research-carousel {
@@ -917,6 +929,7 @@ body {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
+        padding-bottom: 1rem;
     }
 
     .front-page-documentaries-first-post {

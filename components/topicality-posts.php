@@ -74,7 +74,7 @@ if ($actualidad_query->have_posts()):
                             <source media="(min-width: 1440px)"
                                 srcset="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>">
                             <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
-                                alt="<?php the_title_attribute(); ?>">
+                                alt="<?php the_title_attribute(); ?>" loading="eager">
                         </picture>
                     </a>
                 </div>
@@ -82,17 +82,19 @@ if ($actualidad_query->have_posts()):
         </div>
         <?php
     endwhile;
-    $pagination_args = array(
-        'total' => $actualidad_query->max_num_pages,
-        'current' => $paged,
-        'prev_text' => '<i class="fa-solid fa-angle-left"></i>',
-        'next_text' => '<i class="fa-solid fa-angle-right"></i>',
-        'end_size' => 2,
-        'mid_size' => 1,
-        'type' => 'list',
-    );
-    echo '<div class="focostv-pagination-container">';
-    echo paginate_links($pagination_args);
+    if (!$is_frontpage) {
+        $pagination_args = array(
+            'total' => $actualidad_query->max_num_pages,
+            'current' => $paged,
+            'prev_text' => '<i class="fa-solid fa-angle-left"></i>',
+            'next_text' => '<i class="fa-solid fa-angle-right"></i>',
+            'end_size' => 2,
+            'mid_size' => 1,
+            'type' => 'list',
+        );
+        echo '<div class="focostv-pagination-container">';
+        echo paginate_links($pagination_args);
+    }
     echo '</div>';
 else:
     echo '<p>No hay posts en la categoría ACTUALIDAD.</p>';
