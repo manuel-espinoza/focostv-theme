@@ -641,6 +641,9 @@ body {
     border: 0.25rem solid #CDCDCD;
     margin-right: 1rem;
 }
+.focostv-perspectives-post-author-avatar {
+    object-fit: cover;
+}
 
 .focostv-perspectives-post-author-name {
     font-family: 'Inter', sans-serif;

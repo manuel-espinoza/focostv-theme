@@ -80,19 +80,37 @@ if ($category) {
                                     $custom_text = 'Ver entrevista';
                                     get_template_part('components/read-more-post', null, array('permalink' => $permalink, 'custom_text' => $custom_text));
                                 } else if (strpos(strtolower($subcategory->name), 'opinion') !== false) {
-                                    ?>
-                                        <div class="focostv-perspectives-post-author">
-                                        <?php echo get_avatar(get_the_author_meta('ID'), 60); ?>
-                                            <span class="focostv-perspectives-post-author-name"><?php echo esc_html(get_the_author()); ?></span>
-                                        </div>
+                                    $opinion_author = get_field('autor_opinion');
+                                    $opinion_avatar_author = get_field('imagen_autor_opinion');
+                                    if ($opinion_author && $opinion_avatar_author) {
+
+                                        ?>
+                                            <div class="focostv-perspectives-post-author">
+                                                <img src="<?php echo esc_url($opinion_avatar_author['url']); ?>"
+                                                    alt="<?php echo esc_attr($opinion_author); ?>" width="60" height="60" class="focostv-perspectives-post-author-avatar">
+                                                <span class="focostv-perspectives-post-author-name"><?php echo esc_html($opinion_author); ?></span>
+                                            </div>
                                         <?php
-                                        $permalink = get_permalink();
-                                        $custom_text = 'Ver editorial';
-                                        get_template_part('components/read-more-post', null, array('permalink' => $permalink, 'custom_text' => $custom_text));
+                                    } else {
+                                        ?>
+                                            <div class="focostv-perspectives-post-author">
+                                            <?php echo get_avatar(get_the_author_meta('ID'), 60); ?>
+                                                <span class="focostv-perspectives-post-author-name"><?php echo esc_html(get_the_author()); ?></span>
+                                            </div>
+                                        <?php
+                                    }
+                                    $permalink = get_permalink();
+                                    $custom_text = 'Ver editorial';
+                                    get_template_part('components/read-more-post', null, array('permalink' => $permalink, 'custom_text' => $custom_text));
                                 } else if (strpos(strtolower($subcategory->name), 'podcast') !== false) {
                                     ?>
                                             <div class="focostv-perspectives-podcasts-post-date">
-                                                <span><?php echo get_the_date('j \d\e F'); ?></span>
+                                                <span><?php echo get_the_date('j \d\e F');
+                                                    $podcast_duration = get_field('duracion_podcast');
+                                                    if ($podcast_duration) {
+                                                        echo ' - ' . esc_html($podcast_duration) . ' Min.';
+                                                    }
+                                                ?></span>
                                             </div>
                                             <div class="focostv-perpesctives-podcasts-post-link focostv-front-page-post-link">
                                                 <i class="fa-brands fa-spotify"></i> <a href="<?php echo esc_url($permalink); ?>"> Escuchar

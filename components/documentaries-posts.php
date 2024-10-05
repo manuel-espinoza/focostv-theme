@@ -71,7 +71,12 @@ if ($documentales_query->have_posts()):
                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </h2>
                 <h6 class="focostv-documentaries-post-time">
-                    60Min.
+                    <?php
+                    $duracion = get_field('duracion_de_documental');
+                    if ($duracion) {
+                        echo esc_html($duracion) . ' Min.';
+                    }
+                    ?>
                 </h6>
                 <div class="focostv-documentaries-post-excerpt">
                     <?php the_excerpt(); ?>
