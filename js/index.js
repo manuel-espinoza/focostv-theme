@@ -62,9 +62,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (window.innerWidth >= 1024) {
             // Remove the class if screen width is 1024px or more
             fifthPost.classList.remove('focostv-page-topicality-first-post');
+            fifthPost.querySelector('.focostv-front-page-post-excerpt').style.display = 'none';
         } else {
             // Add the class back if screen width is less than 1024px
             fifthPost.classList.add('focostv-page-topicality-first-post');
+            fifthPost.querySelector('.focostv-front-page-post-excerpt').style.display = 'block';
         }
     }
 }
