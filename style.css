@@ -641,6 +641,7 @@ body {
     border: 0.25rem solid #CDCDCD;
     margin-right: 1rem;
 }
+
 .focostv-perspectives-post-author-avatar {
     object-fit: cover;
 }
@@ -668,6 +669,29 @@ body {
 
 .focostv-perspectives-post-item:nth-child(n+2) {
     display: none;
+}
+
+/****************** FOCOSTV ADS **************************/
+.focostv-main-advertisement {
+    max-width: 20rem;
+    max-height: 20rem;
+    background-color: #cdcdcd;
+}
+
+.focostv-main-advertisement img {
+    height: 20rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.focostv-footer-advetisement img {
+    object-fit: contain;
+}
+
+.focostv-footer-advetisement {
+    max-height: 6.25rem;
+    max-width: 18.75rem;
+    margin: 0 auto;
 }
 
 /***************************************TABLET STYLES**************************/
@@ -832,6 +856,7 @@ body {
     .focostv-page-topicality-post-item {
         flex-direction: row-reverse;
         justify-content: space-between;
+        width: 60%;
     }
 
     .focostv-page-topicality-post-item .focostv-front-page-post {
@@ -845,13 +870,13 @@ body {
     .focostv-page-topicality-first-post {
         flex-direction: row !important;
         justify-content: space-between;
+        width: 100%;
     }
 
     .focostv-page-topicality-first-post .focostv-front-page-post,
     .focostv-page-topicality-first-post .focostv-front-page-post-thumbnail {
         width: 49% !important;
     }
-
 
     /**************************INVESTIGACIONES*********************************/
     /***CANDIDATE #1***/
@@ -871,11 +896,13 @@ body {
         min-width: auto;
         text-align: left;
     }
+
     .focostv-research-post-title a {
         line-height: 1.5;
         font-weight: 600;
         margin-bottom: 1rem;
     }
+
     .focostv-research-post-extract {
         display: none;
     }
@@ -1031,6 +1058,25 @@ body {
 
     .focostv-perspectives-container>div {
         width: 32%;
+    }
+
+    /****************** FOCOSTV ADS **************************/
+    .focostv-main-advertisement {
+        position: relative;
+        float: right;
+        max-height: 40rem;
+        width: 35%;
+        margin-top: 2rem;
+    }
+
+    .focostv-main-advertisement img {
+        height: 40rem;
+        object-fit: contain;
+
+    }
+
+    .focostv-footer-advetisement {
+        display: none;
     }
 }
 

@@ -81,6 +81,13 @@ if ($actualidad_query->have_posts()):
             <?php endif; ?>
         </div>
         <?php
+        if (!$is_frontpage && $post_counter == 1) {
+            ?>
+            <div class="focostv-main-advertisement">
+                <img src="https://stage.focostv.com/wp-content/uploads/2024/10/focostv_ad.png" alt="Anuncio">
+            </div>
+            <?php
+        }
     endwhile;
     if (!$is_frontpage) {
         $pagination_args = array(
@@ -94,6 +101,12 @@ if ($actualidad_query->have_posts()):
         );
         echo '<div class="focostv-pagination-container">';
         echo paginate_links($pagination_args);
+        echo '</div>';
+        ?>
+        <div class="focostv-footer-advetisement">
+            <img src="https://stage.focostv.com/wp-content/uploads/2024/10/focostv_end_ad.png" alt="Anuncio">
+        </div>
+        <?php
     }
     echo '</div>';
 else:
