@@ -345,7 +345,8 @@ body {
 
 /***********************FRONT PAGE POSTS*****************/
 .focostv-section-container,
-.focostv-site-actualidad {
+.focostv-site-actualidad,
+.focotv-site-investigacion {
     padding: 1rem 1.5rem;
 }
 
