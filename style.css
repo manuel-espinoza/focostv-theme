@@ -304,6 +304,7 @@ body {
 
 .focostv-pagination-container {
     margin: 1rem 0;
+    /* display: none; */
 }
 
 .focostv-pagination-container ul {
@@ -718,6 +719,10 @@ body {
     .goto-post-icon {
         display: flex;
     }
+
+    /* .focostv-pagination-container {
+        display: block;
+    } */
 
     /*******NAVIGATION*****************/
     .focostv-site-navigation-menu li a {

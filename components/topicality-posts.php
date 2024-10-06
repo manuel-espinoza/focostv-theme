@@ -35,7 +35,7 @@ if ($is_frontpage) {
 
 $actualidad_query = new WP_Query($args);
 
-echo "<div class='focostv-topicality-post-container " . $frontpage_topicality_post_class . "'>";
+echo "<div id='focostv-topicality-posts-container' class='focostv-topicality-post-container " . $frontpage_topicality_post_class . "'>";
 if ($actualidad_query->have_posts()):
     $post_counter = 0;
     while ($actualidad_query->have_posts()):
@@ -89,6 +89,10 @@ if ($actualidad_query->have_posts()):
             <?php
         }
     endwhile;
+    echo '</div>';
+    ?>
+
+    <?php
     if (!$is_frontpage) {
         $pagination_args = array(
             'total' => $actualidad_query->max_num_pages,
@@ -103,18 +107,19 @@ if ($actualidad_query->have_posts()):
         echo paginate_links($pagination_args);
         echo '</div>';
         ?>
-        <div class="focostv-footer-advetisement">
-            <img src="https://stage.focostv.com/wp-content/uploads/2024/10/focostv_end_ad.png" alt="Anuncio">
-        </div>
+        <div id="load-more-spinner" style="display: none;">Cargando m&aacute;s contenido...</div>
         <?php
     }
-    echo '</div>';
+    ?>
+    <div class="focostv-footer-advetisement">
+        <img src="https://stage.focostv.com/wp-content/uploads/2024/10/focostv_end_ad.png" alt="Anuncio">
+    </div>
+    <?php
 else:
     echo '<p>No hay posts en la categoría ACTUALIDAD.</p>';
+    echo '</div>';
 endif;
-echo '</div>';
 
-// Resetear postdata
 wp_reset_postdata();
 
 ?>
