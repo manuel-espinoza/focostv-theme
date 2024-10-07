@@ -446,16 +446,16 @@ body {
     color: inherit;
 }
 
-.focostv-page-topicality-first-post {
+.focostv-basic-page-first-post {
     flex-direction: column-reverse;
 }
 
-.focostv-page-topicality-first-post .focostv-front-page-post,
-.focostv-page-topicality-first-post .focostv-front-page-post-thumbnail {
+.focostv-basic-page-first-post .focostv-front-page-post,
+.focostv-basic-page-first-post .focostv-front-page-post-thumbnail {
     width: 100%;
 }
 
-.focostv-page-topicality-first-post .focostv-front-page-post .focostv-front-page-post-title a {
+.focostv-basic-page-first-post .focostv-front-page-post .focostv-front-page-post-title a {
     font-size: 1.75rem;
 }
 
@@ -678,6 +678,7 @@ body {
     max-width: 20rem;
     max-height: 20rem;
     background-color: #cdcdcd;
+    margin: 0 auto;
 }
 
 .focostv-main-advertisement img {
@@ -706,7 +707,8 @@ body {
     }
 
     .focostv-section-container,
-    .focostv-site-actualidad {
+    .focostv-site-actualidad,
+    .focotv-site-investigacion {
         padding: 1rem 3.5rem;
     }
 
@@ -781,7 +783,8 @@ body {
 
     /*********FRONTPAGE POSTS***************/
     .focostv-section-container,
-    .focostv-site-actualidad {
+    .focostv-site-actualidad,
+    .focotv-site-investigacion {
         padding: 1rem 5rem;
     }
 
@@ -859,28 +862,28 @@ body {
         width: 100%;
     }
 
-    .focostv-page-topicality-post-item {
+    .focostv-basic-page-post-item {
         flex-direction: row-reverse;
         justify-content: space-between;
         width: 60%;
     }
 
-    .focostv-page-topicality-post-item .focostv-front-page-post {
+    .focostv-basic-page-post-item .focostv-front-page-post {
         width: 64%;
     }
 
-    .focostv-page-topicality-post-item .focostv-front-page-post-thumbnail {
+    .focostv-basic-page-post-item .focostv-front-page-post-thumbnail {
         width: 34%;
     }
 
-    .focostv-page-topicality-first-post {
+    .focostv-basic-page-first-post {
         flex-direction: row !important;
         justify-content: space-between;
         width: 100%;
     }
 
-    .focostv-page-topicality-first-post .focostv-front-page-post,
-    .focostv-page-topicality-first-post .focostv-front-page-post-thumbnail {
+    .focostv-basic-page-first-post .focostv-front-page-post,
+    .focostv-basic-page-first-post .focostv-front-page-post-thumbnail {
         width: 49% !important;
     }
 
@@ -1092,7 +1095,8 @@ body {
     }
 
     .focostv-section-container,
-    .focostv-site-actualidad {
+    .focostv-site-actualidad,
+    .focotv-site-investigacion {
         padding: 1rem 10rem;
     }
 }

@@ -56,16 +56,17 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function updateTopicalityPostClass() {
-    const fifthPost = document.querySelector('.focostv-page-topicality-post-item:nth-child(6)');
-
+    console.log('load function ever?');
+    
+    const fifthPost = document.querySelectorAll('.focostv-basic-page-post-item')[5]; // middle element for each 10 posts
     if (fifthPost) {
         if (window.innerWidth >= 1024) {
             // Remove the class if screen width is 1024px or more
-            fifthPost.classList.remove('focostv-page-topicality-first-post');
+            fifthPost.classList.remove('focostv-basic-page-first-post');
             fifthPost.querySelector('.focostv-front-page-post-excerpt').style.display = 'none';
         } else {
             // Add the class back if screen width is less than 1024px
-            fifthPost.classList.add('focostv-page-topicality-first-post');
+            fifthPost.classList.add('focostv-basic-page-first-post');
             fifthPost.querySelector('.focostv-front-page-post-excerpt').style.display = 'block';
         }
     }

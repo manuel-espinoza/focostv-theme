@@ -30,7 +30,7 @@ if ($is_frontpage) {
     $frontpage_topicality_post_item_class = ' focostv-front-page-topicality-post-item';
 } else {
     $args['posts_per_page'] = 10;
-    $frontpage_topicality_post_item_class = ' focostv-page-topicality-post-item';
+    $frontpage_topicality_post_item_class = ' focostv-basic-page-post-item';
 }
 
 $actualidad_query = new WP_Query($args);
@@ -41,8 +41,8 @@ if ($actualidad_query->have_posts()):
     while ($actualidad_query->have_posts()):
         $actualidad_query->the_post();
         $post_counter++;
-        $is_topicality_page = ($post_counter == 1 || $post_counter == 5) && !$is_frontpage;
-        $first_post_topicality_class = $is_topicality_page ? " focostv-page-topicality-first-post" : "";
+        $is_topicality_page = ($post_counter == 1 || $post_counter == 6) && !$is_frontpage;
+        $first_post_topicality_class = $is_topicality_page ? " focostv-basic-page-first-post" : "";
         ?>
         <div
             class="focostv-front-page-post-item<?php echo $frontpage_topicality_post_item_class . $first_post_topicality_class; ?>">
