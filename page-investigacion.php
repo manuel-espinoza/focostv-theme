@@ -3,12 +3,12 @@
 Template Name: Investigacion Page
 */
 get_header(); ?>
-<main class="focotv-site-investigacion">
+<main class="focotv-site-page">
     <div class="focostv-go-home-container">
         <i class="fa-solid fa-chevron-left"></i>
         <a href="<?php echo esc_url(home_url('/')); ?>">Inicio</a>
     </div>
-    <h3 class="focostv-sections-title"><a>Investigaci&oacute;n</a>
+    <h3 class="focostv-sections-title focostv-page-title"><a>Investigaci&oacute;n</a>
     </h3>
     <?php
     $paged = get_query_var('paged') ? get_query_var('paged') : 1;

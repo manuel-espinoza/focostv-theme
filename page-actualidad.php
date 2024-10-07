@@ -3,7 +3,7 @@
 Template Name: Actualidad Page
 */
 get_header(); ?>
-<main class="focostv-site-actualidad">
+<main class="focostv-site-page">
     <div class="focostv-go-home-container">
         <i class="fa-solid fa-chevron-left"></i>
         <a href="<?php echo esc_url(home_url('/')); ?>">Inicio</a>

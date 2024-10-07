@@ -345,8 +345,7 @@ body {
 
 /***********************FRONT PAGE POSTS*****************/
 .focostv-section-container,
-.focostv-site-actualidad,
-.focotv-site-investigacion {
+.focostv-site-page {
     padding: 1rem 1.5rem;
 }
 
@@ -707,8 +706,7 @@ body {
     }
 
     .focostv-section-container,
-    .focostv-site-actualidad,
-    .focotv-site-investigacion {
+    .focostv-site-page {
         padding: 1rem 3.5rem;
     }
 
@@ -721,6 +719,11 @@ body {
 
     .goto-post-icon {
         display: flex;
+    }
+
+    .focostv-page-title {
+        font-weight: 500;
+        font-size: 2.375rem;
     }
 
     /* .focostv-pagination-container {
@@ -783,8 +786,7 @@ body {
 
     /*********FRONTPAGE POSTS***************/
     .focostv-section-container,
-    .focostv-site-actualidad,
-    .focotv-site-investigacion {
+    .focostv-site-page {
         padding: 1rem 5rem;
     }
 
@@ -1095,8 +1097,7 @@ body {
     }
 
     .focostv-section-container,
-    .focostv-site-actualidad,
-    .focotv-site-investigacion {
+    .focostv-site-page {
         padding: 1rem 10rem;
     }
 }
