@@ -698,6 +698,14 @@ body.focostv-home .focostv-site-navigation {
     display: none;
 }
 
+.focostv-perspectives-podcast-spotify > p {
+    display: none;
+}
+
+.perspectives-all-podcasts-container {
+    display: none;
+}
+
 /****************** FOCOSTV ADS **************************/
 .focostv-main-advertisement {
     max-width: 20rem;
