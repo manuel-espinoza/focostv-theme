@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function updateTopicalityPostClass() {
-    console.log('load function ever?');
     
     const fifthPost = document.querySelectorAll('.focostv-basic-page-post-item')[5]; // middle element for each 10 posts
     if (fifthPost) {

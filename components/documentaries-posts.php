@@ -1,30 +1,44 @@
 <?php
 $is_frontpage = get_query_var('is_frontpage');
 $frontpage_documentaries_post_class = '';
+
+function get_post_classes($is_frontpage, $post_counter) {
+    $base_class = $is_frontpage ? ' front-page-documentaries-' : ' documentaries-';
+    $type_class = ($post_counter == 1) ? 'first-post' : 'secondary-post';
+    return $base_class . $type_class;
+}
 ?>
 
-<h3 class="focostv-sections-title focostv-frontpage-documentaries-title"><a
-        href="<?php echo get_permalink(get_page_by_path('documentales')); ?>">Documentales
+<h3
+    class="focostv-sections-title focostv-page-title<?php echo $is_frontpage ? ' focostv-frontpage-documentaries-title' : ' focostv-header-documentaries' ?>">
+    <a <?php echo $is_frontpage ? 'href="' . get_permalink(get_page_by_path('documentales')) . '"' : ''; ?>>Documentales
     </a>
-    <div class="goto-page-icon"><!-- https://feathericons.dev/?search=arrow-up-right&iconset=feather -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon"
-            fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-            <line x1="7" x2="17" y1="17" y2="7" />
-            <polyline points="7 7 17 7 17 17" />
-        </svg>
-    </div>
+    <?php if ($is_frontpage): ?>
+        <div class="goto-page-icon"><!-- https://feathericons.dev/?search=arrow-up-right&iconset=feather -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon"
+                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <line x1="7" x2="17" y1="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+            </svg>
+        </div>
+    <?php endif; ?>
 </h3>
 
 <?php
+$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 $args = array(
     'category_name' => 'documentales',
     'orderby' => 'date',
-    'order' => 'DESC'
+    'order' => 'DESC',
+    'paged' => $paged
 );
 
 if ($is_frontpage) {
     $args['posts_per_page'] = 3;
     $frontpage_documentaries_post_class = 'focostv-front-page-documentaries';
+} else {
+    $args['posts_per_page'] = 10;
+    $frontpage_documentaries_post_class = 'focostv-page-documentaries';
 }
 
 $documentales_query = new WP_Query($args);
@@ -35,9 +49,10 @@ if ($documentales_query->have_posts()):
     while ($documentales_query->have_posts()):
         $documentales_query->the_post();
         $post_counter++;
-        $frontpage_post_class = ($post_counter == 1) ? ' front-page-documentaries-first-post' : ' front-page-documentaries-secondary-post';
+        $post_item_class = $is_frontpage ? 'focostv-documentaries-post-item' : 'focostv-documentaries-page-post-item';
+        $frontpage_post_class = get_post_classes($is_frontpage, $post_counter);
         ?>
-        <div class="focostv-documentaries-post-item<?php echo $frontpage_post_class; ?>">
+        <div class="<?php echo $post_item_class . $frontpage_post_class; ?>">
             <?php if (has_post_thumbnail()): ?>
                 <div class="focostv-documentaries-post-thumbnail">
                     <a href="<?php the_permalink(); ?>">
@@ -96,12 +111,37 @@ if ($documentales_query->have_posts()):
                 </div>
             </div>
         </div>
-    <?php endwhile;
+        <?php
+        if (!$is_frontpage && $post_counter == 1) {
+            ?>
+            <div class="focostv-main-advertisement-documentaries">
+                <img src="https://stage.focostv.com/wp-content/uploads/2024/10/Group-6.png" alt="Anuncio">
+            </div>
+            <?php
+        }
+    endwhile;
 else:
     echo '<p>No hay posts en la categoría DOCUMENTALES.</p>';
 endif;
 echo '</div>';
 
+if (!$is_frontpage) {
+    $pagination_args = array(
+        'total' => $documentales_query->max_num_pages,
+        'current' => $paged,
+        'prev_text' => '<i class="fa-solid fa-angle-left"></i>',
+        'next_text' => '<i class="fa-solid fa-angle-right"></i>',
+        'end_size' => 2,
+        'mid_size' => 1,
+        'type' => 'list',
+    );
+    echo '<div class="focostv-pagination-container">';
+    echo paginate_links($pagination_args);
+    echo '</div>';
+    ?>
+    <div id="load-more-spinner" style="display: none;">Cargando m&aacute;s contenido...</div>
+    <?php
+}
 
 // Resetear postdata
 wp_reset_postdata();
