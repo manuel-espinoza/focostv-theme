@@ -15,5 +15,15 @@ get_header(); ?>
         get_template_part('components/perspectives-podcasts-posts');
         ?>
     </section>
+    <section class="perspectives-opinion">
+        <?php
+        get_template_part('components/perspectives-opinion-posts');
+        ?>
+    </section>
+    <section class="perspectives-interview">
+    <?php
+        get_template_part('components/perspectives-interview-posts');
+        ?>
+    </section>
 </main>
 <?php get_footer(); ?>

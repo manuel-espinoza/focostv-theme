@@ -636,7 +636,8 @@ body.focostv-home .focostv-site-navigation {
     margin-bottom: 1rem;
 }
 
-.focostv-perspectives-post-item {
+.focostv-perspectives-post-item,
+.focostv-perspectives-page-post-item {
     border: 1px solid #CDCDCD;
     padding: 1.5rem;
     border-radius: 0.25rem;
@@ -698,12 +699,29 @@ body.focostv-home .focostv-site-navigation {
     display: none;
 }
 
-.focostv-perspectives-podcast-spotify > p {
+.focostv-perspectives-podcast-spotify>p {
     display: none;
+}
+
+.focostv-perspectives-podcast-spotify>iframe {
+    height: 23rem;
 }
 
 .perspectives-all-podcasts-container {
     display: none;
+}
+
+.pespectives-first-post-interview {
+    flex-direction: column-reverse;
+}
+
+.pespectives-first-post-interview .focostv-front-page-post,
+.pespectives-first-post-interview .focostv-front-page-post-thumbnail {
+    width: 100%;
+}
+
+.pespectives-first-post-interview .focostv-front-page-post-title a {
+    font-size: 1.75rem;
 }
 
 /****************** FOCOSTV ADS **************************/
@@ -1021,7 +1039,7 @@ body.focostv-home .focostv-site-navigation {
         padding-left: 5rem;
         padding-right: 5rem;
     }
-    
+
     .focostv-front-page-documentaries,
     .focostv-page-documentaries {
         display: flex;
@@ -1123,7 +1141,7 @@ body.focostv-home .focostv-site-navigation {
     .documentaries-first-post {
         width: 100%;
     }
-    
+
     .documentaries-secondary-post {
         width: 32%;
         margin-left: 0;
@@ -1152,6 +1170,24 @@ body.focostv-home .focostv-site-navigation {
     .focostv-perspectives-container>div {
         width: 32%;
     }
+    
+    .focostv-perspectives-podcast-spotify>iframe {
+        height: 15rem;
+    }
+
+    /* .perspectives-all-podcasts-container {
+        display: block;
+    } */
+    
+    .perspectives-page-category {
+        font-size: 1rem;
+    }
+
+    .perspectives-opinion, .perspectives-interview {
+        width: 60%;
+    }
+
+
 
     /****************** FOCOSTV ADS **************************/
     .focostv-main-advertisement {
@@ -1198,5 +1234,5 @@ body.focostv-home .focostv-site-navigation {
         padding-left: 10rem;
         padding-right: 10rem;
     }
-    
+
 }

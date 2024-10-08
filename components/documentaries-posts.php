@@ -10,7 +10,7 @@ function get_post_classes($is_frontpage, $post_counter) {
 ?>
 
 <h3
-    class="focostv-sections-title focostv-page-title<?php echo $is_frontpage ? ' focostv-frontpage-documentaries-title' : ' focostv-header-documentaries' ?>">
+    class="focostv-sections-title<?php echo $is_frontpage ? ' focostv-frontpage-documentaries-title' : ' focostv-header-documentaries focostv-page-title' ?>">
     <a <?php echo $is_frontpage ? 'href="' . get_permalink(get_page_by_path('documentales')) . '"' : ''; ?>>Documentales
     </a>
     <?php if ($is_frontpage): ?>
