@@ -18,10 +18,10 @@ if ($entrevistas_query->have_posts()):
         $first_interview_first_post = $post_counter == 1 ? ' pespectives-first-post-interview' : '';
 
         ?>
+        <h6 class="focostv-perspectives-category perspectives-page-category">
+            Entrevista
+        </h6>
         <div class="focostv-front-page-post-item<?php echo $first_interview_first_post; ?>">
-            <!-- <h6 class="focostv-perspectives-category perspectives-page-category">
-                Entrevista
-            </h6> -->
             <div class="focostv-front-page-post">
                 <h2 class="focostv-front-page-post-title">
                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>

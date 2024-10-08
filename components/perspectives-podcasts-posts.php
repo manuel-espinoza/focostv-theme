@@ -13,14 +13,17 @@ $podcasts_query = new WP_Query($args);
 if ($podcasts_query->have_posts()) {
     while ($podcasts_query->have_posts()) {
         $podcasts_query->the_post();
-        
+
         echo '<div class="focostv-perspectives-podcast-spotify">';
         echo the_content();
         echo '</div>';
     }
     ?>
+    <div class="focostv-main-advertisement">
+        <img src="https://stage.focostv.com/wp-content/uploads/2024/10/focostv_ad.png" alt="Anuncio">
+    </div>
     <div class="perspectives-all-podcasts-container">
-        <h6 class="focostv-perspectives-category">
+        <h6 class="focostv-perspectives-category perspectives-page-category">
             Podcasts
         </h6>
         <h3 class="perspectives-all-podcasts-title">

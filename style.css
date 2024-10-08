@@ -637,7 +637,8 @@ body.focostv-home .focostv-site-navigation {
 }
 
 .focostv-perspectives-post-item,
-.focostv-perspectives-page-post-item {
+.focostv-perspectives-page-post-item,
+.perspectives-all-podcasts-container {
     border: 1px solid #CDCDCD;
     padding: 1.5rem;
     border-radius: 0.25rem;
@@ -724,6 +725,12 @@ body.focostv-home .focostv-site-navigation {
     font-size: 1.75rem;
 }
 
+.perspectives-opinion,
+.perspectives-interview {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 /****************** FOCOSTV ADS **************************/
 .focostv-main-advertisement {
     max-width: 20rem;
@@ -807,14 +814,6 @@ body.focostv-home .focostv-site-navigation {
     .focostv-site-header-navigation-menu {
         display: block;
     }
-
-    /* .focostv-site-navigation {
-        display: none;
-    }
-
-    body.focostv-home .focostv-site-navigation {
-        display: block;
-    } */
 
     /***************TOGGLE NAVIGATION***********/
     .focostv-site-toggle-navigation {
@@ -1000,40 +999,6 @@ body.focostv-home .focostv-site-navigation {
         justify-content: start;
     }
 
-
-    /*****CANDIDATE #2***********/
-    /* .focostv-research-carousel {
-        display: grid;
-        grid-template-columns: 2fr 1fr; 
-        grid-template-rows: repeat(2, 1fr); 
-        gap: 1rem; 
-        align-items: center; 
-    }
-
-    .focostv-research-carousel-card {
-        border-radius: 0.25rem;
-        box-sizing: border-box;
-    }
-
-    .focostv-research-carousel-card:first-child {
-        grid-column: 1;
-        grid-row: 1 / span 2; 
-    }
-
-    .focostv-research-carousel-card:nth-child(2) {
-        grid-column: 2;
-        grid-row: 1;
-    }
-
-    .focostv-research-carousel-card:nth-child(3) {
-        grid-column: 2;
-        grid-row: 2;
-    }
-
-    .focostv-research-carousel-buttons,
-    .focostv-research-carousel-indicators {
-        display: none; 
-    } */
     /*************************DOCUMENTALES*************************************/
     .focostv-site-documentaries {
         padding-left: 5rem;
@@ -1170,21 +1135,32 @@ body.focostv-home .focostv-site-navigation {
     .focostv-perspectives-container>div {
         width: 32%;
     }
-    
+
     .focostv-perspectives-podcast-spotify>iframe {
         height: 15rem;
     }
 
-    /* .perspectives-all-podcasts-container {
+    .perspectives-all-podcasts-container {
         display: block;
-    } */
-    
+        width: 60%;
+        margin-top: 1rem;
+    }
+
+    .perspectives-all-podcasts-container .perspectives-all-podcasts-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.75rem;
+        font-weight: 500;
+    }
+
     .perspectives-page-category {
         font-size: 1rem;
     }
 
-    .perspectives-opinion, .perspectives-interview {
+    .perspectives-opinion,
+    .perspectives-interview {
         width: 60%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
     }
 
 
