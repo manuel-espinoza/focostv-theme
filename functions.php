@@ -67,3 +67,30 @@ function focostv_load_more_topicality_posts()
 
 add_action('wp_ajax_nopriv_focostv_load_more_topicality_posts', 'focostv_load_more_topicality_posts');
 add_action('wp_ajax_focostv_load_more_topicality_posts', 'focostv_load_more_topicality_posts');
+
+/** LOAD MORE POSTS IN RESEARCH */
+function focostv_load_more_research_posts()
+{
+    $paged = $_POST['page'] ? $_POST['page'] : 1;
+    $args = array(
+        'category_name' => 'investigacion',
+        'paged' => $paged,
+        'posts_per_page' => 10,
+    );
+    $investigacion_query = new WP_Query($args);
+
+    ob_start();
+    get_template_part('partials/research-more-posts', 'investigacion', array('investigacion_query' => $investigacion_query));
+    $posts_html = ob_get_clean();
+
+    $response = array(
+        'max_pages' => $investigacion_query->max_num_pages,
+        'posts_html' => $posts_html
+    );
+
+    echo json_encode($response);
+    wp_die();
+}
+
+add_action('wp_ajax_nopriv_focostv_load_more_research_posts', 'focostv_load_more_research_posts');
+add_action('wp_ajax_focostv_load_more_research_posts', 'focostv_load_more_research_posts');

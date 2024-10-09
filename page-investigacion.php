@@ -97,7 +97,9 @@ get_header(); ?>
     echo paginate_links($pagination_args);
     echo '</div>';
     ?>
-    <div id="load-more-spinner" style="display: none;">Cargando m&aacute;s contenido...</div>
+    <div id="focostv-load-more-posts" style="display: none;">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+    </div>
     <div class="focostv-footer-advetisement">
         <img src="https://stage.focostv.com/wp-content/uploads/2024/10/focostv_end_ad.png" alt="Anuncio">
     </div>

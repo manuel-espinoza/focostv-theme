@@ -75,6 +75,15 @@ document.addEventListener('DOMContentLoaded', function () {
   let loading = false;
   let lastScrollTop = 0;
 
+  const currentURL = window.location.pathname;
+  let category;
+
+  if (currentURL.includes('investigacion')) {
+    category = 'research';
+  } else if (currentURL.includes('actualidad')) {
+    category = 'topicality';
+  }
+  const containerId = category === 'research' ? 'focostv-research-posts-container' : 'focostv-topicality-posts-container';
   const loaderMorePosts = document.getElementById('focostv-load-more-posts')
 
   function loadMorePosts() {
@@ -89,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
     xhr.onload = function () {
       if (xhr.status === 200) {
         const response = JSON.parse(xhr.responseText);
-        const container = document.getElementById('focostv-topicality-posts-container');
+        const container = document.getElementById(containerId);
         container.innerHTML += response.posts_html;
         page++;
         loading = false;
@@ -100,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     };
 
-    xhr.send('action=focostv_load_more_topicality_posts&page=' + page);
+    xhr.send('action=focostv_load_more_' + category + '_posts&page=' + page);
   }
 
   function handleScroll() {
