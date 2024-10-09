@@ -27,6 +27,12 @@ add_action('wp_enqueue_scripts', 'focostvtheme_enqueue_styles');
 function focostvtheme_enqueue_scripts()
 {
     wp_enqueue_script('focostv-scripts', get_template_directory_uri() . '/js/index.js', array(), '1.0.0', true);
+
+    /** load more posts actualidad */
+    global $actualidad_query;
+    wp_localize_script('focostv-scripts', 'focostv_params', array(
+        'topicalityMaxPages' => $actualidad_query->max_num_pages,
+    ));
 }
 add_action('wp_enqueue_scripts', 'focostvtheme_enqueue_scripts');
 
