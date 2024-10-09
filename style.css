@@ -309,7 +309,7 @@ body.focostv-home .focostv-site-navigation {
 
 .focostv-pagination-container {
     margin: 1rem 0;
-    /* display: none; */
+    display: none;
 }
 
 .focostv-pagination-container ul {
@@ -802,9 +802,9 @@ body.focostv-home .focostv-site-navigation {
         font-size: 2.375rem;
     }
 
-    /* .focostv-pagination-container {
+    .focostv-pagination-container {
         display: block;
-    } */
+    }
 
     /*******NAVIGATION*****************/
     .focostv-site-navigation-menu li a {

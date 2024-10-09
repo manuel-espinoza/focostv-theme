@@ -3,7 +3,7 @@ $is_frontpage = get_query_var('is_frontpage');
 $frontpage_topicality_post_class = '';
 ?>
 
-<h3 class="focostv-sections-title<?php echo !$is_frontpage ? ' focostv-page-title': '';?>"><a <?php echo $is_frontpage ? 'href="' . get_permalink(get_page_by_path('actualidad')) . '"' : ''; ?>>Actualidad</a>
+<h3 class="focostv-sections-title<?php echo !$is_frontpage ? ' focostv-page-title' : ''; ?>"><a <?php echo $is_frontpage ? 'href="' . get_permalink(get_page_by_path('actualidad')) . '"' : ''; ?>>Actualidad</a>
     <?php if ($is_frontpage): ?>
         <div class="goto-page-icon"><!-- https://feathericons.dev/?search=arrow-up-right&iconset=feather -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon"
@@ -107,7 +107,7 @@ if ($actualidad_query->have_posts()):
         echo paginate_links($pagination_args);
         echo '</div>';
         ?>
-        <div id="load-more-spinner" style="display: none;">Cargando m&aacute;s contenido...</div>
+        <button id="load-more-posts">CARGAR MAS</button>
         <div class="focostv-footer-advetisement">
             <img src="https://stage.focostv.com/wp-content/uploads/2024/10/focostv_end_ad.png" alt="Anuncio">
         </div>
