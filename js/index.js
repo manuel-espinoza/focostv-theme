@@ -70,51 +70,75 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   }
-
-  // Execute the function on page load
-  updatePostVisibility();
-  updateTopicalityPostClass();
-
-  // Execute the function on window resize
-  window.addEventListener('resize', () => {
-    updatePostVisibility();
-    updateTopicalityPostClass();
-  });
-
-  /*************************************LOAD MORE POSTS SCRIPTS */
+  /*************************************LOAD MORE POSTS SCRIPTS ************************************/
   let page = 2;
   let loading = false;
+  let lastScrollTop = 0;
+
+  const loaderMorePosts = document.getElementById('focostv-load-more-posts')
 
   function loadMorePosts() {
+    if (loading) return;
     loading = true;
+    loaderMorePosts.style.display = 'block';
+
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '/wp-admin/admin-ajax.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
     xhr.onload = function () {
       if (xhr.status === 200) {
+        const response = JSON.parse(xhr.responseText);
         const container = document.getElementById('focostv-topicality-posts-container');
-        container.innerHTML += xhr.responseText;
+        container.innerHTML += response.posts_html;
         page++;
         loading = false;
+        loaderMorePosts.style.display = 'none';
+        if (page > response.max_pages) {
+          window.removeEventListener('scroll', handleScroll);
+        }
       }
     };
 
     xhr.send('action=focostv_load_more_topicality_posts&page=' + page);
   }
 
-  const loadMoreBtn = document.getElementById('load-more-posts');
+  function handleScroll() {
+    let st = window.scrollY || document.documentElement.scrollTop; // Posición actual del scroll
 
-  loadMoreBtn.addEventListener('click', () => {
-    loadMorePosts();
-  })
-  // const onScrollTopicality = () => {
-  //   if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
-  //     loadMorePosts()
-  //   }
-  // }
+    if (st > lastScrollTop) {
+      const footer = document.querySelector('footer');
+      const footerHeight = footer.offsetHeight;
 
-  // window.addEventListener('scroll', onScrollTopicality())
+      // Verifica si el usuario ha llegado al final de la página
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - (footerHeight + 100)) {
+        loadMorePosts(); // Llama la función para cargar más posts
+      }
+    }
+    lastScrollTop = st; // Actualiza la posición del scroll
+  }
+
+  function togglePaginationVisibility() {
+    if (window.innerWidth >= 1024) {
+      window.removeEventListener('scroll', handleScroll);
+    } else {
+      window.addEventListener('scroll', handleScroll);
+    }
+  }
+
+  // Execute the function on page load
+  updatePostVisibility();
+  updateTopicalityPostClass();
+  /**load more posts */
+  togglePaginationVisibility();
+
+  // Execute the function on window resize
+  window.addEventListener('resize', () => {
+    updatePostVisibility();
+    updateTopicalityPostClass();
+    // togglePaginationVisibility(); // temporaly disabled
+  });
+
 });
 
 /*********CAROUSEL SCRIPTS ***************************/

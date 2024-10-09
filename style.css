@@ -348,6 +348,16 @@ body.focostv-home .focostv-site-navigation {
     font-weight: bold;
 }
 
+#focostv-load-more-posts {
+    text-align: center;
+    padding: 1rem;
+} 
+
+#focostv-load-more-posts > i {
+    color: #FFBE02;
+    font-size: 1.75rem;
+}
+
 /***********************FRONT PAGE POSTS*****************/
 .focostv-section-container,
 .focostv-site-page {

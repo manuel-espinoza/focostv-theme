@@ -53,5 +53,5 @@ if ($actualidad_query->have_posts()) {
     <?php
     }
 } else {
-    echo 'No more posts';
+    echo '<span style="font-family: "Inter", sans-serif;">No hay mas publicaciones que mostrar</span>';
 }

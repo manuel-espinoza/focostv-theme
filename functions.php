@@ -27,12 +27,6 @@ add_action('wp_enqueue_scripts', 'focostvtheme_enqueue_styles');
 function focostvtheme_enqueue_scripts()
 {
     wp_enqueue_script('focostv-scripts', get_template_directory_uri() . '/js/index.js', array(), '1.0.0', true);
-
-    /** load more posts actualidad */
-    global $actualidad_query;
-    wp_localize_script('focostv-scripts', 'focostv_params', array(
-        'topicalityMaxPages' => $actualidad_query->max_num_pages,
-    ));
 }
 add_action('wp_enqueue_scripts', 'focostvtheme_enqueue_scripts');
 
@@ -58,8 +52,16 @@ function focostv_load_more_topicality_posts()
     );
     $actualidad_query = new WP_Query($args);
 
+    ob_start();
     get_template_part('partials/topicality-more-posts', 'actualidad', array('actualidad_query' => $actualidad_query));
+    $posts_html = ob_get_clean();
 
+    $response = array(
+        'max_pages' => $actualidad_query->max_num_pages,
+        'posts_html' => $posts_html
+    );
+
+    echo json_encode($response);
     wp_die(); // Esto es necesario para AJAX en WordPress
 }
 
