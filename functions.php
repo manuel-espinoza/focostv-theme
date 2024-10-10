@@ -94,3 +94,30 @@ function focostv_load_more_research_posts()
 
 add_action('wp_ajax_nopriv_focostv_load_more_research_posts', 'focostv_load_more_research_posts');
 add_action('wp_ajax_focostv_load_more_research_posts', 'focostv_load_more_research_posts');
+
+/** LOAD MORE POSTS IN DOCUMENTARIES */
+function focostv_load_more_documentaries_posts()
+{
+    $paged = $_POST['page'] ? $_POST['page'] : 1;
+    $args = array(
+        'category_name' => 'documentales',
+        'paged' => $paged,
+        'posts_per_page' => 10,
+    );
+    $documentales_query = new WP_Query($args);
+
+    ob_start();
+    get_template_part('partials/research-more-posts', 'documentales', array('documentales_query' => $documentales_query));
+    $posts_html = ob_get_clean();
+
+    $response = array(
+        'max_pages' => $documentales_query->max_num_pages,
+        'posts_html' => $posts_html
+    );
+
+    echo json_encode($response);
+    wp_die();
+}
+
+add_action('wp_ajax_nopriv_focostv_load_more_documentaries_posts', 'focostv_load_more_documentaries_posts');
+add_action('wp_ajax_focostv_load_more_documentaries_posts', 'focostv_load_more_documentaries_posts');

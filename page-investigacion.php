@@ -23,7 +23,7 @@ get_header(); ?>
     $investigacion_query = new WP_Query($args);
     ?>
 
-    <div id="focostv-research-posts-container" class="focostv-research-post-container">
+    <div id="focostv-research-posts-container" class="focostv-research-post-container" data-max-pages="<?php echo $investigacion_query->max_num_pages;?>">
         <?php
         if ($investigacion_query->have_posts()):
             $post_counter = 0;

@@ -71,6 +71,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
   /*************************************LOAD MORE POSTS SCRIPTS ************************************/
+  function getPostsContainer(categoryName) {
+    if(categoryName === 'research') {
+      return 'focostv-research-posts-container';
+    }
+    else if(categoryName === 'topicality') {
+      return 'focostv-topicality-posts-container';
+    }
+    else if(categoryName === 'documentaries') {
+      return 'focostv-documentaries-posts-container';
+    }
+  }
+
+
   let page = 2;
   let loading = false;
   let lastScrollTop = 0;
@@ -83,54 +96,68 @@ document.addEventListener('DOMContentLoaded', function () {
   } else if (currentURL.includes('actualidad')) {
     category = 'topicality';
   }
-  const containerId = category === 'research' ? 'focostv-research-posts-container' : 'focostv-topicality-posts-container';
-  const loaderMorePosts = document.getElementById('focostv-load-more-posts')
+  else if(currentURL.includes('documentales')) {
+    category = 'documentaries';
+  }
+
+  const containerId = getPostsContainer(category);
+  const loaderMorePosts = document.getElementById('focostv-load-more-posts');
+  const container = document.getElementById(containerId);
+  
+  // Obtén el número máximo de páginas desde el atributo data-max-pages
+  const maxPages = parseInt(container.getAttribute('data-max-pages'), 10);
+
+  // Solo agrega el event listener de scroll si hay más de una página
+  if (maxPages > 1) {
+    window.addEventListener('scroll', handleScroll);
+  }
 
   function loadMorePosts() {
     if (loading) return;
-    loading = true;
-    loaderMorePosts.style.display = 'block';
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', '/wp-admin/admin-ajax.php', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    if (category) {
+      loading = true;
+      loaderMorePosts.style.display = 'block';
 
-    xhr.onload = function () {
-      if (xhr.status === 200) {
-        const response = JSON.parse(xhr.responseText);
-        const container = document.getElementById(containerId);
-        container.innerHTML += response.posts_html;
-        page++;
-        loading = false;
-        loaderMorePosts.style.display = 'none';
-        if (page > response.max_pages) {
-          window.removeEventListener('scroll', handleScroll);
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', '/wp-admin/admin-ajax.php', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          const response = JSON.parse(xhr.responseText);
+          container.innerHTML += response.posts_html;
+          page++;
+          loading = false;
+          loaderMorePosts.style.display = 'none';
+          if (page > response.max_pages) {
+            window.removeEventListener('scroll', handleScroll);
+          }
         }
-      }
-    };
+      };
 
-    xhr.send('action=focostv_load_more_' + category + '_posts&page=' + page);
+      xhr.send('action=focostv_load_more_' + category + '_posts&page=' + page);
+    }
   }
 
   function handleScroll() {
-    let st = window.scrollY || document.documentElement.scrollTop; // Posición actual del scroll
+    let st = window.scrollY || document.documentElement.scrollTop;
 
     if (st > lastScrollTop) {
       const footer = document.querySelector('footer');
       const footerHeight = footer.offsetHeight;
 
-      // Verifica si el usuario ha llegado al final de la página
       if (window.innerHeight + window.scrollY >= document.body.scrollHeight - (footerHeight + 100)) {
-        loadMorePosts(); // Llama la función para cargar más posts
+        loadMorePosts();
       }
     }
-    lastScrollTop = st; // Actualiza la posición del scroll
+    lastScrollTop = st;
   }
 
   function togglePaginationVisibility() {
     if (window.innerWidth >= 1024) {
       window.removeEventListener('scroll', handleScroll);
-    } else {
+    } else if (maxPages > 1) { // Asegúrate de que solo se añada el event listener si hay más de una página
       window.addEventListener('scroll', handleScroll);
     }
   }

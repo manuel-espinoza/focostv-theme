@@ -33,7 +33,7 @@
 
     $actualidad_query = new WP_Query($args);
 
-    echo "<div id='focostv-topicality-posts-container' class='focostv-topicality-post-container " . $frontpage_topicality_post_class . "'>";
+    echo "<div id='focostv-topicality-posts-container' class='focostv-topicality-post-container " . $frontpage_topicality_post_class . "' data-max-pages='{$actualidad_query->max_num_pages}'>";
     if ($actualidad_query->have_posts()):
         $post_counter = 0;
         while ($actualidad_query->have_posts()):
