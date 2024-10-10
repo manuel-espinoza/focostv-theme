@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const container = document.getElementById(containerId);
   
   // Obtén el número máximo de páginas desde el atributo data-max-pages
-  const maxPages = parseInt(container.getAttribute('data-max-pages'), 10);
+  const maxPages = container ? parseInt(container.getAttribute('data-max-pages'), 10) : 0;
 
   // Solo agrega el event listener de scroll si hay más de una página
   if (maxPages > 1) {
