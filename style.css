@@ -351,9 +351,9 @@ body.focostv-home .focostv-site-navigation {
 #focostv-load-more-posts {
     text-align: center;
     padding: 1rem;
-} 
+}
 
-#focostv-load-more-posts > i {
+#focostv-load-more-posts>i {
     color: #FFBE02;
     font-size: 1.75rem;
 }
@@ -685,9 +685,17 @@ body.focostv-home .focostv-site-navigation {
     object-fit: cover;
 }
 
+.focostv-perspectives-post-by-author,
 .focostv-perspectives-post-author-name {
     font-family: 'Inter', sans-serif;
+}
+
+.focostv-perspectives-post-author-name {
     font-weight: 600;
+}
+
+.focostv-perspectives-post-by-author {
+    font-weight: 300;
 }
 
 .focostv-perpesctives-podcasts-post-link i {
@@ -769,6 +777,84 @@ body.focostv-home .focostv-site-navigation {
     max-height: 6.25rem;
     max-width: 18.75rem;
     margin: 0 auto;
+}
+
+/*********** SINGLE POSTS DESIGN **************************/
+.focostv-post-header {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.focostv-post-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.75rem;
+}
+
+.focostv-post-location-date-container {
+    margin-top: 1rem;
+}
+
+.focostv-post-location,
+.focostv-post-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+}
+
+.focostv-multimedia-post-container {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #CDCDCD;
+    border-bottom: 1px solid #CDCDCD;
+    padding: 1rem;
+}
+
+.focostv-multimedia-post-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+}
+
+.focostv-post-subtitle-container {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.focostv-post-subtitle {
+    font-size: 1.125rem;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    position: relative;
+    padding-left: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.focostv-post-subtitle::before {
+    content: '';
+    display: inline-block;
+    width: 0.5rem;
+    height: 100%;
+    background-color: #FFBE02;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.focostv-post-thumbnail img {
+    width: 100%;
+    height: auto;
+}
+
+.focostv-post-content {
+    padding: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
 }
 
 /***************************************TABLET STYLES**************************/
