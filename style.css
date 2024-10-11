@@ -779,6 +779,13 @@ body.focostv-home .focostv-site-navigation {
     margin: 0 auto;
 }
 
+.focostv-post-advertisement {
+    max-height: 20rem;
+    background-color: #CDCDCD;
+    margin: 1rem;
+    text-align: center;
+}
+
 /*********** SINGLE POSTS DESIGN **************************/
 .focostv-post-header {
     margin-top: 1rem;
@@ -851,10 +858,29 @@ body.focostv-home .focostv-site-navigation {
     height: auto;
 }
 
-.focostv-post-content {
+.focostv-post-content,
+.focostv-post-author,
+.focostv-post-comments-container {
     padding: 1rem;
     font-family: 'Inter', sans-serif;
     font-size: 1.125rem;
+}
+
+.focostsv-post-comments-button {
+    background: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    border: 1px solid #0F0F0F;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    text-align: center;  /* Centrar el texto dentro del enlace */
+    text-decoration: none;  /* Elimina el subrayado del enlace */
+    color: inherit;  /* Asegura que el color de texto sea el mismo que el contenido del botón */
+    cursor: pointer;  /* Muestra un puntero de mano como en los botones */
 }
 
 /***************************************TABLET STYLES**************************/

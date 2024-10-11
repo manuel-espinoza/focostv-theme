@@ -76,20 +76,56 @@ if (have_posts()):
                 </div>
             <?php endif; ?>
 
+            <!-- FOCOSTV AD -->
+            <div class="focostv-post-advertisement">
+                <img src="https://stage.focostv.com/wp-content/uploads/2024/10/Group-6.png" alt="Anuncio">
+            </div>
+            <!-- FOCOSTV AD -->
+
             <div class="focostv-post-content">
                 <?php the_content(); ?>
             </div>
 
-            <!-- <button >
-                </button> -->
-                <a href="#comments" class="focostv-view-comments-button">Ver y hacer comentarios</a>
+            <div class="focostv-post-comments-container">
+                <a href="#comments" id="focostsv-post-comments-button" class="focostsv-post-comments-button">
+                    <?php
+                    $comments_number = get_comments_number();
+                    echo $comments_number . ' ' . _n('Comentario', 'Comentarios', $comments_number);
+                    ?>
+                </a>
+            </div>
 
-            <?php
-            // Mostrar los comentarios y el formulario de comentarios
-            if (comments_open() /*|| get_comments_number()*/):
-                comments_template();
-            endif;
-            ?>
+            <div class="focostv-post-author">
+                <?php
+                $opinion_author = get_field('autor_opinion');
+                $opinion_avatar_author = get_field('imagen_autor_opinion');
+                $opinion_author_description = get_field('descripcion_autor');
+                if ($opinion_author && $opinion_avatar_author) {
+
+                    ?>
+                    <div class="focostv-perspectives-post-author">
+                        <img src="<?php echo esc_url($opinion_avatar_author['url']); ?>"
+                            alt="<?php echo esc_attr($opinion_author); ?>" width="60" height="60"
+                            class="focostv-perspectives-post-author-avatar">
+                        <span class="focostv-perspectives-post-author-name"><?php echo esc_html($opinion_author); ?></span>
+                    </div>
+                    <div class="focostv-post-author-description">
+                        <p><?php echo $opinion_author_description; ?></p>
+                    </div>
+                    <?php
+                } else {
+                    ?>
+                    <div class="focostv-perspectives-post-author">
+                        <?php echo get_avatar(get_the_author_meta('ID'), 60); ?>
+                        <span class="focostv-perspectives-post-author-name"><?php echo esc_html(get_the_author()); ?></span>
+                    </div>
+                    <div class="focostv-post-author-description">
+                        <p><?php echo esc_html(get_the_author_meta('description')); ?></p>
+                    </div>
+                    <?php
+                }
+                ?>
+            </div>
 
         </article>
         <?php
