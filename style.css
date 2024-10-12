@@ -871,16 +871,41 @@ body.focostv-home .focostv-site-navigation {
     border-radius: 0.5rem;
     font-weight: 600;
     border: 1px solid #0F0F0F;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     width: 100%;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     font-size: 1rem;
-    text-align: center;  /* Centrar el texto dentro del enlace */
-    text-decoration: none;  /* Elimina el subrayado del enlace */
-    color: inherit;  /* Asegura que el color de texto sea el mismo que el contenido del botón */
-    cursor: pointer;  /* Muestra un puntero de mano como en los botones */
+    text-align: center;  
+    text-decoration: none;  
+    color: inherit; 
+    cursor: pointer;
+}
+
+.focostv-post-author-social-media {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.focostv-author-social-media-button {
+    background-color: #0F0F0F;
+    padding: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    color: #D9D9D9;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+}
+
+.focostv-post-whatsapp-subscription {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 /***************************************TABLET STYLES**************************/

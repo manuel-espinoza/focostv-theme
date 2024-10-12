@@ -131,10 +131,41 @@ if (have_posts()):
                         <p><?php echo esc_html(get_the_author_meta('description')); ?></p>
                     </div>
                     <?php
+                    $author_id = get_the_author_meta('ID');
+                    $instagram = get_the_author_meta('instagram', $author_id);
+                    $twitter = get_the_author_meta('twitter', $author_id);
+                    $youtube = get_the_author_meta('youtube', $author_id);
+                    ?>
+                    <div class="focostv-post-author-social-media">
+                        <?php if ($instagram): ?>
+                            <a href="<?php echo esc_url($instagram); ?>" target="_blank"
+                                class="focostv-author-social-media-button instagram-author">
+                                Instagram
+                            </a>
+                        <?php endif; ?>
+
+                        <?php if ($twitter): ?>
+                            <a href="<?php echo esc_url($twitter); ?>" target="_blank"
+                                class="focostv-author-social-media-button twitter-author">
+                                X
+                            </a>
+                        <?php endif; ?>
+
+                        <?php if ($youtube): ?>
+                            <a href="<?php echo esc_url($youtube); ?>" target="_blank"
+                                class="focostv-author-social-media-button youtube-author">
+                                YouTube
+                            </a>
+                        <?php endif; ?>
+                    </div>
+                    <?php
                 }
                 ?>
             </div>
 
+            <div class="focostv-post-whatsapp-subscription">
+                <?php echo do_shortcode('[focostv_whatsapp_subscription]'); ?>
+            </div>
         </article>
         <?php
     endwhile;
