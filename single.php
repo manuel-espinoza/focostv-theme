@@ -168,52 +168,45 @@ if (have_posts()):
             </div>
 
             <div class="focostv-related-posts">
-                <h3>Notas Relacionadas</h3>
+                <h3 class="focostv-related-posts-title">Notas Relacionadas</h3>
                 <?php
-                // Obtener las categorías del post actual
+
                 $categories = wp_get_post_categories(get_the_ID());
 
                 if ($categories) {
-                    // Configurar la consulta para obtener posts relacionados
+
                     $related_args = array(
-                        'category__in' => $categories, // Incluir posts que pertenezcan a las mismas categorías
-                        'post__not_in' => array(get_the_ID()), // Excluir el post actual
-                        'posts_per_page' => 3, // Mostrar solo 3 posts
-                        'ignore_sticky_posts' => 1, // Ignorar los posts fijados
+                        'category__in' => $categories,
+                        'post__not_in' => array(get_the_ID()),
+                        'posts_per_page' => 3,
+                        'ignore_sticky_posts' => 1,
                     );
 
-                    // Ejecutar la consulta
+
                     $related_query = new WP_Query($related_args);
 
-                    // Comprobar si hay posts relacionados
                     if ($related_query->have_posts()) {
-                        echo '<ul class="related-posts-list">';
+                        echo '<ul class="focostv-related-posts-list">';
                         while ($related_query->have_posts()) {
                             $related_query->the_post();
                             ?>
                             <li>
-                                <a href="<?php the_permalink(); ?>" class="related-post-link">
+                                <a href="<?php the_permalink(); ?>" class="focostv-related-post-link">
+                                    <div class="focostv-related-post-content">
+                                        <h4 class="focostv-related-post-title"><?php the_title(); ?></h4>
+                                    </div>
                                     <?php if (has_post_thumbnail()): ?>
-                                        <div class="related-post-thumbnail">
+                                        <div class="focostv-related-post-thumbnail">
                                             <?php the_post_thumbnail('thumbnail'); ?>
                                         </div>
                                     <?php endif; ?>
-                                    <div class="related-post-content">
-                                        <h4 class="related-post-title"><?php the_title(); ?></h4>
-                                    </div>
                                 </a>
                             </li>
                             <?php
                         }
                         echo '</ul>';
-                    } else {
-                        echo '<p>No hay notas relacionadas.</p>';
                     }
-
-                    // Restaurar la consulta original
                     wp_reset_postdata();
-                } else {
-                    echo '<p>No hay categorías asociadas.</p>';
                 }
                 ?>
             </div>

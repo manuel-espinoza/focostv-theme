@@ -877,9 +877,9 @@ body.focostv-home .focostv-site-navigation {
     align-items: center;
     gap: 0.5rem;
     font-size: 1rem;
-    text-align: center;  
-    text-decoration: none;  
-    color: inherit; 
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
     cursor: pointer;
 }
 
@@ -907,6 +907,58 @@ body.focostv-home .focostv-site-navigation {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
+.focostv-related-posts {
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.focostv-related-posts-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.focostv-related-posts-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.focostv-related-post-link {
+    border-top: 1px solid #CDCDCD;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    cursor: pointer;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.focostv-related-post-content {
+    width: 63%;
+}
+
+.focostv-related-post-thumbnail {
+    width: 34%;
+}
+
+.focostv-related-post-thumbnail img {
+    width: 100%;
+    height: auto;
+}
+
+.focostv-related-post-title {
+    margin: 0;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #0F0F0F;
+    font-weight: 600;
+}
+
 
 /***************************************TABLET STYLES**************************/
 /****TO CHANGE 768px resolution**************/
