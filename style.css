@@ -988,6 +988,29 @@ body.focostv-home .focostv-site-navigation {
     .focostv-research-carousel-container {
         max-width: 41.25rem;
     }
+
+    /******************SINGLE STYLES **********************/
+    .focostv-post-header,
+    .focostv-multimedia-post-container,
+    .focostv-post-subtitle-container,
+    .focostv-post-content,
+    .focostv-post-author,
+    .focostv-post-comments-container,
+    .focostv-post-whatsapp-subscription,
+    .focostv-related-posts {
+        padding: 1rem 3.5rem;
+    }
+
+    .focostv-related-post-title {
+        font-size: 1.25rem;
+    }
+
+
+    /********************FOCOSTV AD *********************/
+    .focostv-post-advertisement {
+        margin: 1rem 3.5rem;
+    }
+
 }
 
 @media screen and (min-width: 1024px) {
