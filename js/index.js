@@ -162,6 +162,35 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+
+  /************************* */
+  var modal = document.getElementById("focostv-social-media-share-modal");
+  var btn = document.getElementById("focostv-post-shared-btn");
+  var span = document.getElementsByClassName("focostv-share-modal-close")[0];
+  var copyButton = document.getElementById("copy-link-btn");
+  var shareLink = document.getElementById("share-link");
+
+  btn.onclick = function() {
+      modal.style.display = "flex";
+  }
+
+  span.onclick = function() {
+      modal.style.display = "none";
+  }
+
+  // window.onclick = function(event) {
+  //     if (event.target == modal) {
+  //         modal.style.display = "none";
+  //     }
+  // }
+
+  copyButton.onclick = function() {
+      shareLink.select();
+      document.execCommand("copy");
+      alert("Link copiado al portapapeles");
+  }
+  /************************* */
+
   // Execute the function on page load
   updatePostVisibility();
   updateTopicalityPostClass();

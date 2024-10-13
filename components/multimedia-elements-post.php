@@ -58,3 +58,58 @@
         Compartir
     </button>
 </div>
+
+<div id="focostv-social-media-share-modal" class="focostv-share-modal">
+    <div class="focostv-share-modal-content">
+        <span class="focostv-share-modal-close"><!-- https://feathericons.dev/?search=xcircle&iconset=feather -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="15" x2="9" y1="9" y2="15" />
+                <line x1="9" x2="15" y1="9" y2="15" />
+            </svg>
+        </span>
+        <h3 class="focostv-share-modal-title">Compartir</h3>
+        <div class="focostv-share-options">
+            <a href="#" class="focostv-share-option" id="share-facebook">
+                <div class="focostv-share-option-icon">
+                    <i class="fa-brands fa-square-facebook"></i>
+                </div>
+                Facebook
+            </a>
+            <a href="#" class="focostv-share-option" id="share-instagram">
+                <div class="focostv-share-option-icon">
+                    <i class="fa-brands fa-square-instagram"></i>
+                </div>
+                Instagram
+            </a>
+            <a href="#" class="focostv-share-option" id="share-tiktok">
+                <div class="focostv-share-option-icon">
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+                TikTok
+            </a>
+            <a href="#" class="focostv-share-option" id="share-twitter">
+                <div class="focostv-share-option-icon">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </div>
+                Twitter
+            </a>
+        </div>
+        <h4 class="focostv-share-modal-title">As a message</h4>
+        <div class="focostv-share-options">
+            <a href="#" class="focostv-share-option" id="share-messenger"><i
+                    class="fa-brands fa-facebook-messenger"></i>Messenger</a>
+            <a href="#" class="focostv-share-option" id="share-whatsapp"><i
+                    class="fa-brands fa-square-whatsapp"></i>WhatsApp</a>
+            <a href="#" class="focostv-share-option" id="share-telegram"><i
+                    class="fa-brands fa-telegram"></i>Telegram</a>
+            <a href="#" class="focostv-share-option" id="share-wechat"><i
+                    class="fa-brands fa-signal-messenger"></i>WeChat</a>
+        </div>
+        <h4 class="focostv-share-modal-title">Or copy link</h4>
+        <input type="text" id="share-link" value="<?php the_permalink(); ?>" readonly>
+        <button id="copy-link-btn">Copiar</button>
+    </div>
+</div>
