@@ -72,25 +72,29 @@
         </span>
         <h3 class="focostv-share-modal-title">Compartir</h3>
         <div class="focostv-share-options">
-            <a href="#" class="focostv-share-option" id="share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>"
+                target="_blank" class="focostv-share-option" id="share-facebook">
                 <div class="focostv-share-option-icon">
                     <i class="fa-brands fa-square-facebook"></i>
                 </div>
                 Facebook
             </a>
-            <a href="#" class="focostv-share-option" id="share-instagram">
+            <a href="https://www.instagram.com/?url=<?php echo urlencode(get_permalink()); ?>" target="_blank"
+                class="focostv-share-option" id="share-instagram">
                 <div class="focostv-share-option-icon">
                     <i class="fa-brands fa-instagram"></i>
                 </div>
                 Instagram
             </a>
-            <a href="#" class="focostv-share-option" id="share-tiktok">
+            <a href="https://www.tiktok.com/share?url=<?php echo urlencode(get_permalink()); ?>" target="_blank"
+                class="focostv-share-option" id="share-tiktok">
                 <div class="focostv-share-option-icon">
                     <i class="fa-brands fa-tiktok"></i>
                 </div>
                 TikTok
             </a>
-            <a href="#" class="focostv-share-option" id="share-twitter">
+            <a href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink()); ?>" target="_blank"
+                class="focostv-share-option" id="share-twitter">
                 <div class="focostv-share-option-icon">
                     <i class="fa-brands fa-x-twitter"></i>
                 </div>
@@ -99,24 +103,28 @@
         </div>
         <h4 class="focostv-share-modal-title">As a message</h4>
         <div class="focostv-share-options">
-            <a href="#" class="focostv-share-option" id="share-messenger">
+            <a href="fb-messenger://share?link=<?php echo urlencode(get_permalink()); ?>" target="_blank"
+                class="focostv-share-option" id="share-messenger">
                 <div class="focostv-share-option-icon">
                     <i class="fa-brands fa-facebook-messenger"></i>
                 </div>
                 Messenger
             </a>
-            <a href="#" class="focostv-share-option" id="share-whatsapp">
+            <a href="https://api.whatsapp.com/send?text=<?php echo urlencode(get_permalink()); ?>" target="_blank"
+                class="focostv-share-option" id="share-whatsapp">
                 <div class="focostv-share-option-icon">
                     <i class="fa-brands fa-whatsapp"></i>
                 </div>
                 WhatsApp
             </a>
-            <a href="#" class="focostv-share-option" id="share-telegram">
+            <a href="https://t.me/share/url?url=<?php echo urlencode(get_permalink()); ?>" target="_blank"
+                class="focostv-share-option" id="share-telegram">
                 <div class="focostv-share-option-icon">
                     <i class="fa-brands fa-telegram"></i>
                 </div>Telegram
             </a>
-            <a href="#" class="focostv-share-option" id="share-wechat">
+            <a href="https://web.wechat.com/?url=<?php echo urlencode(get_permalink()); ?>" target="_blank"
+                class="focostv-share-option" id="share-wechat">
                 <div class="focostv-share-option-icon">
                     <i class="fa-brands fa-weixin"></i>
                 </div>
