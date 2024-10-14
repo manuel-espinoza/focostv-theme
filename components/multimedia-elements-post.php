@@ -80,7 +80,7 @@
             </a>
             <a href="#" class="focostv-share-option" id="share-instagram">
                 <div class="focostv-share-option-icon">
-                    <i class="fa-brands fa-square-instagram"></i>
+                    <i class="fa-brands fa-instagram"></i>
                 </div>
                 Instagram
             </a>
@@ -99,17 +99,35 @@
         </div>
         <h4 class="focostv-share-modal-title">As a message</h4>
         <div class="focostv-share-options">
-            <a href="#" class="focostv-share-option" id="share-messenger"><i
-                    class="fa-brands fa-facebook-messenger"></i>Messenger</a>
-            <a href="#" class="focostv-share-option" id="share-whatsapp"><i
-                    class="fa-brands fa-square-whatsapp"></i>WhatsApp</a>
-            <a href="#" class="focostv-share-option" id="share-telegram"><i
-                    class="fa-brands fa-telegram"></i>Telegram</a>
-            <a href="#" class="focostv-share-option" id="share-wechat"><i
-                    class="fa-brands fa-signal-messenger"></i>WeChat</a>
+            <a href="#" class="focostv-share-option" id="share-messenger">
+                <div class="focostv-share-option-icon">
+                    <i class="fa-brands fa-facebook-messenger"></i>
+                </div>
+                Messenger
+            </a>
+            <a href="#" class="focostv-share-option" id="share-whatsapp">
+                <div class="focostv-share-option-icon">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                WhatsApp
+            </a>
+            <a href="#" class="focostv-share-option" id="share-telegram">
+                <div class="focostv-share-option-icon">
+                    <i class="fa-brands fa-telegram"></i>
+                </div>Telegram
+            </a>
+            <a href="#" class="focostv-share-option" id="share-wechat">
+                <div class="focostv-share-option-icon">
+                    <i class="fa-brands fa-weixin"></i>
+                </div>
+                WeChat
+            </a>
         </div>
         <h4 class="focostv-share-modal-title">Or copy link</h4>
-        <input type="text" id="share-link" value="<?php the_permalink(); ?>" readonly>
-        <button id="copy-link-btn">Copiar</button>
+
+        <div class="focostv-copy-link-container">
+            <input type="text" id="share-link" value="<?php the_permalink(); ?>" readonly>
+            <button id="copy-link-btn">Copiar</button>
+        </div>
     </div>
 </div>

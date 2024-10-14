@@ -72,13 +72,13 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   /*************************************LOAD MORE POSTS SCRIPTS ************************************/
   function getPostsContainer(categoryName) {
-    if(categoryName === 'research') {
+    if (categoryName === 'research') {
       return 'focostv-research-posts-container';
     }
-    else if(categoryName === 'topicality') {
+    else if (categoryName === 'topicality') {
       return 'focostv-topicality-posts-container';
     }
-    else if(categoryName === 'documentaries') {
+    else if (categoryName === 'documentaries') {
       return 'focostv-documentaries-posts-container';
     }
   }
@@ -96,14 +96,14 @@ document.addEventListener('DOMContentLoaded', function () {
   } else if (currentURL.includes('actualidad')) {
     category = 'topicality';
   }
-  else if(currentURL.includes('documentales')) {
+  else if (currentURL.includes('documentales')) {
     category = 'documentaries';
   }
 
   const containerId = getPostsContainer(category);
   const loaderMorePosts = document.getElementById('focostv-load-more-posts');
   const container = document.getElementById(containerId);
-  
+
   // Obtén el número máximo de páginas desde el atributo data-max-pages
   const maxPages = container ? parseInt(container.getAttribute('data-max-pages'), 10) : 0;
 
@@ -163,32 +163,27 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
-  /************************* */
+  /*************************  POSTS SHARE FUNCTIONS */
   var modal = document.getElementById("focostv-social-media-share-modal");
-  var btn = document.getElementById("focostv-post-shared-btn");
-  var span = document.getElementsByClassName("focostv-share-modal-close")[0];
-  var copyButton = document.getElementById("copy-link-btn");
+  var postShareButton = document.getElementById("focostv-post-shared-btn");
+  var postShareCloseButton = document.getElementsByClassName("focostv-share-modal-close")[0];
+  var copyPostButton = document.getElementById("copy-link-btn");
   var shareLink = document.getElementById("share-link");
 
-  btn.onclick = function() {
-      modal.style.display = "flex";
-  }
+  postShareButton?.addEventListener('click',
+    () => {
+      modal.style.display = 'flex';
+    }
+  )
 
-  span.onclick = function() {
-      modal.style.display = "none";
-  }
+  postShareCloseButton?.addEventListener('click', () => {
+    modal.style.display = 'none';
+  })
 
-  // window.onclick = function(event) {
-  //     if (event.target == modal) {
-  //         modal.style.display = "none";
-  //     }
-  // }
+  copyPostButton?.addEventListener('click', () => {
+    navigator.clipboard.writeText(shareLink.value).then()
+  })
 
-  copyButton.onclick = function() {
-      shareLink.select();
-      document.execCommand("copy");
-      alert("Link copiado al portapapeles");
-  }
   /************************* */
 
   // Execute the function on page load
@@ -211,8 +206,8 @@ let currentIndex = 0;
 const cards = document.querySelectorAll('.focostv-research-carousel-card');
 const totalCards = cards.length;
 
-document.querySelector('.focostv-research-carousel-next').addEventListener('click', nextSlide);
-document.querySelector('.focostv-research-carousel-prev').addEventListener('click', prevSlide);
+document.querySelector('.focostv-research-carousel-next')?.addEventListener('click', nextSlide);
+document.querySelector('.focostv-research-carousel-prev')?.addEventListener('click', prevSlide);
 
 function nextSlide() {
   currentIndex = (currentIndex + 1) % totalCards;
@@ -242,15 +237,15 @@ function updateCarousel() {
 // CAROUSEL SCRIPTS Swipe functionality
 const carousel = document.querySelector('.focostv-research-carousel');
 
-carousel.addEventListener('touchstart', (event) => {
+carousel?.addEventListener('touchstart', (event) => {
   startX = event.touches[0].clientX;
 });
 
-carousel.addEventListener('touchmove', (event) => {
+carousel?.addEventListener('touchmove', (event) => {
   endX = event.touches[0].clientX;
 });
 
-carousel.addEventListener('touchend', () => {
+carousel?.addEventListener('touchend', () => {
   if (startX > endX + 50) { // Swipe left
     nextSlide();
   } else if (startX < endX - 50) { // Swipe right

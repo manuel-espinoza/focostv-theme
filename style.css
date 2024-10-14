@@ -983,16 +983,8 @@ body.focostv-home .focostv-site-navigation {
 
 .focostv-share-modal-close {
     float: right;
-    /* font-size: 28px;
-    font-weight: bold; */
-}
-
-/* .focostv-share-modal-close:hover,
-.focostv-share-modal-close:focus {
-    color: black;
-    text-decoration: none;
     cursor: pointer;
-} */
+}
 
 .focostv-share-modal-title {
     font-family: 'Inter', sans-serif;
@@ -1035,15 +1027,87 @@ body.focostv-home .focostv-site-navigation {
     color: #3F51B5;
 }
 
+#share-instagram .focostv-share-option-icon {
+    background-color: rgba(218, 26, 95, 0.25);
+}
 
+#share-instagram .focostv-share-option-icon>i {
+    color: #DA1A5F;
+}
+
+#share-tiktok .focostv-share-option-icon {
+    background-color: #0F0F0F;
+}
+
+#share-tiktok .focostv-share-option-icon>i {
+    color: white;
+}
+
+#share-twitter .focostv-share-option-icon {
+    background-color: rgba(217, 217, 217, 0.25);
+}
+
+#share-twitter .focostv-share-option-icon>i {
+    color: #0F0F0F;
+}
+
+#share-messenger .focostv-share-option-icon {
+    background-color: rgba(68, 138, 255, 0.25);
+}
+
+#share-messenger .focostv-share-option-icon>i {
+    color: #448aff;
+}
+
+#share-whatsapp .focostv-share-option-icon {
+    background-color: rgba(64, 195, 81, 0.25);
+}
+
+#share-whatsapp .focostv-share-option-icon>i {
+    color: #40c351;
+}
+
+#share-telegram .focostv-share-option-icon {
+    background-color: rgba(41, 182, 246, 0.25);
+}
+
+#share-telegram .focostv-share-option-icon>i {
+    color: #29b6f6;
+}
+
+#share-wechat .focostv-share-option-icon {
+    background-color: rgba(139, 195, 74, 0.25);
+}
+
+#share-wechat .focostv-share-option-icon>i {
+    color: #8bc34a;
+}
+
+.focostv-copy-link-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+}
 
 #share-link {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 79%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.focostv-copy-link-container>button {
+    padding: 0.5rem;
+    width: 19%;
+    background: none;
+    cursor: pointer;
+    border: 1px solid #0F0F0F;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    text-align: center;
 }
 
 /***************************************TABLET STYLES**************************/
@@ -1095,6 +1159,12 @@ body.focostv-home .focostv-site-navigation {
     /********************FOCOSTV AD *********************/
     .focostv-post-advertisement {
         margin: 1rem 3.5rem;
+    }
+
+    /********************SHARED COMPONENT ******************/
+    .focostv-share-modal-content {
+        padding: 1.75rem;
+        width: 70%;
     }
 
 }
@@ -1555,6 +1625,14 @@ body.focostv-home .focostv-site-navigation {
 
     .focostv-related-post-title {
         font-weight: 500;
+    }
+
+    .focostv-share-modal {
+        align-items: center;
+    }
+
+    .focostv-share-modal-content {
+        width: 30%;
     }
 }
 
