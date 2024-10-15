@@ -8,10 +8,16 @@ $post_id = isset($_GET['post_id']) ? intval($_GET['post_id']) : 0;
 if ($post_id) {
     $post = get_post($post_id);
     setup_postdata($post);
-    
+
     ?>
-    <div class="focostv-comments-page-container">
-        <h1>Comentarios para el post: <?php the_title(); ?></h1>
+    <main class="focostv-comments-page-container">
+        <div class="focostv-go-home-container">
+            <i class="fa-solid fa-chevron-left"></i>
+            <a href="<?php echo esc_url(get_permalink($post_id)); ?>">Regresar a la nota</a>
+        </div>
+
+
+        <h2 class="focostv-comments-page-title">Comentarios</h2>
 
         <div class="focostv-comments-content">
             <?php
@@ -19,7 +25,7 @@ if ($post_id) {
             comments_template();
             ?>
         </div>
-    </div>
+    </main>
     <?php
     wp_reset_postdata();
 } else {

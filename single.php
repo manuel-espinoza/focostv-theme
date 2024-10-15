@@ -11,8 +11,8 @@ if (have_posts()):
         if (!empty($categories)) {
             foreach ($categories as $category) {
                 if ($category->slug !== 'portada' && strpos($category->slug, 'portada-') !== 0) {
-                    $category_link = get_category_link($category->term_id);
                     $category_name = strtolower($category->name);
+                    $category_link = home_url("/$category_name");
                     break;
                 }
             }
