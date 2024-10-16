@@ -19,11 +19,16 @@ if ($post_id) {
 
         <h2 class="focostv-comments-page-title">Comentarios</h2>
 
-        <div class="focostv-comments-content">
-            <?php
-            // Mostrar la sección de comentarios para el post específico
-            comments_template();
-            ?>
+        <div class="focostv-comments-content-container">
+            <div class="focostv-comments-content">
+                <?php
+                // Mostrar la sección de comentarios para el post específico
+                comments_template();
+                ?>
+            </div>
+            <div class="focostv-comments-ad">
+
+            </div>
         </div>
     </main>
     <?php

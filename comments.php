@@ -41,12 +41,14 @@ if (post_password_required()) {
                 'style' => 'ol',
                 'short_ping' => true,
                 'avatar_size' => 50,
-                'callback' => 'my_custom_comments_callback'
+                'callback' => 'my_custom_comments_callback',
+                'reverse_top_level' => true,
             ));
             ?>
         </ol>
 
         <?php the_comments_navigation(); ?>
+
     <?php else: ?>
         <div class="focostv-no-comments-container">
             <h3 class="focostv-no-comments-post-title">¡S&eacute; el primero en comentar!</h3>
