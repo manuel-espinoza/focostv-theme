@@ -1188,6 +1188,11 @@ body.focostv-home .focostv-site-navigation {
     color: #1a7cfe;
 }
 
+.focostv-comment-textarea {
+    resize: none;
+    height: 8em;
+}
+
 .focostv-comment-textarea,
 .focostv-comment-form-author input,
 .focostv-comment-form-email input {
@@ -1760,6 +1765,18 @@ body.focostv-home .focostv-site-navigation {
         width: 74%;
     }
 
+    .focostv-post-comment-form {
+        width: 65%;
+    }
+
+    .focostv-comment-textarea {
+        height: 6em;
+    }
+
+    .focostv-comment-submit-button {
+        width: 40%;
+    }
+
     .focostv-comments-ad {
         width: 24%;
         background-color: #CDCDCD;
@@ -1796,5 +1813,10 @@ body.focostv-home .focostv-site-navigation {
         padding-left: 5rem;
         padding-right: 5rem;
     }
+
+    /**************COMMENTS SECTION*******************/
+    .focostv-comments-page-container {
+        padding: 1rem 10rem;
+    }   
 
 }

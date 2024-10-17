@@ -73,7 +73,7 @@ if (post_password_required()) {
                     'author' => '<p class="comment-form-author focostv-comment-form-author"><input id="author" placeholder="Nombre" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" required/></p>',
                     'email' => '<p class="comment-form-email focostv-comment-form-email"><input id="email" placeholder="Email" name="email" type="email" value="' . esc_attr($commenter['comment_author_email']) . '" required/></p>',
                 ),
-                'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" class="focostv-comment-textarea" placeholder="Únete a la conversación..." rows="8" aria-required="true" required></textarea></p>',
+                'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" class="focostv-comment-textarea" placeholder="Únete a la conversación..." aria-required="true" required></textarea></p>',
             );
 
             comment_form($comment_form_args);
