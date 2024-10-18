@@ -1256,6 +1256,13 @@ body.focostv-home .focostv-site-navigation {
     margin-bottom: 0.5rem;
 }
 
+/*******************ABOUT PAGE *********************/
+.focostv-about-content {
+    font-family: 'Inter', sans-serif;
+    color: #0F0F0F;
+    font-size: 1.125rem;
+}
+
 
 /***************************************TABLET STYLES**************************/
 /****TO CHANGE 768px resolution**************/
@@ -1341,7 +1348,6 @@ body.focostv-home .focostv-site-navigation {
         width: 100%;
         height: 20em;
     }
-
 }
 
 @media screen and (min-width: 1024px) {
