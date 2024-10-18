@@ -1,8 +1,11 @@
 <?php
+$audio_post = get_field('audio_post');
+$video_post = get_field('video_post');
+$summary_post = get_field('resumen_post');
 ?>
 
 <div class="focostv-multimedia-post-container">
-    <button type="button" id="focostv-post-audio-btn" class="focostv-multimedia-post-button">
+    <button type="button" id="focostv-post-audio-btn" class="focostv-multimedia-post-button" <?php echo empty($audio_post) ? 'disabled' : ''; ?>>
         <div class="multimedia-icon-container">
             <!-- https://feathericons.dev/?search=headphones&iconset=feather -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
@@ -16,7 +19,7 @@
         Escuchar
     </button>
 
-    <button type="button" id="focostv-post-video-btn" class="focostv-multimedia-post-button">
+    <button type="button" id="focostv-post-video-btn" class="focostv-multimedia-post-button" <?php echo empty($video_post) ? 'disabled' : ''; ?>>
         <div class="multimedia-icon-container">
             <!-- https://feathericons.dev/?search=play-circle&iconset=feather -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
@@ -29,7 +32,7 @@
         </div>
         Video
     </button>
-    <button type="button" id="focostv-post-summary-btn" class="focostv-multimedia-post-button">
+    <button type="button" id="focostv-post-summary-btn" class="focostv-multimedia-post-button" <?php echo empty($resumen_post) ? 'disabled' : ''; ?>>
         <div class="multimedia-icon-container">
             <!-- https://feathericons.dev/?search=star&iconset=feather -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
