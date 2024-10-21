@@ -43,7 +43,7 @@ if (have_posts()):
                                 <img src="<?php echo esc_url($opinion_avatar_author['url']); ?>"
                                     alt="<?php echo esc_attr($opinion_author); ?>" width="60" height="60"
                                     class="focostv-perspectives-post-author-avatar">
-                                <span class="focostv-perspectives-post-by-author">Por</span>
+                                <span class="focostv-perspectives-post-by-author">Por&nbsp;</span>
                                 <span class="focostv-perspectives-post-author-name"><?php echo esc_html($opinion_author); ?></span>
                             </div>
                             <?php
@@ -67,8 +67,10 @@ if (have_posts()):
                 </header>
                 <?php
                 get_template_part('components/multimedia-elements-post');
-
-                $subtitle = get_field('subtitulo');
+                
+                // for legacy support
+                $tie_post_subtitle = get_post_meta(get_the_ID(), 'tie_post_sub_title', true);
+                $subtitle = !empty($tie_post_subtitle) ? $tie_post_subtitle : get_field('subtitulo');
                 ?>
                 <?php if ($subtitle): ?>
                     <div class="focostv-post-subtitle-container">
@@ -122,7 +124,7 @@ if (have_posts()):
                             <img src="<?php echo esc_url($opinion_avatar_author['url']); ?>"
                                 alt="<?php echo esc_attr($opinion_author); ?>" width="60" height="60"
                                 class="focostv-perspectives-post-author-avatar">
-                            <span class="focostv-perspectives-post-author-name"><?php echo esc_html($opinion_author); ?></span>
+                            <span class="focostv-perspectives-post-author-name">&nbsp;<?php echo esc_html($opinion_author); ?></span>
                         </div>
                         <div class="focostv-post-author-description">
                             <p><?php echo $opinion_author_description; ?></p>
@@ -225,5 +227,4 @@ else:
     echo '<p>No se encontró el post.</p>';
 endif;
 ?>
-
 <?php get_footer(); ?>

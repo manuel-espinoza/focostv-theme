@@ -5,7 +5,7 @@ $summary_post = get_field('resumen_post');
 ?>
 
 <div class="focostv-multimedia-post-container">
-    <button type="button" id="focostv-post-audio-btn" class="focostv-multimedia-post-button" <?php echo empty($audio_post) ? 'disabled' : ''; ?>>
+    <button type="button" id="focostv-post-audio-btn" class="focostv-multimedia-post-button">
         <div class="multimedia-icon-container">
             <!-- https://feathericons.dev/?search=headphones&iconset=feather -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
