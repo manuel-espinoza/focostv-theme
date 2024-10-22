@@ -162,6 +162,59 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  /*************************AUDIO POSTS SCRIPTS *************************/
+  const audioPostButton = document.getElementById('focostv-post-audio-btn');
+  const containerAudioPost = document.getElementById('focostv-audio-post');
+  const containerAudioPostClose = document.getElementById('focostv-audio-post-close-btn');
+  const audioPlayButton = document.getElementById('focostv-audio-post-play-btn');
+
+  audioPostButton?.addEventListener('click', ()=> {
+    containerAudioPost.style.display = 'block';
+  })
+
+  containerAudioPostClose?.addEventListener('click', ()=> {
+    containerAudioPost.style.display = 'none';
+  })
+
+
+  let isPaused = false; // Variable para rastrear si el audio está pausado
+
+  audioPlayButton?.addEventListener('click', () => {
+    let textToRead = '';
+    const audioContent = document.querySelector('.focostv-post-content');
+    const playIcon = document.getElementById('audio-post-play');
+  
+    if (audioContent) {
+      textToRead = audioContent.innerText;
+    }
+  
+    if (!responsiveVoice.isPlaying() && !isPaused) {
+      // Inicia la reproducción con voz masculina latina
+      responsiveVoice.speak(textToRead, "Spanish Latin American Male", {
+        onstart: function () {
+          playIcon.classList.remove('fa-play');
+          playIcon.classList.add('fa-pause');
+        },
+        onend: function () {
+          playIcon.classList.remove('fa-pause');
+          playIcon.classList.add('fa-play');
+          isPaused = false; // Reinicia el estado de pausa al finalizar
+        }
+      });
+    } else if (isPaused) {
+      // Reanuda el audio si estaba pausado
+      responsiveVoice.resume();
+      playIcon.classList.remove('fa-play');
+      playIcon.classList.add('fa-pause');
+      isPaused = false;
+    } else {
+      // Pausa el audio si ya está reproduciendo
+      responsiveVoice.pause();
+      playIcon.classList.remove('fa-pause');
+      playIcon.classList.add('fa-play');
+      isPaused = true;
+    }
+  });
 
   /*************************  POSTS SHARE FUNCTIONS */
   var modal = document.getElementById("focostv-social-media-share-modal");
@@ -186,6 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /************************* */
 
+
   // Execute the function on page load
   updatePostVisibility();
   updateTopicalityPostClass();
@@ -198,6 +252,8 @@ document.addEventListener('DOMContentLoaded', function () {
     updateTopicalityPostClass();
     // togglePaginationVisibility(); // temporaly disabled
   });
+
+
 
 });
 
@@ -226,8 +282,9 @@ function currentSlide(index) {
 
 function updateCarousel() {
   const carousel = document.querySelector('.focostv-research-carousel');
-  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-
+  if (carousel) {
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
   const dots = document.querySelectorAll('.focostv-research-carousel-dot');
   dots.forEach((dot, index) => {
     dot.classList.toggle('focostv-research-carousel-dot-active', index === currentIndex);

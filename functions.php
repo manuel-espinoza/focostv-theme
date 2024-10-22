@@ -7,7 +7,7 @@ function focostvtheme_setup_menus()
     add_image_size('large', 1024, 9999);
 
     add_theme_support('title-tag');
-    
+
     register_nav_menus(array(
         'menu_principal' => __('Principal', 'focostv'),
         'footer_menu_principal' => __('FooterPrincipal', 'focostv'),

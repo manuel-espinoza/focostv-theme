@@ -142,3 +142,32 @@ $summary_post = get_field('resumen_post');
         </div>
     </div>
 </div>
+
+<div id="focostv-audio-post" class="focostv-audio-post-container">
+    <div class="focostv-audio-post-content">
+        <section class="focostv-audio-post-close">
+            <span id="focostv-audio-post-close-btn"><!-- https://feathericons.dev/?search=xcircle&iconset=feather -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                    class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="15" x2="9" y1="9" y2="15" />
+                    <line x1="9" x2="15" y1="9" y2="15" />
+                </svg>
+            </span>
+        </section>
+        <section class="focostv-audio-post-header">
+            <?php if (has_post_thumbnail()): ?>
+                <div class="focostv-audio-post-thumbnail">
+                    <?php the_post_thumbnail('small'); ?>
+                </div>
+            <?php endif; ?>
+            <h6 class="focostv-audio-post-title"><?php the_title(); ?></h6>
+        </section>
+        <section class="focostv-audio-post-content">
+            <button type="button" id="focostv-audio-post-play-btn" class="focostv-audio-post-play-button">
+                <i id="audio-post-play" class="fa-solid fa-play"></i>
+            </button>
+        </section>
+    </div>
+</div>
