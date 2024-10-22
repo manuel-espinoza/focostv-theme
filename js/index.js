@@ -247,6 +247,19 @@ document.addEventListener('DOMContentLoaded', function () {
     videoModal.style.display = 'none';
   });
 
+  /***************************** POSTS SUMMARY COMPONENT **************/
+  const summaryModal = document.getElementById('focostv-summary-post');
+  const postSummaryButton = document.getElementById('focostv-post-summary-btn');
+  const postSummaryCloseButton = document.getElementById('focostv-summary-post-modal-close');
+
+  postSummaryButton?.addEventListener('click', ()=> {
+    summaryModal.style.display = 'flex';
+  });
+
+  postSummaryCloseButton?.addEventListener('click',()=> {
+    summaryModal.style.display = 'none';
+  })
+
   /*************************  POSTS SHARE FUNCTIONS */
   var modal = document.getElementById("focostv-social-media-share-modal");
   var postShareButton = document.getElementById("focostv-post-shared-btn");

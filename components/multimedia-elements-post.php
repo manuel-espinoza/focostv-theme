@@ -33,7 +33,7 @@ $summary_post = get_field('resumen_post');
         </div>
         Video
     </button>
-    <button type="button" id="focostv-post-summary-btn" class="focostv-multimedia-post-button" <?php echo empty($resumen_post) ? 'disabled' : ''; ?>>
+    <button type="button" id="focostv-post-summary-btn" class="focostv-multimedia-post-button" <?php echo empty($summary_post) ? 'disabled' : ''; ?>>
         <div class="multimedia-icon-container">
             <!-- https://feathericons.dev/?search=star&iconset=feather -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
@@ -218,5 +218,28 @@ $summary_post = get_field('resumen_post');
             <?php endif; ?>
             <h6 class="focostv-audio-post-title"><?php the_title(); ?></h6>
         </section>
+    </div>
+</div>
+
+<div id="focostv-summary-post" class="focostv-summary-post-modal">
+    <div class="focostv-summary-post-modal-content">
+        <span id="focostv-summary-post-modal-close" class="focostv-share-modal-close"><!-- https://feathericons.dev/?search=xcircle&iconset=feather -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="15" x2="9" y1="9" y2="15" />
+                <line x1="9" x2="15" y1="9" y2="15" />
+            </svg>
+        </span>
+        <h3 class="focostv-summary-modal-title">Resumen de la nota</h3>
+        <div class="focostv-summary-post-container">
+            <h5 class="focostv-summary-post-title">
+                <?php the_title(); ?>
+            </h5>
+            <div class="focostv-summary-post-content">
+                <?php echo $summary_post; ?>
+            </div>
+        </div>
     </div>
 </div>
