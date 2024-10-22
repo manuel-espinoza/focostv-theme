@@ -167,29 +167,36 @@ document.addEventListener('DOMContentLoaded', function () {
   const containerAudioPost = document.getElementById('focostv-audio-post');
   const containerAudioPostClose = document.getElementById('focostv-audio-post-close-btn');
   const audioPlayButton = document.getElementById('focostv-audio-post-play-btn');
-
-  audioPostButton?.addEventListener('click', ()=> {
+  let isPaused = false;
+  audioPostButton?.addEventListener('click', () => {
     containerAudioPost.style.display = 'block';
   })
 
-  containerAudioPostClose?.addEventListener('click', ()=> {
+  containerAudioPostClose?.addEventListener('click', () => {
     containerAudioPost.style.display = 'none';
+
+    if (responsiveVoice.isPlaying()) {
+      responsiveVoice.cancel();
+    }
+
+    const playIcon = document.getElementById('audio-post-play');
+    playIcon.classList.remove('fa-pause');
+    playIcon.classList.add('fa-play');
+
+    isPaused = false;
   })
 
-
-  let isPaused = false; // Variable para rastrear si el audio está pausado
 
   audioPlayButton?.addEventListener('click', () => {
     let textToRead = '';
     const audioContent = document.querySelector('.focostv-post-content');
     const playIcon = document.getElementById('audio-post-play');
-  
+
     if (audioContent) {
       textToRead = audioContent.innerText;
     }
-  
+
     if (!responsiveVoice.isPlaying() && !isPaused) {
-      // Inicia la reproducción con voz masculina latina
       responsiveVoice.speak(textToRead, "Spanish Latin American Male", {
         onstart: function () {
           playIcon.classList.remove('fa-play');
@@ -198,17 +205,15 @@ document.addEventListener('DOMContentLoaded', function () {
         onend: function () {
           playIcon.classList.remove('fa-pause');
           playIcon.classList.add('fa-play');
-          isPaused = false; // Reinicia el estado de pausa al finalizar
+          isPaused = false;
         }
       });
     } else if (isPaused) {
-      // Reanuda el audio si estaba pausado
       responsiveVoice.resume();
       playIcon.classList.remove('fa-play');
       playIcon.classList.add('fa-pause');
       isPaused = false;
     } else {
-      // Pausa el audio si ya está reproduciendo
       responsiveVoice.pause();
       playIcon.classList.remove('fa-pause');
       playIcon.classList.add('fa-play');
