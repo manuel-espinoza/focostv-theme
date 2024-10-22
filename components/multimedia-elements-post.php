@@ -164,10 +164,13 @@ $summary_post = get_field('resumen_post');
             <?php endif; ?>
             <h6 class="focostv-audio-post-title"><?php the_title(); ?></h6>
         </section>
-        <section class="focostv-audio-post-content">
+        <section class="focostv-audio-post-controls">
             <button type="button" id="focostv-audio-post-play-btn" class="focostv-audio-post-play-button">
                 <i id="audio-post-play" class="fa-solid fa-play"></i>
             </button>
+            <div id="audio-progress-container">
+                <div id="audio-progress-bar"></div>
+            </div>
         </section>
     </div>
 </div>

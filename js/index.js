@@ -167,6 +167,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const containerAudioPost = document.getElementById('focostv-audio-post');
   const containerAudioPostClose = document.getElementById('focostv-audio-post-close-btn');
   const audioPlayButton = document.getElementById('focostv-audio-post-play-btn');
+  const progressBar = document.getElementById('audio-progress-bar');
+
   let isPaused = false;
   audioPostButton?.addEventListener('click', () => {
     containerAudioPost.style.display = 'block';
@@ -178,11 +180,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (responsiveVoice.isPlaying()) {
       responsiveVoice.cancel();
     }
-
+    stopProgressBar();
     const playIcon = document.getElementById('audio-post-play');
     playIcon.classList.remove('fa-pause');
     playIcon.classList.add('fa-play');
-
     isPaused = false;
   })
 
@@ -201,25 +202,37 @@ document.addEventListener('DOMContentLoaded', function () {
         onstart: function () {
           playIcon.classList.remove('fa-play');
           playIcon.classList.add('fa-pause');
+          startProgressBar();
         },
         onend: function () {
           playIcon.classList.remove('fa-pause');
           playIcon.classList.add('fa-play');
           isPaused = false;
+          stopProgressBar();
         }
       });
     } else if (isPaused) {
       responsiveVoice.resume();
       playIcon.classList.remove('fa-play');
       playIcon.classList.add('fa-pause');
+      startProgressBar();
       isPaused = false;
     } else {
       responsiveVoice.pause();
       playIcon.classList.remove('fa-pause');
       playIcon.classList.add('fa-play');
       isPaused = true;
+      stopProgressBar();
     }
   });
+
+  function startProgressBar() {
+    progressBar.classList.add('loading');
+  }
+  
+  function stopProgressBar() {
+    progressBar.classList.remove('loading');
+  }
 
   /*************************  POSTS SHARE FUNCTIONS */
   var modal = document.getElementById("focostv-social-media-share-modal");

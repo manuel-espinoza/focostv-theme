@@ -1252,7 +1252,10 @@ body.focostv-home .focostv-site-navigation {
     font-weight: 600;
     margin: 0;
 }
-
+.focostv-audio-post-controls {
+    display: flex;
+    align-items: center;
+}
 .focostv-audio-post-play-button {
     border-radius: 50%;
     background-color: #0F0F0F;
@@ -1270,6 +1273,36 @@ body.focostv-home .focostv-site-navigation {
     font-size: 1.5rem;
 }
 
+#audio-progress-container {
+    width: 100%;
+    background-color: #CDCDCD;
+    height: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #audio-progress-bar {
+    height: 100%;
+    width: 100%;
+    background-color: #FFBE02;
+    border-radius: 5px;
+    transform: translateX(-100%);
+  }
+  
+  @keyframes loading {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  .loading {
+    animation: loading 5s linear infinite;
+  }
 /*************** SINGLE DOCUMENTARIES *****************/
 .focostv-go-home-container-documentaries {
     margin-top: 1rem;
