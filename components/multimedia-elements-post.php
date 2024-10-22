@@ -1,5 +1,6 @@
 <?php
 $audio_post = get_field('audio_post');
+$has_video_post = get_field('post_con_video');
 $video_post = get_field('video_post');
 $summary_post = get_field('resumen_post');
 ?>
@@ -19,7 +20,7 @@ $summary_post = get_field('resumen_post');
         Escuchar
     </button>
 
-    <button type="button" id="focostv-post-video-btn" class="focostv-multimedia-post-button" <?php echo empty($video_post) ? 'disabled' : ''; ?>>
+    <button type="button" id="focostv-post-video-btn" class="focostv-multimedia-post-button" <?php echo empty($has_video_post) ? 'disabled' : ''; ?>>
         <div class="multimedia-icon-container">
             <!-- https://feathericons.dev/?search=play-circle&iconset=feather -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
@@ -171,6 +172,51 @@ $summary_post = get_field('resumen_post');
             <div id="audio-progress-container">
                 <div id="audio-progress-bar"></div>
             </div>
+        </section>
+    </div>
+</div>
+
+<div id="focostv-video-post" class="focostv-video-post-modal">
+    <div class="focostv-video-post-modal-content">
+        <section class="focostv-audio-post-close">
+            <span id="focostv-video-post-close-btn"><!-- https://feathericons.dev/?search=xcircle&iconset=feather -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                    class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="15" x2="9" y1="9" y2="15" />
+                    <line x1="9" x2="15" y1="9" y2="15" />
+                </svg>
+            </span>
+        </section>
+        <section class="focostv-video-post-container">
+            <?php
+            $archivo_video = get_field('archivo_video_post');
+            $url_video = get_field('url_video_post');
+
+            if ($archivo_video):
+                ?>
+                <video class="video-post-control" controls controlsList="nodownload">
+                    <source src="<?php echo esc_url($archivo_video); ?>">
+                    Your browser does not support the video tag.
+                </video>
+                <?php
+            elseif ($url_video):
+                ?>
+                <iframe class="video-post-embed-frame" src="<?php echo esc_url($url_video); ?>" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            <?php else: ?>
+                <p>No hay video disponible para este post.</p>
+            <?php endif; ?>
+        </section>
+        <section class="focostv-audio-post-header focostv-video-post-header">
+            <?php if (has_post_thumbnail()): ?>
+                <div class="focostv-audio-post-thumbnail">
+                    <?php the_post_thumbnail('small'); ?>
+                </div>
+            <?php endif; ?>
+            <h6 class="focostv-audio-post-title"><?php the_title(); ?></h6>
         </section>
     </div>
 </div>

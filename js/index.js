@@ -229,10 +229,23 @@ document.addEventListener('DOMContentLoaded', function () {
   function startProgressBar() {
     progressBar.classList.add('loading');
   }
-  
+
   function stopProgressBar() {
     progressBar.classList.remove('loading');
   }
+
+  /*************************** POSTS VIDEO COMPONENT *******************/
+  const videoModal = document.getElementById('focostv-video-post');
+  const postVideoButton = document.getElementById('focostv-post-video-btn');
+  const postVideoCloseButton = document.getElementById('focostv-video-post-close-btn');
+
+  postVideoButton?.addEventListener('click', () => {
+    videoModal.style.display = 'flex';
+  });
+
+  postVideoCloseButton?.addEventListener('click', () => {
+    videoModal.style.display = 'none';
+  });
 
   /*************************  POSTS SHARE FUNCTIONS */
   var modal = document.getElementById("focostv-social-media-share-modal");
