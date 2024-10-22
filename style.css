@@ -1225,6 +1225,7 @@ body.focostv-home .focostv-site-navigation {
     border-top-right-radius: 0.5rem;
     z-index: 2;
     padding: 1rem;
+    border: 1px solid #CDCDCD;
 }
 
 .focostv-audio-post-close {
@@ -1363,6 +1364,10 @@ body.focostv-home .focostv-site-navigation {
         font-size: 1.25rem;
     }
 
+    .focostv-audio-post-container {
+        width: 60%;
+        right: 0;
+    }
 
     /********************FOCOSTV AD *********************/
     .focostv-post-advertisement {
@@ -1870,6 +1875,10 @@ body.focostv-home .focostv-site-navigation {
         width: 30%;
     }
 
+    .focostv-audio-post-container {
+        width: 40%;
+    }
+
     /**************COMMENTS SECTION*******************/
     .focostv-comments-page-container {
         padding: 1rem 5rem;
@@ -1982,6 +1991,9 @@ body.focostv-home .focostv-site-navigation {
         padding-right: 5rem;
     }
 
+    .focostv-audio-post-container {
+        width: 35%;
+    }
     /**************COMMENTS SECTION*******************/
     .focostv-comments-page-container {
         padding: 1rem 10rem;
