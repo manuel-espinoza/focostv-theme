@@ -1025,7 +1025,7 @@ body.focostv-home .focostv-site-navigation {
 }
 
 .focostv-summary-modal-title {
-    font-family: 'Poppins',  sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 1.75rem;
 }
@@ -1039,6 +1039,8 @@ body.focostv-home .focostv-site-navigation {
 .focostv-summary-post-content {
     font-size: 1.125rem;
     font-family: 'Inter', sans-serif;
+    overflow: auto;
+    max-height: 20rem;
 }
 
 .focostv-share-options {
@@ -1478,6 +1480,10 @@ body.focostv-home .focostv-site-navigation {
         width: 31.25rem;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .focostv-summary-post-modal-content {
+        width: 80%;
     }
 
     /**************COMMENTS SECTION*******************/
@@ -1967,7 +1973,8 @@ body.focostv-home .focostv-site-navigation {
         font-weight: 500;
     }
 
-    .focostv-share-modal {
+    .focostv-share-modal,
+    .focostv-summary-post-modal {
         align-items: center;
     }
 
@@ -1977,6 +1984,10 @@ body.focostv-home .focostv-site-navigation {
 
     .focostv-audio-post-container {
         width: 40%;
+    }
+
+    .focostv-summary-post-modal-content {
+        width: 70%;
     }
 
     /**************COMMENTS SECTION*******************/
@@ -2101,6 +2112,14 @@ body.focostv-home .focostv-site-navigation {
 
     .focostv-video-post-modal-content {
         width: 35%;
+    }
+
+    .focostv-summary-post-modal-content {
+        width: 60%;
+    }
+
+    .focostv-summary-post-content {
+        max-height: 30rem;
     }
 
     /**************COMMENTS SECTION*******************/
