@@ -116,7 +116,7 @@ if ($documentales_query->have_posts()):
         if (!$is_frontpage && $post_counter == 1) {
             ?>
             <div class="focostv-main-advertisement-documentaries">
-                <img src="https://stage.focostv.com/wp-content/uploads/2024/10/Group-6.png" alt="Anuncio">
+                <?php echo do_shortcode('[focostv_ad type="mobile" location="pages"]'); ?>
             </div>
             <?php
         }

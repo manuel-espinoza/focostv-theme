@@ -67,7 +67,7 @@ if (have_posts()):
                 </header>
                 <?php
                 get_template_part('components/multimedia-elements-post');
-                
+
                 // for legacy support
                 $tie_post_subtitle = get_post_meta(get_the_ID(), 'tie_post_sub_title', true);
                 $subtitle = !empty($tie_post_subtitle) ? $tie_post_subtitle : get_field('subtitulo');
@@ -87,7 +87,7 @@ if (have_posts()):
 
                 <!-- FOCOSTV AD -->
                 <div class="focostv-post-advertisement">
-                    <img src="https://stage.focostv.com/wp-content/uploads/2024/10/Group-6.png" alt="Anuncio">
+                    <?php echo do_shortcode('[focostv_ad type="mobile" location="posts"]'); ?>
                 </div>
                 <!-- FOCOSTV AD -->
 

@@ -755,14 +755,11 @@ body.focostv-home .focostv-site-navigation {
 }
 
 .focostv-main-advertisement-documentaries {
-    width: 100%;
     margin: 0 auto;
     text-align: center;
 }
 
 .focostv-post-advertisement {
-    max-height: 20rem;
-    background-color: #CDCDCD;
     margin: 1rem;
     text-align: center;
 }
@@ -1874,14 +1871,8 @@ body.focostv-home .focostv-site-navigation {
     }
 
     .focostv-main-advertisement-documentaries {
-        max-height: 15.625rem;
         margin-left: 3rem;
         margin-right: 3rem;
-        border: 1px solid #D9D9D9;
-    }
-
-    .focostv-main-advertisement-documentaries img {
-        height: 15.625rem;
     }
 
     .focostv-footer-advetisement {
