@@ -166,9 +166,11 @@ $summary_post = get_field('resumen_post');
             <h6 class="focostv-audio-post-title"><?php the_title(); ?></h6>
         </section>
         <section class="focostv-audio-post-controls">
-            <button type="button" id="focostv-audio-post-play-btn" class="focostv-audio-post-play-button">
-                <i id="audio-post-play" class="fa-solid fa-play"></i>
-            </button>
+            <div class="focostv-audio-post-play-button-container">
+                <button type="button" id="focostv-audio-post-play-btn" class="focostv-audio-post-play-button">
+                    <i id="audio-post-play" class="fa-solid fa-play"></i>
+                </button>
+            </div>
             <div id="audio-progress-container">
                 <div id="audio-progress-bar"></div>
             </div>
@@ -223,7 +225,8 @@ $summary_post = get_field('resumen_post');
 
 <div id="focostv-summary-post" class="focostv-summary-post-modal">
     <div class="focostv-summary-post-modal-content">
-        <span id="focostv-summary-post-modal-close" class="focostv-share-modal-close"><!-- https://feathericons.dev/?search=xcircle&iconset=feather -->
+        <span id="focostv-summary-post-modal-close"
+            class="focostv-share-modal-close"><!-- https://feathericons.dev/?search=xcircle&iconset=feather -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                 class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
                 stroke-linejoin="round" stroke-width="2">

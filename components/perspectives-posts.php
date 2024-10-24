@@ -113,7 +113,7 @@ if ($category) {
                                                 ?></span>
                                             </div>
                                             <div class="focostv-perpesctives-podcasts-post-link focostv-front-page-post-link">
-                                                <i class="fa-brands fa-spotify"></i> <a href="<?php echo esc_url($permalink); ?>"> Escuchar
+                                                <i class="fa-brands fa-spotify"></i> <a href="<?php echo esc_url(get_permalink()); ?>"> Escuchar
                                                 </a>
                                             </div>
                                     <?php

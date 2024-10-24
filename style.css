@@ -751,9 +751,6 @@ body.focostv-home .focostv-site-navigation {
 
 /****************** FOCOSTV ADS **************************/
 .focostv-main-advertisement {
-    max-width: 20rem;
-    max-height: 20rem;
-    background-color: #cdcdcd;
     margin: 0 auto;
 }
 
@@ -761,22 +758,6 @@ body.focostv-home .focostv-site-navigation {
     width: 100%;
     margin: 0 auto;
     text-align: center;
-}
-
-.focostv-main-advertisement img {
-    height: 20rem;
-    width: 100%;
-    object-fit: cover;
-}
-
-.focostv-footer-advetisement img {
-    object-fit: contain;
-}
-
-.focostv-footer-advetisement {
-    max-height: 6.25rem;
-    max-width: 18.75rem;
-    margin: 0 auto;
 }
 
 .focostv-post-advertisement {
@@ -1395,12 +1376,17 @@ body.focostv-home .focostv-site-navigation {
 }
 
 /*******************ABOUT PAGE *********************/
-.focostv-about-content {
+.focostv-about-content,
+.focostv-noiz-content,
+.focostv-tc-content {
     font-family: 'Inter', sans-serif;
     color: #0F0F0F;
     font-size: 1.125rem;
 }
 
+.focostv-noiz-content {
+    text-align: center;
+}
 
 /***************************************TABLET STYLES**************************/
 /****TO CHANGE 768px resolution**************/
@@ -1884,14 +1870,7 @@ body.focostv-home .focostv-site-navigation {
     .focostv-main-advertisement {
         position: relative;
         float: right;
-        max-height: 40rem;
         width: 35%;
-    }
-
-    .focostv-main-advertisement img {
-        height: 40rem;
-        object-fit: contain;
-
     }
 
     .focostv-main-advertisement-documentaries {

@@ -47,7 +47,7 @@ if ($actualidad_query->have_posts()) {
         </div>
         <?php if ($post_counter == 1): ?>
             <div class="focostv-main-advertisement">
-                <img src="https://stage.focostv.com/wp-content/uploads/2024/10/focostv_ad.png" alt="Anuncio">
+                <?php echo do_shortcode('[focostv_ad type="mobile" location="pages"]'); ?>
             </div>
         <?php endif; ?>
     <?php
