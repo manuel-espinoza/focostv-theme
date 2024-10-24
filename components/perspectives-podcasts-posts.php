@@ -19,7 +19,7 @@ if ($podcasts_query->have_posts()) {
         echo '</div>';
     }
     ?>
-    <div class="focostv-main-advertisement">
+    <div class="focostv-main-advertisement" style="display: none;">
         <img src="https://stage.focostv.com/wp-content/uploads/2024/10/focostv_ad.png" alt="Anuncio">
     </div>
     <div class="perspectives-all-podcasts-container">

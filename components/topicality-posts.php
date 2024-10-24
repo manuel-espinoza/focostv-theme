@@ -82,7 +82,7 @@ if ($actualidad_query->have_posts()):
         if (!$is_frontpage && $post_counter == 1) {
             ?>
             <div class="focostv-main-advertisement">
-                <?php echo do_shortcode('[focostv_ad type="mobile" location="pages"]'); ?>
+                <?php echo do_shortcode('[the_ad id="14655"]'); ?>
             </div>
             <?php
         }
@@ -109,7 +109,7 @@ if ($actualidad_query->have_posts()):
             <i class="fa-solid fa-spinner fa-spin"></i>
         </div>
         <div class="focostv-footer-advetisement">
-            <?php echo do_shortcode('[focostv_ad type="mobile" location="pages_footer"]'); ?>
+            <?php echo do_shortcode('[the_ad id="14656"]'); ?>
         </div>
         <?php
     }

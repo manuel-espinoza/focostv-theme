@@ -50,7 +50,7 @@ if ($investigacion_query->have_posts()):
         if ($post_counter == 1) {
             ?>
             <div class="focostv-main-advertisement">
-                <?php echo do_shortcode('[focostv_ad type="mobile" location="pages"]'); ?>
+                <?php echo do_shortcode('[the_ad id="14655"]'); ?>
             </div>
             <?php
         }

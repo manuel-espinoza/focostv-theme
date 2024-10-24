@@ -73,7 +73,7 @@ get_header(); ?>
                 if ($post_counter == 1) {
                     ?>
                     <div class="focostv-main-advertisement">
-                        <?php echo do_shortcode('[focostv_ad type="mobile" location="pages"]'); ?>
+                        <?php echo do_shortcode('[the_ad id="14655"]'); ?>
                     </div>
                     <?php
                 }
@@ -102,7 +102,7 @@ get_header(); ?>
         <i class="fa-solid fa-spinner fa-spin"></i>
     </div>
     <div class="focostv-footer-advetisement">
-        <?php echo do_shortcode('[focostv_ad type="mobile" location="pages_footer"]'); ?>
+        <?php echo do_shortcode('[the_ad id="14656"]'); ?>
     </div>
 </main>
 <?php get_footer();
