@@ -18,7 +18,7 @@
             <div class="focostv-site-header-logo">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/images/focostv-logo-black.svg'); ?>"
-                        alt="Logo de Focos TV">
+                        alt="Logo de Focos TV" loading="eager">
                 </a>
             </div>
             <?php if (!is_front_page() && !is_home()): ?>

@@ -2,7 +2,7 @@
   <div class="focostv-footer-logo">
     <a href="<?php echo esc_url(home_url('/')); ?>">
       <img class="focostv-footer-logo-img" src="<?php echo esc_url(get_template_directory_uri() . '/images/focostv-logo-white.svg'); ?>"
-        alt="Logo de Focos TV">
+        alt="Logo de Focos TV" loading="eager">
     </a>
   </div>
   <div class="focostv-site-footer-menu">
