@@ -744,7 +744,7 @@ body.focostv-home .focostv-site-navigation {
 }
 
 .perspectives-opinion,
-.perspectives-interview {
+.perspectives-editorial {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
@@ -1855,7 +1855,7 @@ body.focostv-home .focostv-site-navigation {
     }
 
     .perspectives-opinion,
-    .perspectives-interview {
+    .perspectives-editorial {
         width: 60%;
         margin-top: 2rem;
         margin-bottom: 2rem;

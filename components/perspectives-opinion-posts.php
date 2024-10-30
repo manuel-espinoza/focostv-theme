@@ -1,10 +1,11 @@
 <?php
 $principal_category_id = get_cat_ID('opinion');
 $subcategory_id = get_cat_ID('opiniones'); // slug de la subcategoria para el estilo de opiniones
+$not_subcategory_id = get_cat_ID('editorial');
 
 $args = array(
-    'category__in' => [$principal_category_id],
-    'category__not_in' => [$subcategory_id],
+    'category__in' => [$principal_category_id, $subcategory_id],
+    'category__not_in' => [$not_subcategory_id],
     'posts_per_page' => 3,
     'orderby' => 'date',
     'order' => 'DESC'
@@ -18,7 +19,7 @@ if ($opiniones_query->have_posts()):
         ?>
         <div class="focostv-perspectives-page-post-item">
             <h6 class="focostv-perspectives-category perspectives-page-category">
-                Editorial
+                Opiniones
             </h6>
             <div class="focostv-perspectives-post">
                 <h2 class="focostv-front-page-post-title focostv-perspectives-post-title">
@@ -47,7 +48,6 @@ if ($opiniones_query->have_posts()):
             }
             ?>
         </div>
-
         <?php
     endwhile;
 else:

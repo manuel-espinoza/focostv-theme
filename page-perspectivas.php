@@ -10,6 +10,11 @@ get_header(); ?>
     </div>
     <h3 class="focostv-sections-title focostv-page-title"><a><?php the_title(); ?></a>
     </h3>
+    <section class="perspectives-editorial">
+        <?php
+        get_template_part('components/perspectives-editorial-posts');
+        ?>
+    </section>
     <section class="perspectives-opinion">
         <?php
         get_template_part('components/perspectives-opinion-posts');

@@ -1,25 +1,29 @@
 <?php
-// entrevistas-perspectivas
+$principal_category_id = get_cat_ID('opinion');
+$subcategory_id = get_cat_ID('editorial');
+$not_subcategory_id = get_cat_ID('opiniones'); // slug de la subcategoria para el estilo de opiniones
+
 $args = array(
-    'category_name' => 'entrevistas-perspectivas',
-    'posts_per_page' => 3, // TODO: pending load the correct number of posts
+    'category__in' => [$principal_category_id, $subcategory_id],
+    'category__not_in' => [$not_subcategory_id],
+    'posts_per_page' => 3,
     'orderby' => 'date',
     'order' => 'DESC'
 );
 
-$entrevistas_query = new WP_Query($args);
+$editorial_query = new WP_Query($args);
 
 
-if ($entrevistas_query->have_posts()):
+if ($editorial_query->have_posts()):
     $post_counter = 0;
-    while ($entrevistas_query->have_posts()):
-        $entrevistas_query->the_post();
+    while ($editorial_query->have_posts()):
+        $editorial_query->the_post();
         $post_counter++;
         $first_interview_first_post = $post_counter == 1 ? ' pespectives-first-post-interview' : '';
 
         ?>
         <h6 class="focostv-perspectives-category perspectives-page-category">
-            Entrevista
+            Editorial
         </h6>
         <div class="focostv-front-page-post-item<?php echo $first_interview_first_post; ?>">
             <div class="focostv-front-page-post">
@@ -33,7 +37,7 @@ if ($entrevistas_query->have_posts()):
                 <?php endif; ?>
                 <?php
                 $permalink = get_permalink();
-                $custom_text = 'Leer entrevista';
+                $custom_text = 'Leer editorial';
                 get_template_part('components/read-more-post', null, array('permalink' => $permalink, 'custom_text' => $custom_text));
                 ?>
             </div>
