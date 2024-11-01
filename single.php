@@ -6,20 +6,35 @@ if (have_posts()):
         the_post();
 
         $categories = get_the_category();
-        $category_link = '';
+        $category_name = '';
         $category_slug = '';
 
         if (!empty($categories)) {
+            // Get the first category that is not 'portada' and doesn't start with 'portada-'
             foreach ($categories as $category) {
                 if ($category->slug !== 'portada' && strpos($category->slug, 'portada-') !== 0) {
-                    $category_name = strtolower($category->name);
-                    $category_link = home_url("/$category_name");
-                    $category_slug = $category->slug;
-                    break;
+                    // Check if the category has a parent
+                    if ($category->parent == 0) {
+                        // This is a top-level category
+                        $category_name = strtolower($category->name);
+                        $category_slug = $category->slug;
+                        break;
+                    } else {
+                        // This is a child category, get its top-level parent
+                        $top_level_category = get_term($category->parent, 'category');
+                        while ($top_level_category->parent != 0) {
+                            $top_level_category = get_term($top_level_category->parent, 'category');
+                        }
+                        $category_name = strtolower($top_level_category->name);
+                        $category_slug = $top_level_category->slug;
+                        break;
+                    }
                 }
             }
         }
-        if ($category_slug === 'documentales'):
+
+        $category_link = home_url("/$category_name");
+        if ($category_slug === 'multimedia'):
             get_template_part('components/documentaries-single-post');
         else:
             ?>

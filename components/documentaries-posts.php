@@ -12,7 +12,7 @@ function get_post_classes($is_frontpage, $post_counter)
 
 <h3
     class="focostv-sections-title<?php echo $is_frontpage ? ' focostv-frontpage-documentaries-title' : ' focostv-header-documentaries focostv-page-title' ?>">
-    <a <?php echo $is_frontpage ? 'href="' . get_permalink(get_page_by_path('documentales')) . '"' : ''; ?>>Documentales
+    <a <?php echo $is_frontpage ? 'href="' . get_permalink(get_page_by_path('multimedia')) . '"' : ''; ?>>Multimedia
     </a>
     <?php if ($is_frontpage): ?>
         <div class="goto-page-icon"><!-- https://feathericons.dev/?search=arrow-up-right&iconset=feather -->
@@ -28,7 +28,7 @@ function get_post_classes($is_frontpage, $post_counter)
 <?php
 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
 $args = array(
-    'category_name' => 'documentales',
+    'category_name' => 'multimedia',
     'orderby' => 'date',
     'order' => 'DESC',
     'paged' => $paged
@@ -115,14 +115,14 @@ if ($documentales_query->have_posts()):
         <?php
         if (!$is_frontpage && $post_counter == 1) {
             ?>
-            <div class="focostv-main-advertisement-documentaries">
+            <div class="focostv-main-advertisement-documentaries" style="display: none;">
                 <?php echo do_shortcode('[focostv_ad type="mobile" location="pages"]'); ?>
             </div>
             <?php
         }
     endwhile;
 else:
-    echo '<p>No hay posts en la categoría DOCUMENTALES.</p>';
+    echo '<p>No hay posts en la categoría MULTIMEDIA.</p>';
 endif;
 echo '</div>';
 
