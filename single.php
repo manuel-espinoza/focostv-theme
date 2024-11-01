@@ -33,7 +33,7 @@ if (have_posts()):
             }
         }
 
-        $category_link = home_url("/$category_name");
+        $category_link = home_url("/$category_slug");
         if ($category_slug === 'multimedia'):
             get_template_part('components/documentaries-single-post');
         else:
@@ -43,7 +43,7 @@ if (have_posts()):
                     <?php if (!empty($category_link)): ?>
                         <div class="focostv-go-home-container">
                             <i class="fa-solid fa-chevron-left"></i>
-                            <a href="<?php echo esc_url($category_link); ?>"><?php echo ucwords($category_name); ?></a>
+                            <a href="<?php echo esc_url($category_link); ?>"><?php echo mb_convert_case(mb_strtolower($category_name, 'UTF-8'), MB_CASE_TITLE, 'UTF-8'); ?></a>
                         </div>
                     <?php endif; ?>
                     <h1 class="focostv-post-title"><?php the_title(); ?></h1>

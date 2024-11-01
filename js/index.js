@@ -170,23 +170,25 @@ document.addEventListener('DOMContentLoaded', function () {
   const progressBar = document.getElementById('audio-progress-bar');
 
   let isPaused = false;
+  let utterance; // Variable para almacenar el SpeechSynthesisUtterance
+  const synth = window.speechSynthesis; // Referencia a Speech Synthesis
+
   audioPostButton?.addEventListener('click', () => {
     containerAudioPost.style.display = 'block';
-  })
+  });
 
   containerAudioPostClose?.addEventListener('click', () => {
     containerAudioPost.style.display = 'none';
 
-    if (responsiveVoice.isPlaying()) {
-      responsiveVoice.cancel();
+    if (synth.speaking) {
+      synth.cancel();
     }
     stopProgressBar();
     const playIcon = document.getElementById('audio-post-play');
     playIcon.classList.remove('fa-pause');
     playIcon.classList.add('fa-play');
     isPaused = false;
-  })
-
+  });
 
   audioPlayButton?.addEventListener('click', () => {
     let textToRead = '';
@@ -196,29 +198,32 @@ document.addEventListener('DOMContentLoaded', function () {
     if (audioContent) {
       textToRead = audioContent.innerText;
     }
+    const voices = window.speechSynthesis.getVoices();
 
-    if (!responsiveVoice.isPlaying() && !isPaused) {
-      responsiveVoice.speak(textToRead, "Spanish Latin American Male", {
-        onstart: function () {
-          playIcon.classList.remove('fa-play');
-          playIcon.classList.add('fa-pause');
-          startProgressBar();
-        },
-        onend: function () {
-          playIcon.classList.remove('fa-pause');
-          playIcon.classList.add('fa-play');
-          isPaused = false;
-          stopProgressBar();
-        }
-      });
+    if (!synth.speaking && !isPaused) {
+      utterance = new SpeechSynthesisUtterance(textToRead);
+      // utterance.lang = 'es-419'; 
+      utterance.voice = voices.find(voice=> voice.lang === 'es-US') || voices.find(voice => voice.lang === "es-ES") || null;
+      utterance.onstart = function () {
+        playIcon.classList.remove('fa-play');
+        playIcon.classList.add('fa-pause');
+        startProgressBar();
+      };
+      utterance.onend = function () {
+        playIcon.classList.remove('fa-pause');
+        playIcon.classList.add('fa-play');
+        isPaused = false;
+        stopProgressBar();
+      };
+      synth.speak(utterance);
     } else if (isPaused) {
-      responsiveVoice.resume();
+      synth.resume();
       playIcon.classList.remove('fa-play');
       playIcon.classList.add('fa-pause');
       startProgressBar();
       isPaused = false;
     } else {
-      responsiveVoice.pause();
+      synth.pause();
       playIcon.classList.remove('fa-pause');
       playIcon.classList.add('fa-play');
       isPaused = true;
@@ -252,11 +257,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const postSummaryButton = document.getElementById('focostv-post-summary-btn');
   const postSummaryCloseButton = document.getElementById('focostv-summary-post-modal-close');
 
-  postSummaryButton?.addEventListener('click', ()=> {
+  postSummaryButton?.addEventListener('click', () => {
     summaryModal.style.display = 'flex';
   });
 
-  postSummaryCloseButton?.addEventListener('click',()=> {
+  postSummaryCloseButton?.addEventListener('click', () => {
     summaryModal.style.display = 'none';
   })
 

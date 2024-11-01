@@ -70,6 +70,12 @@ if ($documentales_query->have_posts()):
                                 alt="<?php the_title_attribute(); ?>" loading="eager">
                         </picture>
                         <div class="focostv-documentaries-play-icon-overlay">
+                            <?php
+                            $is_podcast = has_term('podcasts', 'category');
+                            if($is_podcast):
+                            echo '<i class="fa-brands fa-spotify" style="font-size: 3.75rem; color: white; opacity:0.9;"></i>';
+                            else:   
+                            ?>
                             <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="60" height="60" rx="30" fill="white" />
                                 <path
@@ -78,6 +84,7 @@ if ($documentales_query->have_posts()):
                                 <path d="M28 26L34 30L28 34V26Z" stroke="#0F0F0F" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" />
                             </svg>
+                            <?php endif; ?>
                         </div>
                     </a>
                 </div>
