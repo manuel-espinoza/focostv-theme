@@ -46,7 +46,7 @@ if ($actualidad_query->have_posts()) {
             <?php endif; ?>
         </div>
         <?php if ($post_counter == 1): ?>
-            <div class="focostv-main-advertisement">
+            <div class="focostv-main-advertisement" style="display: none;">
                 <?php echo do_shortcode('[the_ad id="14655"]'); ?>
             </div>
         <?php endif; ?>

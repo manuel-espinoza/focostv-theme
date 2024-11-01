@@ -79,7 +79,7 @@ if ($documentales_query->have_posts()):
         <?php
         if ($post_counter == 1) {
             ?>
-            <div class="focostv-main-advertisement-documentaries">
+            <div class="focostv-main-advertisement-documentaries" style="display: none;">
                 <?php echo do_shortcode('[focostv_ad type="mobile" location="pages"]'); ?>
             </div>
             <?php

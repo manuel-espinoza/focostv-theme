@@ -81,7 +81,7 @@ if ($actualidad_query->have_posts()):
         <?php
         if (!$is_frontpage && $post_counter == 1) {
             ?>
-            <div class="focostv-main-advertisement">
+            <div class="focostv-main-advertisement" style="display: none;">
                 <?php echo do_shortcode('[the_ad id="14655"]'); ?>
             </div>
             <?php
@@ -108,7 +108,7 @@ if ($actualidad_query->have_posts()):
         <div id="focostv-load-more-posts" style="display: none;">
             <i class="fa-solid fa-spinner fa-spin"></i>
         </div>
-        <div class="focostv-footer-advetisement">
+        <div class="focostv-footer-advetisement" style="display: none;">
             <?php echo do_shortcode('[the_ad id="14656"]'); ?>
         </div>
         <?php
