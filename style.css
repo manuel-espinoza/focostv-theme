@@ -312,6 +312,10 @@ body.focostv-home .focostv-site-navigation {
     display: none;
 }
 
+.focostv-opinion-pagination {
+    display: block;
+}
+
 .focostv-pagination-container ul {
     list-style: none;
     padding: 0;
@@ -752,18 +756,6 @@ body.focostv-home .focostv-site-navigation {
 /***********LOAD MORE OPINION ********************/
 .load-more-container-opinion {
     margin: 0.5rem auto;
-}
-
-.load-more-opinion-button {
-    background: none;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-    border: 1px solid #0F0F0F;
-    border-radius: 0.25rem;
-    padding: 1rem;
-    width: 100%;
-    cursor: pointer;
 }
 
 /****************** FOCOSTV ADS **************************/

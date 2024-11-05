@@ -103,7 +103,7 @@ function focostv_load_more_documentaries_posts()
 {
     $paged = $_POST['page'] ? $_POST['page'] : 1;
     $args = array(
-        'category_name' => 'documentales',
+        'category_name' => 'multimedia',
         'paged' => $paged,
         'posts_per_page' => 10,
     );
@@ -124,3 +124,26 @@ function focostv_load_more_documentaries_posts()
 
 add_action('wp_ajax_nopriv_focostv_load_more_documentaries_posts', 'focostv_load_more_documentaries_posts');
 add_action('wp_ajax_focostv_load_more_documentaries_posts', 'focostv_load_more_documentaries_posts');
+
+/**
+ * Summary of load_more_opinion_posts
+ * @return void
+ */
+function load_more_opinion_posts()
+{
+    $section = $_POST['section'];
+    $page = $_POST['page'];
+
+    ob_start();
+    if ($section === 'editorial') {
+        get_template_part('components/perspectives-editorial-posts');
+    } elseif ($section === 'opinion') {
+        get_template_part('components/perspectives-opinion-posts');
+    }
+    $content = ob_get_clean();
+
+    wp_send_json(array('content' => $content));
+    wp_die();
+}
+add_action('wp_ajax_load_more_opinion_posts', 'load_more_opinion_posts');
+add_action('wp_ajax_nopriv_load_more_opinion_posts', 'load_more_opinion_posts');

@@ -3,12 +3,15 @@ $principal_category_id = get_cat_ID('opinion');
 $subcategory_id = get_cat_ID('editorial');
 $not_subcategory_id = get_cat_ID('opiniones'); // slug de la subcategoria para el estilo de opiniones
 
+$paged = isset($_POST['page']) ? $_POST['page'] : 1;
+
 $args = array(
     'category__in' => [$principal_category_id, $subcategory_id],
     'category__not_in' => [$not_subcategory_id],
     'posts_per_page' => 3,
     'orderby' => 'date',
-    'order' => 'DESC'
+    'order' => 'DESC',
+    'paged' => $paged
 );
 
 $editorial_query = new WP_Query($args);
@@ -62,7 +65,30 @@ if ($editorial_query->have_posts()):
         </div>
         <?php
     endwhile;
+
+    echo '<div class="focostv-pagination-container focostv-opinion-pagination">';
+    $pagination = paginate_links(array(
+        'total' => $editorial_query->max_num_pages,
+        'current' => $paged,
+        'prev_text' => '<i class="fa-solid fa-angle-left"></i>',
+        'next_text' => '<i class="fa-solid fa-angle-right"></i>',
+        'format' => '?paged=%#%',
+        'base' => add_query_arg('paged', '%#%'),
+        'end_size' => 2,
+        'mid_size' => 1,
+        'type' => 'list'
+    ));
+    
+    $pagination = str_replace('page-numbers', 'focostv-pagination', $pagination);
+    $pagination = str_replace('prev', 'prev focostv-pagination-prev', $pagination);
+    $pagination = str_replace('next', 'next focostv-pagination-next', $pagination);
+    
+    echo $pagination;
+    echo '</div>';
+
 else:
     echo 'NO hay posts';
 endif;
+
+wp_reset_postdata();
 ?>

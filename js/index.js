@@ -96,8 +96,8 @@ document.addEventListener('DOMContentLoaded', function () {
   } else if (currentURL.includes('actualidad')) {
     category = 'topicality';
   }
-  else if (currentURL.includes('documentales')) {
-    category = 'documentaries';
+  else if (currentURL.includes('multimedia')) {
+    category = 'multimedia';
   }
 
   const containerId = getPostsContainer(category);
@@ -162,6 +162,40 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  /**************************LOAD MORE OPINION SCRIPT ***************************/
+  function loadMoreOpinionPosts(section, page) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/wp-admin/admin-ajax.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            const response = JSON.parse(xhr.responseText);
+            document.getElementById('perspectives-' + section).innerHTML = response.content;
+
+            updatePaginationListeners(section);
+        }
+    };
+
+    xhr.send('action=load_more_opinion_posts&section=' + section + '&page=' + page);
+  }
+
+  function updatePaginationListeners(section) {
+    const paginationLinks = document.querySelectorAll('#perspectives-' + section + ' .focostv-pagination-container a');
+    paginationLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            const urlParams = new URLSearchParams(href.split('?')[1]);
+            const page = urlParams.get('paged');
+            loadMoreOpinionPosts(section, page);
+        });
+    });
+  }
+
+  updatePaginationListeners('editorial');
+  updatePaginationListeners('opinion');
+
   /*************************AUDIO POSTS SCRIPTS *************************/
   const audioPostButton = document.getElementById('focostv-post-audio-btn');
   const containerAudioPost = document.getElementById('focostv-audio-post');
@@ -203,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!synth.speaking && !isPaused) {
       utterance = new SpeechSynthesisUtterance(textToRead);
       // utterance.lang = 'es-419'; 
-      utterance.voice = voices.find(voice=> voice.lang === 'es-US') || voices.find(voice => voice.lang === "es-ES") || null;
+      utterance.voice = voices.find(voice => voice.lang === 'es-US') || voices.find(voice => voice.lang === "es-ES") || null;
       utterance.onstart = function () {
         playIcon.classList.remove('fa-play');
         playIcon.classList.add('fa-pause');
