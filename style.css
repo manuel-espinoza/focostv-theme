@@ -329,6 +329,10 @@ body.focostv-home .focostv-site-navigation {
     margin-right: 1rem;
 }
 
+.focostv-opinion-pagination ul li {
+    margin-right: 0.25rem;
+}
+
 .focostv-pagination-container ul li a {
     text-decoration: none;
     color: #0F0F0F;

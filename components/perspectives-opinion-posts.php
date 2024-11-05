@@ -62,8 +62,8 @@ if ($opiniones_query->have_posts()):
         'next_text' => '<i class="fa-solid fa-angle-right"></i>',
         'format' => '?paged=%#%',
         'base' => add_query_arg('paged', '%#%'),
-        'end_size' => 2,
-        'mid_size' => 1,
+        'end_size' => 1,
+        'mid_size' => 0,
         'type' => 'list'
     ));
     

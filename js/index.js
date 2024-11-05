@@ -174,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('perspectives-' + section).innerHTML = response.content;
 
             updatePaginationListeners(section);
+            scrollToSection(section);
         }
     };
 
@@ -192,6 +193,21 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
   }
+
+  
+  function scrollToSection(section) {
+    const sectionElement = document.getElementById('perspectives-' + section);
+    if (sectionElement) {
+        const headerOffset = 60;
+        const elementPosition = sectionElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+}
 
   updatePaginationListeners('editorial');
   updatePaginationListeners('opinion');
