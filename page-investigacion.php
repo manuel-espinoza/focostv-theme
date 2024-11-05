@@ -72,9 +72,9 @@ get_header(); ?>
                 <?php
                 if ($post_counter == 1) {
                     ?>
-                    <div class="focostv-main-advertisement" style="display: none;">
-                        <?php echo do_shortcode('[the_ad id="14655"]'); ?>
-                    </div>
+                    <section class="focostv-main-advertisement">
+                        <?php echo do_shortcode('[focostv_advertising group="mobile_page"]'); ?>
+                    </section>
                     <?php
                 }
             endwhile;
