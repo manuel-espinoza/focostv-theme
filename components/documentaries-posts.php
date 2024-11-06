@@ -122,7 +122,7 @@ if ($documentales_query->have_posts()):
         <?php
         if (!$is_frontpage && $post_counter == 1) {
             ?>
-            <section class="focostv-main-advertisement">
+            <section class="focostv-main-advertisement focostv-advertisement-multimedia">
                 <div id="dynamic-advertisement">
                     <?php echo do_shortcode('[focostv_advertising group="mobile_page"]'); ?>
                 </div>

@@ -767,14 +767,12 @@ body.focostv-home .focostv-site-navigation {
     margin: 0 auto;
 }
 
-.focostv-main-advertisement-documentaries {
-    margin: 0 auto;
-    text-align: center;
+.focostv-advertisement-opinion {
+    display: none;
 }
 
 .focostv-post-advertisement {
     margin: 1rem;
-    text-align: center;
 }
 
 /*********** SINGLE POSTS DESIGN **************************/
@@ -1869,11 +1867,17 @@ body.focostv-home .focostv-site-navigation {
 
     .perspectives-opinion,
     .perspectives-editorial {
-        width: 60%;
         margin-top: 2rem;
         margin-bottom: 2rem;
     }
 
+    .opinion-page-container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .opinion-sections-container {
+        width: 60%;
+    }
 
 
     /****************** FOCOSTV ADS **************************/
@@ -1882,9 +1886,12 @@ body.focostv-home .focostv-site-navigation {
         float: right;
     }
 
-    .focostv-main-advertisement-documentaries {
-        margin-left: 3rem;
-        margin-right: 3rem;
+    .focostv-advertisement-multimedia {
+        display: none;
+    }
+
+    .focostv-advertisement-opinion {
+        display: block;
     }
 
     .focostv-footer-advetisement {
