@@ -147,3 +147,13 @@ function load_more_opinion_posts()
 }
 add_action('wp_ajax_load_more_opinion_posts', 'load_more_opinion_posts');
 add_action('wp_ajax_nopriv_load_more_opinion_posts', 'load_more_opinion_posts');
+
+function focostv_update_advertisement() {
+
+    $group = isset($_POST['group']) ? sanitize_text_field($_POST['group']) : 'mobile_page';
+    echo do_shortcode("[focostv_advertising group=\"$group\"]");
+    wp_die();
+    
+}
+add_action('wp_ajax_focostv_update_advertisement', 'focostv_update_advertisement');
+add_action('wp_ajax_nopriv_focostv_update_advertisement', 'focostv_update_advertisement');

@@ -167,15 +167,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '/wp-admin/admin-ajax.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            const response = JSON.parse(xhr.responseText);
-            document.getElementById('perspectives-' + section).innerHTML = response.content;
 
-            updatePaginationListeners(section);
-            scrollToSection(section);
-        }
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        const response = JSON.parse(xhr.responseText);
+        document.getElementById('perspectives-' + section).innerHTML = response.content;
+
+        updatePaginationListeners(section);
+        scrollToSection(section);
+      }
     };
 
     xhr.send('action=load_more_opinion_posts&section=' + section + '&page=' + page);
@@ -184,30 +184,30 @@ document.addEventListener('DOMContentLoaded', function () {
   function updatePaginationListeners(section) {
     const paginationLinks = document.querySelectorAll('#perspectives-' + section + ' .focostv-pagination-container a');
     paginationLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const href = this.getAttribute('href');
-            const urlParams = new URLSearchParams(href.split('?')[1]);
-            const page = urlParams.get('paged');
-            loadMoreOpinionPosts(section, page);
-        });
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        const urlParams = new URLSearchParams(href.split('?')[1]);
+        const page = urlParams.get('paged');
+        loadMoreOpinionPosts(section, page);
+      });
     });
   }
 
-  
+
   function scrollToSection(section) {
     const sectionElement = document.getElementById('perspectives-' + section);
     if (sectionElement) {
-        const headerOffset = 60;
-        const elementPosition = sectionElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
+      const headerOffset = 60;
+      const elementPosition = sectionElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
-}
+  }
 
   updatePaginationListeners('editorial');
   updatePaginationListeners('opinion');
@@ -338,6 +338,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /************************* */
 
+  /*****************************SCRIPTS ADS *****************************/
+  function updateAdvertisementGroup() {
+
+    var adContainer = document.getElementById('dynamic-advertisement');
+    if (!adContainer || adContainer.innerHTML.trim() === '') {
+      return;
+    }
+
+    const group = window.innerWidth < 1024 ? 'mobile_page' : 'desktop_page';
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "/wp-admin/admin-ajax.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        adContainer.innerHTML = xhr.responseText;
+      }
+    };
+    xhr.send("action=focostv_update_advertisement&group=" + group);
+  }
 
   // Execute the function on page load
   updatePostVisibility();
@@ -345,11 +365,15 @@ document.addEventListener('DOMContentLoaded', function () {
   /**load more posts */
   togglePaginationVisibility();
 
+  /*******ad */
+  updateAdvertisementGroup();
   // Execute the function on window resize
   window.addEventListener('resize', () => {
     updatePostVisibility();
     updateTopicalityPostClass();
     // togglePaginationVisibility(); // temporaly disabled
+    updateAdvertisementGroup();
+
   });
 
 

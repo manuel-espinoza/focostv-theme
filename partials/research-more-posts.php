@@ -50,7 +50,9 @@ if ($investigacion_query->have_posts()):
         if ($post_counter == 1) {
             ?>
             <section class="focostv-main-advertisement">
-                <?php echo do_shortcode('[focostv_advertising group="mobile_page"]'); ?>
+                <div id="dynamic-advertisement">
+                    <?php echo do_shortcode('[focostv_advertising group="mobile_page"]'); ?>
+                </div>
             </section>
             <?php
         }

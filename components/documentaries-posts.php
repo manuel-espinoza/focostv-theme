@@ -72,18 +72,18 @@ if ($documentales_query->have_posts()):
                         <div class="focostv-documentaries-play-icon-overlay">
                             <?php
                             $is_podcast = has_term('podcasts', 'category');
-                            if($is_podcast):
-                            echo '<i class="fa-brands fa-spotify" style="font-size: 3.75rem; color: white; opacity:0.9;"></i>';
-                            else:   
-                            ?>
-                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="60" height="60" rx="30" fill="white" />
-                                <path
-                                    d="M30 40C35.5228 40 40 35.5228 40 30C40 24.4772 35.5228 20 30 20C24.4772 20 20 24.4772 20 30C20 35.5228 24.4772 40 30 40Z"
-                                    stroke="#0F0F0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M28 26L34 30L28 34V26Z" stroke="#0F0F0F" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
+                            if ($is_podcast):
+                                echo '<i class="fa-brands fa-spotify" style="font-size: 3.75rem; color: white; opacity:0.9;"></i>';
+                            else:
+                                ?>
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="60" height="60" rx="30" fill="white" />
+                                    <path
+                                        d="M30 40C35.5228 40 40 35.5228 40 30C40 24.4772 35.5228 20 30 20C24.4772 20 20 24.4772 20 30C20 35.5228 24.4772 40 30 40Z"
+                                        stroke="#0F0F0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M28 26L34 30L28 34V26Z" stroke="#0F0F0F" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
                             <?php endif; ?>
                         </div>
                     </a>
@@ -123,7 +123,9 @@ if ($documentales_query->have_posts()):
         if (!$is_frontpage && $post_counter == 1) {
             ?>
             <section class="focostv-main-advertisement">
-                <?php echo do_shortcode('[focostv_advertising group="mobile_page"]'); ?>
+                <div id="dynamic-advertisement">
+                    <?php echo do_shortcode('[focostv_advertising group="mobile_page"]'); ?>
+                </div>
             </section>
             <?php
         }
