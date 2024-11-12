@@ -339,14 +339,17 @@ document.addEventListener('DOMContentLoaded', function () {
   /************************* */
 
   /*****************************SCRIPTS ADS *****************************/
-  function updateAdvertisementGroup() {
+  function updateAdvertisementGroup(adType) {
 
-    var adContainer = document.getElementById('dynamic-advertisement');
+    var adContainerId = adType === 'posts' ? 'dynamic-posts-advertisement' : 'dynamic-advertisement';
+    var adContainer = document.getElementById(adContainerId);
+
     if (!adContainer || adContainer.innerHTML.trim() === '') {
       return;
     }
 
-    const group = window.innerWidth < 1024 ? 'mobile_page' : 'desktop_page';
+    const group = window.innerWidth < 1024 ? `mobile_${adType}` : `desktop_${adType}`;
+
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "/wp-admin/admin-ajax.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -365,18 +368,18 @@ document.addEventListener('DOMContentLoaded', function () {
   /**load more posts */
   togglePaginationVisibility();
 
-  /*******ad */
-  updateAdvertisementGroup();
+  /***************** AD ********************/
+  updateAdvertisementGroup('page');
+  updateAdvertisementGroup('posts');
   // Execute the function on window resize
   window.addEventListener('resize', () => {
     updatePostVisibility();
     updateTopicalityPostClass();
     // togglePaginationVisibility(); // temporaly disabled
-    updateAdvertisementGroup();
-
+    /***************** AD ********************/
+    updateAdvertisementGroup('page');
+    updateAdvertisementGroup('posts');
   });
-
-
 
 });
 

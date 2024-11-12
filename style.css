@@ -772,7 +772,7 @@ body.focostv-home .focostv-site-navigation {
 }
 
 .focostv-post-advertisement {
-    margin: 1rem;
+    margin: 1rem auto;
 }
 
 /*********** SINGLE POSTS DESIGN **************************/
@@ -1447,9 +1447,9 @@ body.focostv-home .focostv-site-navigation {
     }
 
     /********************FOCOSTV AD *********************/
-    .focostv-post-advertisement {
+    /* .focostv-post-advertisement {
         margin: 1rem 3.5rem;
-    }
+    } */
 
     /********************SHARED COMPONENT ******************/
     .focostv-share-modal-content {
@@ -1910,7 +1910,7 @@ body.focostv-home .focostv-site-navigation {
     }
 
     .focostv-single-post {
-        width: 75%;
+        width: 80%;
         padding-left: 5rem;
         padding-right: 5rem;
     }

@@ -43,7 +43,8 @@ if (have_posts()):
                     <?php if (!empty($category_link)): ?>
                         <div class="focostv-go-home-container">
                             <i class="fa-solid fa-chevron-left"></i>
-                            <a href="<?php echo esc_url($category_link); ?>"><?php echo mb_convert_case(mb_strtolower($category_name, 'UTF-8'), MB_CASE_TITLE, 'UTF-8'); ?></a>
+                            <a
+                                href="<?php echo esc_url($category_link); ?>"><?php echo mb_convert_case(mb_strtolower($category_name, 'UTF-8'), MB_CASE_TITLE, 'UTF-8'); ?></a>
                         </div>
                     <?php endif; ?>
                     <h1 class="focostv-post-title"><?php the_title(); ?></h1>
@@ -101,9 +102,11 @@ if (have_posts()):
                 <?php endif; ?>
 
                 <!-- FOCOSTV AD -->
-                <div class="focostv-post-advertisement">
-                    <?php echo do_shortcode('[focostv_ad type="mobile" location="posts"]'); ?>
-                </div>
+                <section class="focostv-post-advertisement">
+                    <div id="dynamic-posts-advertisement">
+                        <?php echo do_shortcode('[focostv_advertising group="mobile_posts"]'); ?>
+                    </div>
+                </section>
                 <!-- FOCOSTV AD -->
 
                 <div class="focostv-post-content">
