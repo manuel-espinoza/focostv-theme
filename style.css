@@ -565,11 +565,16 @@ body.focostv-home .focostv-site-navigation {
 /******************DOCUMENTALES******************/
 .focostv-site-documentaries {
     padding: 1rem 0;
+    background-color: #0F0F0F;
 }
 
 .focostv-header-documentaries {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+}
+
+.focostv-header-documentaries a {
+    color: #D9D9D9;
 }
 
 .focostv-section-documentaries {
@@ -1875,6 +1880,7 @@ body.focostv-home .focostv-site-navigation {
         display: flex;
         justify-content: space-between;
     }
+
     .opinion-sections-container {
         width: 60%;
     }

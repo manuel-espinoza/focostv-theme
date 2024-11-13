@@ -8,7 +8,6 @@ get_header(); ?>
         <i class="fa-solid fa-chevron-left"></i>
         <a href="<?php echo esc_url(home_url('/')); ?>">Inicio</a>
     </div>
-    <?php set_query_var('is_frontpage', (is_front_page() || is_home()));
-    get_template_part('components/documentaries-posts'); ?>
+    <?php get_template_part('components/multimedia-posts-container') ?>
 </main>
 <?php get_footer(); ?>
