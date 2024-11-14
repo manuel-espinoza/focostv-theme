@@ -563,6 +563,10 @@ body.focostv-home .focostv-site-navigation {
 }
 
 /******************DOCUMENTALES******************/
+.focostv-multimedia-video-post {
+    color: #D9D9D9;
+}
+
 .focostv-site-documentaries {
     padding: 1rem 0;
     background-color: #0F0F0F;
@@ -743,16 +747,20 @@ body.focostv-home .focostv-site-navigation {
     display: none;
 }
 
-.pespectives-first-post-interview {
+.pespectives-first-post-interview,
+.multimedia-first-post-video {
     flex-direction: column-reverse;
 }
 
 .pespectives-first-post-interview .focostv-front-page-post,
-.pespectives-first-post-interview .focostv-front-page-post-thumbnail {
+.pespectives-first-post-interview .focostv-front-page-post-thumbnail,
+.multimedia-first-post-video .focostv-front-page-post,
+.multimedia-first-post-video .focostv-front-page-post-thumbnail{
     width: 100%;
 }
 
-.pespectives-first-post-interview .focostv-front-page-post-title a {
+.pespectives-first-post-interview .focostv-front-page-post-title a,
+.multimedia-first-post-video .focostv-front-page-post-title a {
     font-size: 1.75rem;
 }
 
