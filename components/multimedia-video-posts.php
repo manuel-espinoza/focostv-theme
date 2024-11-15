@@ -23,11 +23,19 @@ if ($multimedia_query->have_posts()):
         $multimedia_first_post = $post_counter == 1 ? ' multimedia-first-post-video' : '';
 
         ?>
-        <div class="focostv-front-page-post-item<?php echo $multimedia_first_post; ?>">
+        <div class="focostv-front-page-post-item focostv-multimedia-page-post-item<?php echo $multimedia_first_post; ?>">
             <div class="focostv-front-page-post focostv-documentaries-post">
                 <h2 class="focostv-front-page-post-title focostv-documentaries-post-title">
                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </h2>
+                <h6 class="focostv-documentaries-post-time">
+                    <?php
+                    $duracion = get_field('duracion_de_documental');
+                    if ($duracion) {
+                        echo esc_html($duracion) . ' Min.';
+                    }
+                    ?>
+                </h6>
                 <?php if ($post_counter == 1): ?>
                     <div class="focostv-front-page-post-excerpt focostv-documentaries-post-excerpt">
                         <?php the_excerpt(); ?>
@@ -40,7 +48,7 @@ if ($multimedia_query->have_posts()):
                 ?>
             </div>
             <?php if (has_post_thumbnail()): ?>
-                <div class="focostv-front-page-post-thumbnail">
+                <div class="focostv-front-page-post-thumbnail focostv-documentaries-post-thumbnail">
                     <a href="<?php the_permalink(); ?>">
                         <picture>
                             <source media="(max-width: 639px)"
@@ -54,6 +62,16 @@ if ($multimedia_query->have_posts()):
                             <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
                                 alt="<?php the_title_attribute(); ?>" loading="eager">
                         </picture>
+                        <div class="focostv-documentaries-play-icon-overlay">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="60" height="60" rx="30" fill="white" />
+                                <path
+                                    d="M30 40C35.5228 40 40 35.5228 40 30C40 24.4772 35.5228 20 30 20C24.4772 20 20 24.4772 20 30C20 35.5228 24.4772 40 30 40Z"
+                                    stroke="#0F0F0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28 26L34 30L28 34V26Z" stroke="#0F0F0F" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
                     </a>
                 </div>
             <?php endif; ?>

@@ -563,8 +563,8 @@ body.focostv-home .focostv-site-navigation {
 }
 
 /******************DOCUMENTALES******************/
-.focostv-multimedia-video-post {
-    color: #D9D9D9;
+.focostv-multimedia-page-post-item {
+    padding: 1.5rem;
 }
 
 .focostv-site-documentaries {
@@ -586,6 +586,7 @@ body.focostv-home .focostv-site-navigation {
 }
 
 .focostv-frontpage-documentaries-title,
+.focostv-documentaries-post,
 .focostv-documentaries-post a,
 .focostv-documentaries-post-time,
 .focostv-documentaries-post-excerpt {
