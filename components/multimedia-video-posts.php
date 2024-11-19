@@ -78,6 +78,25 @@ if ($multimedia_query->have_posts()):
         </div>
         <?php
     endwhile;
+    echo '<div class="focostv-pagination-container focostv-multimedia-pagination">';
+    $pagination = paginate_links(array(
+        'total' => $multimedia_query->max_num_pages,
+        'current' => $paged,
+        'prev_text' => '<i class="fa-solid fa-angle-left"></i>',
+        'next_text' => '<i class="fa-solid fa-angle-right"></i>',
+        'format' => '?paged=%#%',
+        'base' => add_query_arg('paged', '%#%'),
+        'end_size' => 1,
+        'mid_size' => 0,
+        'type' => 'list'
+    ));
+    
+    $pagination = str_replace('page-numbers', 'focostv-pagination', $pagination);
+    $pagination = str_replace('prev', 'prev focostv-pagination-prev', $pagination);
+    $pagination = str_replace('next', 'next focostv-pagination-next', $pagination);
+    
+    echo $pagination;
+    echo '</div>';
 
 else:
     echo '<span class="no-posts"></span>';

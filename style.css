@@ -312,8 +312,14 @@ body.focostv-home .focostv-site-navigation {
     display: none;
 }
 
-.focostv-opinion-pagination {
+.focostv-opinion-pagination,
+.focostv-multimedia-pagination {
     display: block;
+}
+
+.focostv-multimedia-pagination {
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .focostv-pagination-container ul {
@@ -329,7 +335,8 @@ body.focostv-home .focostv-site-navigation {
     margin-right: 1rem;
 }
 
-.focostv-opinion-pagination ul li {
+.focostv-opinion-pagination ul li,
+.focostv-multimedia-pagination ul li {
     margin-right: 0.25rem;
 }
 
@@ -354,6 +361,10 @@ body.focostv-home .focostv-site-navigation {
 .focostv-pagination-container ul li .prev,
 .focostv-pagination-container ul li .next {
     font-weight: bold;
+}
+
+.focostv-multimedia-pagination ul li a{
+    color: #D9D9D9;
 }
 
 #focostv-load-more-posts {
@@ -1439,6 +1450,15 @@ body.focostv-home .focostv-site-navigation {
         max-width: 41.25rem;
     }
 
+    /******** DOCUMENTALES******************/
+    .focostv-multimedia-page-post-item {
+        padding: 1rem 3.5rem;
+    }
+
+    .focostv-multimedia-pagination {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
     /******************SINGLE STYLES **********************/
     .focostv-post-header,
     .focostv-multimedia-post-container,
