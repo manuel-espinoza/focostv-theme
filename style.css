@@ -1964,7 +1964,10 @@ body.focostv-home .focostv-site-navigation {
         opacity: 0.7;
     }
 
-    .focostv-header-documentaries {
+    .focostv-header-documentaries,
+    .focostv-multimedia-page-post-item,
+    .multimedia-podcasts-posts-container,
+    .focostv-multimedia-pagination {
         padding-left: 0;
         padding-right: 0;
     }
@@ -1985,6 +1988,41 @@ body.focostv-home .focostv-site-navigation {
         margin-right: 0;
     }
 
+    .focostv-ad-multimedia-page {
+        display: none;
+    }
+
+    .focostv-podcast-carousel {
+        display: block;
+        transform: none; 
+    }
+
+    .focostv-podcast-card {
+        min-width: auto; 
+        margin-bottom: 0.5rem; 
+    }
+
+    .focostv-podcast-carousel-buttons {
+        display: none; 
+    }
+
+    .focostv-podcast-carousel-indicators {
+        display: none; 
+    }
+
+    .focostv-multimedia-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .multimedia-video-posts-container {
+        width: 65%;
+    }
+
+    .multimedia-podcasts-posts-container {
+        width: 30%;
+    }
     /******************************PERSPECTIVAS***********************************/
     .focostv-perspectives-post-item {
         display: block !important;
