@@ -530,7 +530,8 @@ body.focostv-home .focostv-site-navigation {
     margin: 0;
 }
 
-.focostv-research-carousel-buttons {
+.focostv-research-carousel-buttons,
+.focostv-podcast-carousel-buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -540,16 +541,20 @@ body.focostv-home .focostv-site-navigation {
 }
 
 .focostv-research-carousel-next,
-.focostv-research-carousel-prev {
+.focostv-research-carousel-prev,
+.focostv-podcast-carousel-prev,
+.focostv-podcast-carousel-next {
     background: none;
     border: none;
 }
 
-.focostv-research-carousel-indicators {
+.focostv-research-carousel-indicators,
+.focostv-podcast-carousel-indicators {
     text-align: center;
 }
 
-.focostv-research-carousel-dot {
+.focostv-research-carousel-dot,
+.focostv-podcast-carousel-dot {
     height: 1rem;
     width: 1rem;
     margin: 0 0.313rem;
@@ -740,6 +745,23 @@ body.focostv-home .focostv-site-navigation {
 .focostv-podcast-carousel {
     display: flex;
     transition: transform 0.4s ease-in-out;
+}
+
+.focostv-podcast-card {
+    min-width: 100%;
+}
+
+.focostv-podcast-carousel-buttons {
+    margin-bottom: 1rem;
+}
+
+.focostv-podcast-carousel-dot-active {
+    background-color: white;
+}
+
+.focostv-podcast-carousel-prev-container,
+.focostv-podcast-carousel-next-container {
+    color: white;
 }
 
 .go-to-focostv-spotify-container {
@@ -1553,6 +1575,17 @@ body.focostv-home .focostv-site-navigation {
     .focostv-multimedia-pagination {
         padding-left: 3rem;
         padding-right: 3rem;
+    }
+
+    .multimedia-podcasts-posts-container {
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
+    }
+
+    .focostv-podcast-carousel-buttons {
+        margin-top: 1.5rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
     }
 
     /******************SINGLE STYLES **********************/

@@ -362,6 +362,44 @@ document.addEventListener('DOMContentLoaded', function () {
     xhr.send("action=focostv_update_advertisement&group=" + group);
   }
 
+  /***************************** PODCASTS CAROUSEL SCRIPTS **********************/
+  let currentPodcastCarouselIndex = 0;
+  const podcastCards = document.querySelectorAll('.focostv-podcast-post-item');
+  const totalPodcastCards = podcastCards.length
+
+  const podcastCarouselNext = document.querySelector('.focostv-podcast-carousel-next')
+  const podcastCarouselPrev = document.querySelector('.focostv-podcast-carousel-prev')
+
+  podcastCarouselPrev?.addEventListener('click', prevPodcastSlide)
+  podcastCarouselNext?.addEventListener('click', nextPodcastSlide)
+
+  function nextPodcastSlide() {
+    currentPodcastCarouselIndex = (currentPodcastCarouselIndex + 1) % totalPodcastCards
+    updatePodcastCarousel();
+  }
+
+  function prevPodcastSlide() {
+    currentPodcastCarouselIndex = (currentPodcastCarouselIndex - 1) % totalPodcastCards
+    updatePodcastCarousel();
+  };
+
+  function currentPodcastSlide(index) {
+    currentPodcastCarouselIndex = index - 1;
+    updatePodcastCarousel();
+  }
+
+  function updatePodcastCarousel() {
+    const podcastCarousel = document.querySelector('.focostv-podcast-carousel')
+    if (podcastCarousel) {
+      podcastCarousel.style.transform = `translateX(-${currentPodcastCarouselIndex * 100}%)`
+    }
+    const dots = document.querySelectorAll('.focostv-podcast-carousel-dot')
+    dots.forEach((dot, index)=> {
+      dot.classList.toggle('focostv-podcast-carousel-dot-active', index === currentPodcastCarouselIndex)
+    })
+  }
+  /*****************************END PODCASTS CAROUSEL ********************/
+
   // Execute the function on page load
   updatePostVisibility();
   updateTopicalityPostClass();
@@ -381,6 +419,7 @@ document.addEventListener('DOMContentLoaded', function () {
     updateAdvertisementGroup('posts');
   });
 
+  updatePodcastCarousel();
 });
 
 /*********CAROUSEL SCRIPTS ***************************/

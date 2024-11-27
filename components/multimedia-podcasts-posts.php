@@ -27,7 +27,7 @@
                 while ($multimedia_podcast_query->have_posts()):
                     $multimedia_podcast_query->the_post();
                     ?>
-                    <div class="focostv-podcast-post-item">
+                    <div class="focostv-podcast-post-item focostv-podcast-card">
                         <?php if (has_post_thumbnail()): ?>
                             <div class="focostv-podcast-post-thumbnail-image">
                                 <?php the_post_thumbnail('full'); ?>
@@ -56,9 +56,9 @@
             wp_reset_postdata();
             ?>
         </div>
-        <div class="focostv-podcast-carousel-indicators">
-            <button class="focostv-research-carousel-prev">
-                <div class="focostv-research-carousel-prev-container">
+        <div class="focostv-podcast-carousel-buttons">
+            <button class="focostv-podcast-carousel-prev">
+                <div class="focostv-podcast-carousel-prev-container">
                     <!-- https://feathericons.dev/?search=arrow-left-circle&iconset=feather -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                         class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
@@ -69,14 +69,14 @@
                     </svg>
                 </div>
             </button>
-            <div class="focostv-research-carousel-indicators">
+            <div class="focostv-podcast-carousel-indicators">
                 <?php
                 for ($i = 1; $i <= $multimedia_podcast_query->post_count; $i++): ?>
-                    <span class="focostv-research-carousel-dot"></span>
+                    <span class="focostv-podcast-carousel-dot" onclick="currentPodcastSlide(<?php echo $i; ?>)"></span>
                 <?php endfor; ?>
             </div>
-            <button class="focostv-research-carousel-next">
-                <div class="focostv-research-carousel-next-container">
+            <button class="focostv-podcast-carousel-next">
+                <div class="focostv-podcast-carousel-next-container">
                     <!-- https://feathericons.dev/?search=arrow-right-circle&iconset=feather -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                         class="main-grid-item-icon" fill="none" stroke="currentColor" stroke-linecap="round"
