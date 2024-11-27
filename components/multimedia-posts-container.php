@@ -8,4 +8,5 @@
             <?php echo do_shortcode('[focostv_advertising group="mobile_page"]'); ?>
         </div>
     </section>
+    <?php get_template_part('components/multimedia-podcasts-posts') ?>
 </section>
