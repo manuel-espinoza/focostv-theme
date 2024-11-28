@@ -5,10 +5,11 @@
         </a>
     </div>
     <div class="focostv-site-search-form">
-        <div class="focostv-site-search-form-container">
+        <form action="<?php echo esc_url(home_url('/')); ?>" method="get" class="focostv-site-search-form-container">
             <i class="fa-solid fa-magnifying-glass focostv-site-search-icon"></i>
-            <input type="text" placeholder="Buscar">
-        </div>
+            <input type="text" name="s" placeholder="Buscar" value="<?php echo get_search_query(); ?>">
+            <button type="submit" style="display: none;"></button>
+        </form>
     </div>
     <div class="focostv-site-search-topics">
         <h4 class="focostv-site-search-topics-title">
