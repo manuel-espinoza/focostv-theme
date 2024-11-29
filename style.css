@@ -1760,6 +1760,12 @@ body.focostv-home .focostv-site-navigation {
         margin: 0;
     }
 
+    /*************** TAG PAGE **************/
+    .focostv-tag-post-container,
+    .focostv-category-post-container {
+        width: 75%;
+    }
+
     /*********FRONTPAGE POSTS***************/
     .focostv-section-container,
     .focostv-site-page {
@@ -2312,6 +2318,12 @@ body.focostv-home .focostv-site-navigation {
     .focostv-site-documentaries {
         padding-left: 10rem;
         padding-right: 10rem;
+    }
+
+    /*************** TAG PAGE **************/
+    .focostv-tag-post-container,
+    .focostv-category-post-container {
+        width: 70%;
     }
 
     /******************SINGLE STYLES **********************/
