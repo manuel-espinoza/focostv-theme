@@ -53,7 +53,11 @@ if (!empty($categories)) {
                 ?>
                 <div class="focostv-perspectives-post-author">
                     <?php echo get_avatar(get_the_author_meta('ID'), 60); ?>
-                    <span class="focostv-perspectives-post-author-name"><?php echo esc_html(get_the_author()); ?></span>
+                    <span class="focostv-perspectives-post-author-name">
+                        <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
+                            <?php echo esc_html(get_the_author()); ?>
+                        </a>
+                    </span>
                 </div>
                 <div class="focostv-post-author-description">
                     <p><?php echo esc_html(get_the_author_meta('description')); ?></p>

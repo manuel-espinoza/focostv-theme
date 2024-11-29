@@ -1,12 +1,12 @@
 <?php get_header(); ?>
-<main class="focostv-site-page focostv-category-page">
+<main class="focostv-site-page focostv-author-page">
     <div class="focostv-go-home-container">
         <i class="fa-solid fa-chevron-left"></i>
         <a href="<?php echo esc_url(home_url('/')); ?>">Regresar al inicio</a>
     </div>
-    <h1 class="focostv-sections-title focostv-search-result-title"><?php single_cat_title('Posts relacionados con ') ?></h1>
+    <h1 class="focostv-sections-title focostv-search-result-title"><?php echo get_the_author(); ?></h1>
     <?php if (have_posts()): ?>
-        <div class="focostv-category-post-container">
+        <div class="focostv-author-post-container">
             <?php while (have_posts()):
                 the_post(); ?>
                 <div class="focostv-front-page-post-item">
@@ -56,7 +56,7 @@
         echo '</div>';
         ?>
     <?php else: ?>
-        <p class="focostv-no-search-description">No se encontraron posts relacionados con esta categoria.</p>
+        <p class="focostv-no-search-description">No se encontraron posts de este autor.</p>
     <?php endif; ?>
 </main>
 <?php get_footer(); ?>

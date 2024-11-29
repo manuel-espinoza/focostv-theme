@@ -4,7 +4,7 @@
         <i class="fa-solid fa-chevron-left"></i>
         <a href="<?php echo esc_url(home_url('/')); ?>">Regresar al inicio</a>
     </div>
-    <h3 class="focostv-sections-title focostv-search-result-title"><?php single_tag_title('Posts relacionados con ') ?></h3>
+    <h1 class="focostv-sections-title focostv-search-result-title"><?php single_tag_title('Posts relacionados con ') ?></h1>
     <?php if (have_posts()): ?>
         <div class="focostv-tag-post-container">
             <?php while (have_posts()):

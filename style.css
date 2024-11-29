@@ -864,6 +864,11 @@ body.focostv-home .focostv-site-navigation {
     font-weight: 600;
 }
 
+.focostv-perspectives-post-author-name a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .focostv-perspectives-post-by-author {
     font-weight: 300;
 }
@@ -1762,7 +1767,8 @@ body.focostv-home .focostv-site-navigation {
 
     /*************** TAG PAGE **************/
     .focostv-tag-post-container,
-    .focostv-category-post-container {
+    .focostv-category-post-container,
+    .focostv-author-post-container {
         width: 75%;
     }
 
@@ -2322,7 +2328,8 @@ body.focostv-home .focostv-site-navigation {
 
     /*************** TAG PAGE **************/
     .focostv-tag-post-container,
-    .focostv-category-post-container {
+    .focostv-category-post-container,
+    .focostv-author-post-container {
         width: 70%;
     }
 
