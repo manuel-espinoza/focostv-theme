@@ -226,6 +226,7 @@ body.focostv-home .focostv-site-navigation {
 }
 
 .focostv-site-search-results {
+    padding-top: 1rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
@@ -1734,10 +1735,7 @@ body.focostv-home .focostv-site-navigation {
     .focostv-site-search-results {
         padding-left: 5rem;
         padding-right: 5rem;
-    }
-
-    .focostv-site-search-results {
-        width: 70%;
+        width: 75%;
     }
 
     /****** FOOTER*************/
@@ -2298,6 +2296,7 @@ body.focostv-home .focostv-site-navigation {
     .focostv-site-search-results {
         padding-left: 10rem;
         padding-right: 10rem;
+        width: 70%;
     }
 
     .focostv-site-footer {

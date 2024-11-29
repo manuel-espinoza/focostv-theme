@@ -4,8 +4,11 @@
     if (is_search()):
         $paged = get_query_var('paged') ? absint(get_query_var('paged')) : 1;
         ?>
-
         <section class="focostv-site-search-results">
+            <div class="focostv-go-home-container">
+                <i class="fa-solid fa-chevron-left"></i>
+                <a href="<?php echo esc_url(home_url('/')); ?>">Regresar al inicio</a>
+            </div>
             <h3 class="focostv-sections-title focostv-search-result-title">
                 <span class="search-result-description">Resultados
                     de&nbsp;</span><?php echo esc_html(get_search_query()); ?>
