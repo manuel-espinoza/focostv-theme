@@ -227,6 +227,13 @@ document.addEventListener('DOMContentLoaded', function () {
     containerAudioPost.style.display = 'block';
   });
 
+  // quita el audio al moverme de pagina
+  window.addEventListener('pagehide', () => {
+    if (synth.speaking) {
+      synth.cancel();
+    }
+  });
+
   containerAudioPostClose?.addEventListener('click', () => {
     containerAudioPost.style.display = 'none';
 
@@ -288,6 +295,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function stopProgressBar() {
     progressBar.classList.remove('loading');
   }
+
 
   /*************************** POSTS VIDEO COMPONENT *******************/
   const videoModal = document.getElementById('focostv-video-post');
