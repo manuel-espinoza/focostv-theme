@@ -223,6 +223,13 @@ document.addEventListener('DOMContentLoaded', function () {
   let utterance; // Variable para almacenar el SpeechSynthesisUtterance
   const synth = window.speechSynthesis; // Referencia a Speech Synthesis
 
+  // esperar que las voces carguen para moviles
+  if ('onvoiceschanged' in synth) {
+    synth.onvoiceschanged = () => {
+      console.log('Voces cargadas y listas para escuchar posts');
+    };
+  }
+
   audioPostButton?.addEventListener('click', () => {
     containerAudioPost.style.display = 'block';
   });
