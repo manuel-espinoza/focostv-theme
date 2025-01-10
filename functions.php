@@ -23,13 +23,13 @@ function focostvtheme_enqueue_styles()
     // icons from FontAwesome
     wp_enqueue_style('fontawesome', get_template_directory_uri() . '/assets/fontawesome/css/all.min.css', array(), '6.6.0');
     // theme styles
-    wp_enqueue_style('focostvtheme-style', get_stylesheet_uri(), array(), '1.0.0');
+    wp_enqueue_style('focostvtheme-style', get_template_directory_uri() . '/style.css', array(), '1.0.0');
 }
 add_action('wp_enqueue_scripts', 'focostvtheme_enqueue_styles');
 
 function focostvtheme_enqueue_scripts()
 {
-    wp_enqueue_script('focostv-scripts', get_template_directory_uri() . '/js/index.js', array(), '1.0.0', true);
+    wp_enqueue_script('focostv-scripts', get_template_directory_uri() . '/js/index.min.js', array(), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'focostvtheme_enqueue_scripts');
 

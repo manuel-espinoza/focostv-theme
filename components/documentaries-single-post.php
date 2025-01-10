@@ -68,7 +68,6 @@ if (!empty($categories)) {
         </div>
 
         <div class="focostv-coffee-donations-container">
-            <?php get_template_part('components/coffee-donations') ?>
         </div>
     </section>
 </article>
