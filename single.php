@@ -198,10 +198,6 @@ if (have_posts()):
                     ?>
                 </div>
 
-                <div class="focostv-post-whatsapp-subscription">
-                    <?php echo do_shortcode('[focostv_whatsapp_subscription]'); ?>
-                </div>
-
                 <div class="focostv-related-posts">
                     <h3 class="focostv-related-posts-title">Notas Relacionadas</h3>
                     <?php

@@ -33,6 +33,67 @@ function focostvtheme_enqueue_scripts()
 }
 add_action('wp_enqueue_scripts', 'focostvtheme_enqueue_scripts');
 
+function focostv_setup_categories_and_pages() {
+    // Categorías y subcategorías
+    $categories = [
+        'PORTADA' => ['PORTADA PRINCIPAL', 'PORTADA SECUNDARIA'],
+        'ACTUALIDAD' => [],
+        'INVESTIGACIÓN' => [],
+        'MULTIMEDIA' => [],
+        'OPINIÓN' => []
+    ];
+
+    foreach ($categories as $parent => $children) {
+        // Verificar si la categoría principal existe
+        $parent_term = term_exists($parent, 'category');
+        if (!$parent_term) {
+            $parent_term = wp_insert_category([
+                'cat_name' => $parent,
+                'category_nicename' => sanitize_title($parent)
+            ]);
+        }
+
+        // Crear subcategorías si hay
+        if (!empty($children) && is_array($children)) {
+            foreach ($children as $child) {
+                $child_term = term_exists($child, 'category');
+                if (!$child_term) {
+                    wp_insert_category([
+                        'cat_name' => $child,
+                        'category_nicename' => sanitize_title($child),
+                        'category_parent' => $parent_term['term_id'] ?? $parent_term
+                    ]);
+                }
+            }
+        }
+    }
+
+    // Páginas
+    $pages = [
+        'actualidad',
+        'investigacion',
+        'multimedia',
+        'opinion',
+        'sobre-focos',
+        'noiz-productora',
+        'terminos-y-condiciones',
+        'comentarios'
+    ];
+
+    foreach ($pages as $page_slug) {
+        $page_exists = get_page_by_path($page_slug);
+        if (!$page_exists) {
+            wp_insert_post([
+                'post_title' => ucwords(str_replace('-', ' ', $page_slug)),
+                'post_name' => $page_slug,
+                'post_status' => 'publish',
+                'post_type' => 'page'
+            ]);
+        }
+    }
+}
+add_action('after_setup_theme', 'focostv_setup_categories_and_pages');
+
 /**
  * Summary of custom_excerpt_length
  * @param mixed $length

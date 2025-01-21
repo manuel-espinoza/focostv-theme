@@ -966,7 +966,7 @@ body.focostv-home .focostv-site-navigation {
 .focostv-post-location,
 .focostv-post-date {
     font-family: 'Inter', sans-serif;
-    font-size: 1.125rem;
+    font-size: 1rem;
 }
 
 .focostv-multimedia-post-container {
@@ -2257,6 +2257,7 @@ body.focostv-home .focostv-site-navigation {
         width: 24%;
         background-color: #CDCDCD;
         max-height: 40rem;
+        display: none;
     }
 
     .focostv-video-post-modal-content {
