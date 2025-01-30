@@ -36,6 +36,7 @@
                 </div>
             <?php endif; ?>
             <div class="focostv-site-header-search">
+                <?php echo do_shortcode('[gtranslate]'); ?>
                 <button class="focostv-site-header-button" id="focostv-toggle-search">
                     <i class="fa-solid fa-magnifying-glass focostv-site-header-icon"></i>
                 </button>

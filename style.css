@@ -55,6 +55,11 @@ body {
     display: none;
 }
 
+.focostv-site-header-search {
+    display: flex;
+    align-items: center;
+}
+
 /***navigation only pc****/
 .focostv-site-header-navigation-menu {
     display: none;
