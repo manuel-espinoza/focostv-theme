@@ -429,6 +429,7 @@ body.focostv-home .focostv-site-navigation {
     width: 34%;
     display: flex;
     align-items: start;
+    padding-top: 0.5rem;
 }
 
 .focostv-front-page-post-thumbnail a img {
@@ -1874,6 +1875,7 @@ body.focostv-home .focostv-site-navigation {
 
     .focostv-basic-page-post-item .focostv-front-page-post-thumbnail {
         width: 34%;
+        padding-top: 0;
     }
 
     .focostv-basic-page-first-post {
