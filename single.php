@@ -9,31 +9,29 @@ if (have_posts()):
         $category_name = '';
         $category_slug = '';
 
+        $allowed_categories = ['actualidad', 'investigacion', 'multimedia', 'opinion'];
+
         if (!empty($categories)) {
-            // Get the first category that is not 'portada' and doesn't start with 'portada-'
+            // Recorrer las categorías del post
             foreach ($categories as $category) {
-                if ($category->slug !== 'portada' && strpos($category->slug, 'portada-') !== 0) {
-                    // Check if the category has a parent
-                    if ($category->parent == 0) {
-                        // This is a top-level category
-                        $category_name = strtolower($category->name);
-                        $category_slug = $category->slug;
-                        break;
-                    } else {
-                        // This is a child category, get its top-level parent
-                        $top_level_category = get_term($category->parent, 'category');
-                        while ($top_level_category->parent != 0) {
-                            $top_level_category = get_term($top_level_category->parent, 'category');
-                        }
-                        $category_name = strtolower($top_level_category->name);
-                        $category_slug = $top_level_category->slug;
-                        break;
-                    }
+                // Verificar si la categoría está en las permitidas
+                if (in_array($category->slug, $allowed_categories)) {
+                    $category_name = strtolower($category->name);
+                    $category_slug = $category->slug;
+                    break;
                 }
+            }
+
+            // Si no se encontró una categoría permitida, usar la primera categoría disponible
+            if (empty($category_slug) && !empty($categories)) {
+                $category_name = strtolower($categories[0]->name);
+                $category_slug = $categories[0]->slug;
             }
         }
 
-        $category_link = home_url("/$category_slug");
+        // Generar el link correspondiente
+        $category_link = (in_array($category_slug, $allowed_categories)) ? home_url("/$category_slug") : get_term_link($categories[0]->term_id, 'category');
+
         if ($category_slug === 'multimedia'):
             get_template_part('components/documentaries-single-post');
         else:
