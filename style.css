@@ -58,6 +58,7 @@ body {
 .focostv-site-header-search {
     display: flex;
     align-items: center;
+    gap: 0.5rem;
 }
 
 /***navigation only pc****/
@@ -427,7 +428,7 @@ body.focostv-home .focostv-site-navigation {
 .focostv-front-page-post-thumbnail {
     width: 34%;
     display: flex;
-    align-items: center;
+    align-items: start;
 }
 
 .focostv-front-page-post-thumbnail a img {
@@ -518,6 +519,7 @@ body.focostv-home .focostv-site-navigation {
 .focostv-basic-page-first-post .focostv-front-page-post,
 .focostv-basic-page-first-post .focostv-front-page-post-thumbnail {
     width: 100%;
+    display: block;
 }
 
 .focostv-basic-page-first-post .focostv-front-page-post .focostv-front-page-post-title a {
