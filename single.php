@@ -40,9 +40,9 @@ if (have_posts()):
                 <header class="focostv-post-header">
                     <?php if (!empty($category_link)): ?>
                         <div class="focostv-go-home-container">
-                            <i class="fa-solid fa-chevron-left">
-                                <a href="<?php echo esc_url($category_link); ?>"></a>
-                            </i>
+                            <a href="<?php echo esc_url($category_link); ?>" style="margin-left: 0;">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </a>
                             <a
                                 href="<?php echo esc_url($category_link); ?>"><?php echo mb_convert_case(mb_strtolower($category_name, 'UTF-8'), MB_CASE_TITLE, 'UTF-8'); ?></a>
                         </div>
