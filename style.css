@@ -444,7 +444,8 @@ body.focostv-home .focostv-site-navigation {
 .front-page-first-post .focostv-front-page-post,
 .front-page-first-post .focostv-front-page-post-thumbnail {
     width: 100%;
-    display: block; /* MOSTRAR EN TAMANIO COMPLETO  LOS PRIMEROS POSTS*/
+    display: block;
+    /* MOSTRAR EN TAMANIO COMPLETO  LOS PRIMEROS POSTS*/
 }
 
 .front-page-first-post .focostv-front-page-post-thumbnail {
@@ -1587,7 +1588,7 @@ body.focostv-home .focostv-site-navigation {
 }
 
 .focostv-404-subtitle {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 1.75rem;
     margin-top: 0.5rem;
@@ -1595,20 +1596,27 @@ body.focostv-home .focostv-site-navigation {
 }
 
 .focostv-404-text {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 300;
     font-size: 1.5rem;
     margin-top: 0;
     margin-bottom: 0;
 }
 
-.focostv-go-to-frontpage-link, .focostv-go-to-multimedia-link {
+.focostv-go-to-frontpage,
+.focostv-go-to-multimedia {
+    width: 50%;
+}
+
+.focostv-go-to-frontpage-link,
+.focostv-go-to-multimedia-link {
     text-decoration: none;
     color: #0F0F0F;
 }
 
-.focostv-go-to-frontpage-title, .focostv-go-to-multimedia-title {
-    font-family: 'Inter', sans-serif;
+.focostv-go-to-frontpage-title,
+.focostv-go-to-multimedia-title {
+    font-family: 'Poppins', sans-serif;
     font-size: 1.75rem;
     font-weight: 400;
 }
