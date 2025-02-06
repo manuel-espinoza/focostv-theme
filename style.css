@@ -1578,6 +1578,41 @@ body.focostv-home .focostv-site-navigation {
     text-align: center;
 }
 
+/******************404 PAGE **********************/
+.focostv-404-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.focostv-404-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.focostv-404-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.focostv-go-to-frontpage-link, .focostv-go-to-multimedia-link {
+    text-decoration: none;
+    color: #0F0F0F;
+}
+
+.focostv-go-to-frontpage-title, .focostv-go-to-multimedia-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+}
+
 /***************************************TABLET STYLES**************************/
 /****TO CHANGE 768px resolution**************/
 @media screen and (min-width: 640px) {
