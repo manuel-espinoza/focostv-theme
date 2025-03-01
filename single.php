@@ -14,11 +14,23 @@ if (have_posts()):
         if (!empty($categories)) {
             // Recorrer las categorías del post
             foreach ($categories as $category) {
-                // Verificar si la categoría está en las permitidas
-                if (in_array($category->slug, $allowed_categories)) {
-                    $category_name = strtolower($category->name);
-                    $category_slug = $category->slug;
-                    break;
+                // Verificar si la categoría tiene un padre
+                if ($category->parent) {
+                    // Obtener la categoría padre
+                    $parent_category = get_category($category->parent);
+                    // Verificar si la categoría padre está en las permitidas
+                    if (in_array($parent_category->slug, $allowed_categories)) {
+                        $category_name = strtolower($parent_category->name);
+                        $category_slug = $parent_category->slug;
+                        break;
+                    }
+                } else {
+                    // Verificar si la categoría está en las permitidas
+                    if (in_array($category->slug, $allowed_categories)) {
+                        $category_name = strtolower($category->name);
+                        $category_slug = $category->slug;
+                        break;
+                    }
                 }
             }
 
@@ -33,6 +45,8 @@ if (have_posts()):
         $category_link = (in_array($category_slug, $allowed_categories)) ? home_url("/$category_slug") : get_term_link($categories[0]->term_id, 'category');
 
         if ($category_slug === 'multimedia'):
+            set_query_var('category_multimedia_link', $category_link);
+            set_query_var('category_multimedia_name', $category_name);
             get_template_part('components/documentaries-single-post');
         else:
             ?>

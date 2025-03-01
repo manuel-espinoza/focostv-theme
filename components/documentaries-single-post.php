@@ -1,28 +1,19 @@
 <?php
-$categories = get_the_category();
-$category_link = '';
-$category_slug = '';
-
-if (!empty($categories)) {
-    foreach ($categories as $category) {
-        if ($category->slug !== 'portada' && strpos($category->slug, 'portada-') !== 0) {
-            $category_name = strtolower($category->name);
-            $category_link = home_url("/$category_name");
-            $category_slug = $category->slug;
-            break;
-        }
-    }
-}
+$category_link = get_query_var('category_multimedia_link');
+$category_name = get_query_var('category_multimedia_name');
 ?>
 
 <article id="focostv-post-<?php the_ID(); ?>" class="focostv-single-documentaries-post">
     <header class="focostv-documentaries-post-header">
         <?php if (!empty($category_link)): ?>
-            <div class="focostv-go-home-container focostv-go-home-container-documentaries">
-                <i class="fa-solid fa-chevron-left"></i>
-                <a href="<?php echo esc_url($category_link); ?>"><?php echo ucwords($category_name); ?></a>
-            </div>
-        <?php endif; ?>
+                        <div class="focostv-go-home-container focostv-go-home-container-documentaries">
+                            <a href="<?php echo esc_url($category_link); ?>" style="margin-left: 0;">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </a>
+                            <a
+                                href="<?php echo esc_url($category_link); ?>"><?php echo mb_convert_case(mb_strtolower($category_name, 'UTF-8'), MB_CASE_TITLE, 'UTF-8'); ?></a>
+                        </div>
+                    <?php endif; ?>
         <h1 class="focostv-post-title focostv-post-documentaries-title"><?php the_title(); ?></h1>
     </header>
 
