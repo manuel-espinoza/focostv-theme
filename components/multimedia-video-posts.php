@@ -4,8 +4,21 @@ $not_subcategory_id = get_cat_ID('podcasts'); // slug de la subcategoria para el
 
 $paged = isset($_POST['page']) ? $_POST['page'] : 1;
 
+// Obtener todas las subcategorías de "multimedia" excepto "podcasts"
+$subcategories = get_categories(array(
+    'child_of' => $principal_category_id,
+    'exclude' => [$not_subcategory_id],
+    'hide_empty' => false
+));
+
+
+$category_ids = array($principal_category_id);
+foreach ($subcategories as $subcategory) {
+    $category_ids[] = $subcategory->term_id;
+}
+
 $args = array(
-    'category__in' => [$principal_category_id],
+    'category__in' => $category_ids,
     'category__not_in' => [$not_subcategory_id],
     'posts_per_page' => 5,
     'orderby' => 'date',
