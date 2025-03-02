@@ -37,7 +37,7 @@ if ($category) {
             $post_count++;
 
             $subcategories = get_the_terms(get_the_ID(), 'category');
-            $subcategory_name = 'Editorial'; // Valor por defecto
+            $subcategory_name = 'Editoriales'; // Valor por defecto
 
             if ($subcategories && !is_wp_error($subcategories)) {
                 foreach ($subcategories as $subcategory) {

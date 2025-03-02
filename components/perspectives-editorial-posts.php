@@ -1,7 +1,7 @@
 <?php
 $principal_category_id = get_cat_ID('opinion');
-$subcategory_id = get_cat_ID('editorial');
-$not_subcategory_id = get_cat_ID('opiniones'); // slug de la subcategoria para el estilo de opiniones
+$subcategory_id = get_cat_ID('editoriales');
+$not_subcategory_id = get_cat_ID('columnas-de-opinion'); // slug de la subcategoria para el estilo de opiniones
 
 $paged = isset($_POST['page']) ? $_POST['page'] : 1;
 
@@ -23,10 +23,9 @@ if ($editorial_query->have_posts()):
         $editorial_query->the_post();
         $post_counter++;
         $first_interview_first_post = $post_counter == 1 ? ' pespectives-first-post-interview' : '';
-
         ?>
         <h6 class="focostv-perspectives-category perspectives-page-category">
-            Editorial
+            Editoriales
         </h6>
         <div class="focostv-front-page-post-item<?php echo $first_interview_first_post; ?>">
             <div class="focostv-front-page-post">

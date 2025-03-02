@@ -1,13 +1,11 @@
 <?php
-$principal_category_id = get_cat_ID('opinion');
-$subcategory_id = get_cat_ID('opiniones'); // slug de la subcategoria para el estilo de opiniones
-$not_subcategory_id = get_cat_ID('editorial');
-
+$subcategory_slug = 'columnas-de-opinion';
+$not_subcategory_slug = 'editoriales';
 $paged = isset($_POST['page']) ? $_POST['page'] : 1;
 
 $args = array(
-    'category__in' => [$principal_category_id, $subcategory_id],
-    'category__not_in' => [$not_subcategory_id],
+    'category_name' => $subcategory_slug,
+    'category__not_in' => array(get_cat_ID($not_subcategory_slug)),
     'posts_per_page' => 3,
     'orderby' => 'date',
     'order' => 'DESC',
@@ -20,9 +18,10 @@ if ($opiniones_query->have_posts()):
     while ($opiniones_query->have_posts()):
         $opiniones_query->the_post();
         ?>
+
         <div class="focostv-perspectives-page-post-item">
             <h6 class="focostv-perspectives-category perspectives-page-category">
-                Opiniones
+                Columnas de opini&oacute;n
             </h6>
             <div class="focostv-perspectives-post">
                 <h2 class="focostv-front-page-post-title focostv-perspectives-post-title">
@@ -75,7 +74,7 @@ if ($opiniones_query->have_posts()):
     echo '</div>';
 
 else:
-    echo 'NO hay posts';
+    echo 'No hay posts';
 endif;
 wp_reset_postdata();
 ?>
