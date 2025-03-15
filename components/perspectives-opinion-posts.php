@@ -21,7 +21,7 @@ if ($opiniones_query->have_posts()):
 
         <div class="focostv-perspectives-page-post-item">
             <h6 class="focostv-perspectives-category perspectives-page-category">
-                Columnas de opini&oacute;n
+                Opini&oacute;n
             </h6>
             <div class="focostv-perspectives-post">
                 <h2 class="focostv-front-page-post-title focostv-perspectives-post-title">

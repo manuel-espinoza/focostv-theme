@@ -25,7 +25,7 @@ if ($editorial_query->have_posts()):
         $first_interview_first_post = $post_counter == 1 ? ' pespectives-first-post-interview' : '';
         ?>
         <h6 class="focostv-perspectives-category perspectives-page-category">
-            Editoriales
+            Editorial
         </h6>
         <div class="focostv-front-page-post-item<?php echo $first_interview_first_post; ?>">
             <div class="focostv-front-page-post">
