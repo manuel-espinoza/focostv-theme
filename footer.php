@@ -27,7 +27,7 @@
   </div>
   <div class="focostv-site-footer-copyright">
     <p class="focostv-copyright-text">
-      © Copyright <?php echo date('Y'); ?>, <?php bloginfo('name'); ?> El Salvador, Todos los derechos
+      © Copyright <?php echo date('Y'); ?>, <?php bloginfo('name'); ?> Centroam&eacute;rica, Todos los derechos
       reservados.
     </p>
   </div>
